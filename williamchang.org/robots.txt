@@ -1,0 +1,5 @@
+# robots.txt for http://williamchang.org
+# Reference Guide: http://www.robotstxt.org/wc/norobots.html
+
+User-agent: *
+Disallow: /portfolio/resume/

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head> 
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	<!--[if ie]><meta http-equiv="X-UA-Compatible" content="chrome=1"><![endif]-->
+	<meta name="author" content="William Chang"/>
+	<title>String Reverse - Prototype</title>
+	<!-- BEGIN: Styles -->
+	<link href="main.css" media="all" rel="stylesheet" type="text/css"/>
+	<!-- END: Styles -->
+	<!-- BEGIN: Page Specific -->
+	<style type="text/css" media="all">
+.row {margin-bottom:4px;padding:4px;overflow:hidden;}
+.row label {float:left;width:100px;margin-right:10px;text-align:right;}
+#input1 {background-color:#eee;}
+#output1 {background-color:#ddd;}
+	</style>
+	<!-- END: Page Specific -->
+</head>
+<body>
+<div id="frame">
+	<div id="region_header">
+<!-- BEGIN: Region Header -->
+		<h1>String Reverse</h1>
+<!-- END: Region Header -->
+	</div>
+	<div id="region_middle">
+<!-- BEGIN: Template Region Middle -->
+		<div id="input1" class="row"><label>Input</label><span>Madam, I'm Adam</span></div>
+		<div id="output1" class="row"><label>Output</label><span></span></div>
+<!-- END: Template Region Middle -->
+	</div>
+	<div class="line"></div>
+	<div id="region_footer">
+<!-- BEGIN: Region Footer -->
+		<div class="credit center">Developed by <a href="http://www.williamchang.org/" title="DieHard">William Chang</a></div>
+<!-- END: Region Footer -->
+	</div>
+</div>
+<!-- BEGIN: Scripts -->
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>-->
+	<script src="jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	//<![CDATA[
+// Register ready event to be executed when the DOM document has finished loading.
+$(document).ready(function() {
+	var strMessage = $('#input1 span').text();
+	var strCharacters = strMessage.split('');
+	var strCharacter = null;
+	var numLength = strMessage.length;
+	var numLast = numLength - 1;
+
+	for(var numIndex = 0;numIndex < numLength / 2;numIndex += 1) {
+		strCharacter = strCharacters[numIndex];
+		strCharacters[numIndex] = strCharacters[numLast - numIndex];
+		strCharacters[numLast - numIndex] = strCharacter;
+	}
+	$('#output1 span').text(strCharacters.join(''));
+});
+	//]]>
+	</script>
+<!-- END: Scripts -->
+</body>
+</html>

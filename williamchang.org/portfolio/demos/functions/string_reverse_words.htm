@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head> 
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	<!--[if ie]><meta http-equiv="X-UA-Compatible" content="chrome=1"><![endif]-->
+	<meta name="author" content="William Chang"/>
+	<title>String Words Reverse - Prototype</title>
+	<!-- BEGIN: Styles -->
+	<link href="main.css" media="all" rel="stylesheet" type="text/css"/>
+	<!-- END: Styles -->
+	<!-- BEGIN: Page Specific -->
+	<style type="text/css" media="all">
+.row {margin-bottom:4px;padding:4px;overflow:hidden;}
+.row label {float:left;width:100px;margin-right:10px;text-align:right;}
+#input1 {background-color:#eee;}
+#output1 {background-color:#ddd;}
+	</style>
+	<!-- END: Page Specific -->
+</head>
+<body>
+<div id="frame">
+	<div id="region_header">
+<!-- BEGIN: Region Header -->
+		<h1>String Words Reverse</h1>
+<!-- END: Region Header -->
+	</div>
+	<div id="region_middle">
+<!-- BEGIN: Template Region Middle -->
+		<div id="input1" class="row"><label>Input</label><span>Do or do not, there is no try.</span></div>
+		<div id="output1" class="row"><label>Output</label><span></span></div>
+<!-- END: Template Region Middle -->
+	</div>
+	<div class="line"></div>
+	<div id="region_footer">
+<!-- BEGIN: Region Footer -->
+		<div class="credit center">Developed by <a href="http://www.williamchang.org/" title="DieHard">William Chang</a></div>
+<!-- END: Region Footer -->
+	</div>
+</div>
+<!-- BEGIN: Scripts -->
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>-->
+	<script src="jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	//<![CDATA[
+function reverseString(strCharacters, numStart, numEnd) {
+	var strCharacter = null;
+	while(numEnd > numStart) {
+		// Exchange characters.
+		strCharacter = strCharacters[numStart];
+		strCharacters[numStart] = strCharacters[numEnd];
+		strCharacters[numEnd] = strCharacter;
+		// Move indexes towards middle.
+		numStart++;
+		numEnd--;
+	}
+	return strCharacters;
+}
+function reverseWords(strWords) {
+	var numStart = 0, numEnd = 0;
+	var strCharacters = strWords.split('');
+
+	// Reverse entire string.
+	strCharacters = reverseString(strCharacters, numStart, strCharacters.length - 1);
+
+	while(numEnd < strCharacters.length) {
+		// Validate character. If no space, skip non-word character.
+		if(strCharacters[numEnd] != ' ') {
+			numStart = numEnd;
+
+			// Scan to next non-word character.
+			while(numEnd < strCharacters.length && strCharacters[numEnd] != ' ') {
+				numEnd++;
+			}
+
+			// Back up to end of word.
+			numEnd--;
+
+			// Reverse word.
+			strCharacters = reverseString(strCharacters, numStart, numEnd);
+		}
+		// Advance to the next character.
+		numEnd++;
+	}
+	return strCharacters.join('');
+}
+// Register ready event to be executed when the DOM document has finished loading.
+$(document).ready(function() {
+	var strMessage = $('#input1 span').text();
+	$('#output1 span').text(reverseWords(strMessage));
+});
+	//]]>
+	</script>
+<!-- END: Scripts -->
+</body>
+</html>

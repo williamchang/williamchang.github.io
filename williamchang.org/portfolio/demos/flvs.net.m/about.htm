@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	<title>About Us - Florida Virtual School</title>
+	<meta name="keywords" content="Florida Virtual School, Online Courses, accredited online high school, virtual high school, distance, learning, accredited online middle school, accredited online junior high school"/>
+	<meta name="description" content="Florida Virtual School is an accredited, public, online e-learning school serving students in grades K-12 all over the world."/>
+	<meta name="author" content="William Chang"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+	<!-- BEGIN: Styles -->
+	<link href="_assets/css/foundation.css" media="screen" rel="stylesheet" type="text/css"/>
+	<link href="_assets/css/template.css" media="screen" rel="stylesheet" type="text/css"/>
+	<link href="_assets/css/template_skin.css" media="screen" rel="stylesheet" type="text/css"/>
+	<link href="_assets/css/content.css" media="screen" rel="stylesheet" type="text/css"/>
+	<!-- END: Styles -->
+	<link href="_assets/img/favicon.ico" rel="shortcut icon" type="image/ico"/>
+	<link href="_assets/img/appicon.png" rel="apple-touch-icon"/>
+</head>
+<body class="page_about orientation_portrait">
+<div id="frame">
+	<div id="region_container"><div id="region_container_buffer">
+		<div id="region_column"><div id="region_column_buffer">
+			<div id="region_header">
+<!-- BEGIN: Region Header -->
+				<div id="region_header_navigation"><ul>
+					<li class="first"><a class="lv1 home" href="index.htm"><span>Home</span></a></li>
+					<li><a class="lv1 about" href="about.htm"><span>About</span></a></li>
+					<li><a class="lv1 courses" href="courses.htm"><span>Courses</span></a></li>
+					<li><a class="lv1 apps" href="apps.htm"><span>Apps</span></a></li>
+					<li class="last"><a class="lv1 contact" href="contact.htm"><span>Contact</span></a></li>
+				</ul></div>
+				<div id="region_header_logo">
+					<h1><a href="index.htm"><img alt="Florida Virtual School" width="198" height="70" src="_assets/img/logo.png"/></a></h1>
+				</div>
+<!-- END: Region Header -->
+			</div>
+			<div id="region_middle">
+<!-- BEGIN: Template Region Middle -->
+				<div id="subregion_panels">
+					<div class="panel panel_first"><div class="inner">
+						<div class="header">
+							<h3><span class="i1"><span class="i2">About Us</span></span></h3>
+						</div>
+						<div class="body">
+							<div id="videoplayer_container" class="media">
+								<a href="http://m.youtube.com/flvs#p/u/25/HxVa5DdbSvI"><img alt="video" src="http://img.youtube.com/vi/HxVa5DdbSvI/0.jpg"/></a>
+							</div>
+							<p>We believe every student is unique - so learning should be dynamic, flexible, and engaging. Meet a few of our students and listen to their stories.</p>
+						</div>
+						<div class="footer">
+							<a class="btn" href="mailto:?subject=Reminder!%20Checkout%20Florida%20Virtual%20School%20Website&body=http%3A%2F%2Fwww.flvs.net%2F"><span class="i1"><span class="i2">Send to my email</span></span></a>
+							<a class="btn" href="mailto:?subject=Checkout%20the%20Florida%20Virtual%20School%20Website!&body=http%3A%2F%2Fwww.flvs.net%2F"><span class="i1"><span class="i2">Send to a Friend</span></span></a>
+						</div>
+					</div></div>
+					<div class="panel_btn">
+						<a href="http://jobs.flvs.net/"><span>View careers on the main site</span></a>
+					</div>
+				</div>
+<!-- END: Template Region Middle -->
+			</div>
+			<div id="region_bottom">
+<!-- BEGIN: Region Bottom -->
+				<div class="social_container"><ul>
+					<li class="facebook"><a href="http://m.facebook.com/FloridaVirtualSchool"><span>Facebook</span></a></li>
+					<li class="twitter"><a href="http://mobile.twitter.com/flvs"><span>Twitter</span></a></li>
+					<li class="youtube"><a href="http://m.youtube.com/FLVS"><span>YouTube</span></a></li>
+				</ul></div>
+				<div class="search_container"><form action="http://www.flvs.net/Search/Results.aspx" method="get">
+					<span class="txt_search_container"><span class="o1"><span class="o2"><input type="text" class="txt_search" name="k" placeholder="Search Full Site" value=""/></span></span></span><input type="submit" class="btn_search" value="Search"/>
+				</form></div>
+<!-- END: Region Bottom -->
+			</div>
+			<div id="region_footer">
+<!-- BEGIN: Template Region Footer -->
+				<ul>
+					<li class="first"><a href="http://www.flvs.net/">View Full Site</a></li>
+					<li><a href="https://vsa.flvs.net/">Login</a></li>
+				</ul>
+				<p>&copy; Florida Virtual School 2011. All rights reserved.</p>
+<!-- END: Template Region Footer -->
+			</div>
+		</div></div>
+	</div></div>
+</div>
+<!-- BEGIN: Scripts -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+	<script src="_assets/js/main.js" type="text/javascript"></script>
+	<script type="text/javascript">
+// Register ready event to be executed when the DOM document has finished loading.
+jQuery(document).ready(function($) {
+	function createVideoMarkup(strUrl, strWidth, strHeight) {
+		return '<iframe class=\"videoplayer\" src=\"' + strUrl + '\" type=\"text/html\"  width=\"' + strWidth + '\" height=\"' + strHeight + '\" frameborder=\"0\"></iframe>'
+	}
+	function setVideoOrientation(elePlayer, intValue, strUrl) {
+		// Validate orientation.
+		switch(intValue) {
+			default: case 0: // Portrait.
+				$(elePlayer).empty().html(createVideoMarkup(strUrl, '280', '150'));
+				break;
+			case 90: case -90: // Landscape.
+				$(elePlayer).empty().html(createVideoMarkup(strUrl, '430', '230'));
+				break;
+		}
+	}
+
+	// Validate global object from window.
+	if(typeof window.cms !== 'undefined') {
+		// Init.
+		var eleVideoPlayer = $('#videoplayer_container').get(0);
+		var strUrl = 'http://www.youtube.com/embed/HxVa5DdbSvI';
+		// Set orientation.
+		setVideoOrientation(eleVideoPlayer, window.cms.intOrientation, strUrl);
+		// Validate orientation event from global object.
+		if(typeof window.cms.objOrientationEvent !== 'undefined') {
+			// Bind event.
+			$(window).bind(window.cms.objOrientationEvent, function(evt) {
+				setVideoOrientation(eleVideoPlayer, window.orientation, strUrl);
+			});
+		}
+	}
+});
+	</script>
+<!-- END: Scripts -->
+</body>
+</html>

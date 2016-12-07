@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<!-- XHTML5 Mobile-First Responsive Boilerplate, Designed By William Chang, Created 2016-07-27, Modified 2016-08-19 -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="tabbar_fix_html">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<title>Software Development Engineer Portfolio of William Chang</title>
+	<meta name="description" content="The portfolio of Software Engineer William Chang contains projects, programming source codes (C, C++, C#, VB, Java, PHP, JavaScript, SQL), and screenshots." />
+	<meta name="keywords" content="development, portfolio, resume, cv, curriculum vitae, job, work, career, research, architect, programmer, developer, software engineer, program manager, computer, projects, technologies, applications, programming, evangelist, it, information technology" />
+	<meta name="author" content="William Chang" />
+
+<!-- BEGIN: Styles -->
+	<style>
+/*! normalize.css v4.2.0 | MIT License | github.com/necolas/normalize.css */
+progress,sub,sup{vertical-align:baseline}button,hr,input{overflow:visible}html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0} figcaption, menu,article,aside,details,figure,footer,header,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0} [hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{}button,select{text-transform:none}[type=submit], [type=reset],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
+	</style>
+<!-- END: Styles -->
+
+<!-- BEGIN: Page Specific Styles -->
+	<style>
+/* General Rules */
+body {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:14px;color:#000;}
+h1 {color:#3c475b;font-weight:bold;}
+h2 {color:#3c475b;font-weight:bold;}
+h3 {color:#3c475b;font-weight:bold;}
+h4 {color:#3c475b;font-weight:bold;}
+p {margin:0 0 16px 0;}
+ul {margin:0 0 16px 30px;list-style-type:disc;}
+ul ul {margin:0 0 0 30px;list-style-type:circle;}
+ul ul ul {list-style-type:square;}
+ol {margin:0 0 16px 30px;list-style-type:decimal;}
+ol ol {margin:0 0 0 30px;}
+strong {font-weight:bold;}
+
+/* Basic Classes */
+.bold {font-weight:bold;}
+.italic {font-style:italic;}
+.underline {text-decoration:underline;}
+.strikethrough {text-decoration:line-through;}
+.center {text-align:center;}
+.hide {display:none;}
+
+/* Links */
+a {color:#524cc3;}
+a:link, a:visited {text-decoration:none;color:#524cc3;}
+a:hover, a:active {text-decoration:underline;color:#524cc3;}
+h1 a {color:#3c475b;}
+h1 a:link, h1 a:visited {text-decoration:none;color:#3c475b;}
+h1 a:hover, h1 a:active {text-decoration:none;color:#000;}
+h3 a {color:#3c475b;}
+h3 a:link, h3 a:visited {text-decoration:none;color:#3c475b;}
+h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
+.a-light {color:#ddd;}
+.a-light a:link, .a-light a:visited {text-decoration:none;color:#ddd;}
+.a-light a:hover, .a-light a:active {text-decoration:underline;color:#ddd;}
+
+#console {position:fixed;z-index:2000;top:20%;left:20%;min-width:160px;min-height:120px;width:60%;height:30%;border:solid 4px #f00;background-color:#fff;opacity:0.9;overflow:scroll;}
+#console .log {display:block;padding:4px;border-top:solid 1px #f00;}
+#console .log:first-child {border-top:0;}
+#console .log.template {display:none;}
+
+/* Extra small devices (portrait phones, less than 544px), Small devices (landscape phones, less than 768px), Medium devices (tablets, less than 992px) */
+@media (max-width:1024px) {
+	/* General Rules */
+	body {}
+	#main_frame {background:url("http://williamchang.org/portfolio/images/body_bg.jpg") #280b05 repeat-x scroll 0 0;}
+	#main_frame > #main_frame_inner {}
+	#main_frame #region_header {padding:20px 0;}
+	#main_frame #region_header .main_title_superscript {display:block;text-align:center;font-size:12px;}
+	#main_frame #region_header .main_heading {margin:0;text-align:center;}
+	#main_frame #region_header .main_heading .main_link {display:block;}
+	#main_frame #region_header .main_heading .main_link .main_avatar {width:100px;height:100px;margin:20px 0 10px 0;border-radius:50%;}
+	#main_frame #region_header .main_heading .main_link .main_title {display:block;}
+	/*#main_frame #region_header .main_title_superscript {display:none;position:relative;width:210px;height:0;top:10px;left:110px;font-size:12px;}
+	#main_frame #region_header .main_heading {margin:0;padding-bottom:10px;overflow:hidden;}
+	#main_frame #region_header .main_heading .main_link {}
+	#main_frame #region_header .main_heading .main_link .main_avatar {float:left;width:100px;height:100px;margin-left:10px;border-radius:50%;}
+	#main_frame #region_header .main_heading .main_link .main_title {float:left;width:60%;margin-top:36px;margin-left:10px;}*/
+	#main_frame #region_middle {margin:0;padding-top:2px;border-top-right-radius:10px;border-top-left-radius:10px;background-color:#fff;font-size:16px;}
+	#main_frame #region_footer {margin-top:-20px;padding:10px 0 60px 0;background-color:#fff;}
+	h1, h2, h3, h4, h5, h6, p, .main_title_superscript {margin-right:10px;margin-left:10px;}
+	.main_title_superscript {color:#3c475b;}
+	.main_title_superscript a:link, .main_title_superscript a:visited {text-decoration:none;color:#3c475b;}
+	.main_title_superscript a:hover, .main_title_superscript a:active {text-decoration:underline;color:#000;}
+
+	/* Simple Touch Tab Bar */
+	.tabbar {position:fixed;z-index:1000;width:100%;height:40px;bottom:0;left:0;overflow:hidden;transform:translateY(0);transition:transform 0.1s;border-top:solid 1px #bbb;background-color:#fff;opacity:0.96;}
+	.tabbar.hide {display:block;transform:translateY(100%);}
+	.tabbar ul {display:table;table-layout:fixed;width:100%;height:100%;margin:0;padding:0;list-style:none;}
+	.tabbar ul li {display:table-cell;}
+	.tabbar ul li a {display:block;height:40px;text-align:center;line-height:40px;}
+	/*.tabbar_fix_html {height:100%;overflow-y:scroll;-webkit-overflow-scrolling:touch;}
+	.tabbar_fix_body {height:100%;overflow-y:scroll;-webkit-overflow-scrolling:touch;}*/
+	::-webkit-scrollbar {display:none;}
+
+	/* Simple Touch Slider */
+	.slider {display:block;z-index:0;height:240px;margin-bottom:16px;padding:10px 0 10px 10px;background-color:#555;overflow-x:scroll;overflow-y:hidden;-webkit-overflow-scrolling:touch;white-space:nowrap;}
+	.slider span {padding-right:10px;}
+	.slider span img {border-radius:6px;}
+
+	/* Footer */
+	.credit {margin:10px 0;font-size:10px;color:#666;}
+	.credit a:link, .credit a:visited {text-decoration:none;color:#666;}
+	.credit a:hover, .credit a:active {text-decoration:underline;color:#aaa;}
+	.badges ul {margin:0;padding:0;width:100%;}
+	.badges ul li {display:inline;}
+}
+
+/* Extra extra small devices (portrait phones, less than 321px) */
+/*@media (max-width:320px) {
+	#main_frame #region_header .main_title_superscript {display:none;width:180px;top:0;}
+	#main_frame #region_header .main_heading .main_link .main_title {margin-top:40px;}
+}*/
+
+/* Medium devices (tablets, less than 992px) */
+@media (min-width:768px) and (max-width:1024px) {
+	.tabbar {transform:none;transition:none;}
+	.tabbar.hide {display:block;transform:none;}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width:1025px) {
+	/* General Rules */
+	body {background:url("http://williamchang.org/portfolio/images/body_bg.jpg") #280b05 repeat-x fixed 0 0;}
+	#main_frame {width:800px;margin:0 auto;padding:60px 0 30px 0;overflow:hidden;}
+	#main_frame > #main_frame_inner {}
+	#main_frame .region_column1 {position:fixed;width:160px;overflow:hidden;}
+	#main_frame .region_column1 > .region_column1_inner {}
+	#main_frame .region_column2 {float:right;width:640px;overflow:hidden;}
+	#main_frame .region_column2 > .region_column2_inner {}
+
+	#main_frame .region_column1 #region_header {color:#000;}
+	#main_frame .region_column1 #region_header .main_title_superscript {margin-left:20px;font-size:10px;color:#fff;}
+	#main_frame .region_column1 #region_header .main_heading {}
+	#main_frame .region_column1 #region_header .main_heading .main_link {}
+	#main_frame .region_column1 #region_header .main_heading .main_link .main_avatar {box-shadow:0 0 30px 0 rgba(0,0,0,0.4);border-radius:50%;}
+	#main_frame .region_column1 #region_header .main_heading .main_link .main_title {font-size:14px;color:#fff;}
+	#main_frame .region_column2 #region_middle {padding:10px 0 10px 0;border-radius:10px;background:#fff;}
+	#main_frame .region_column2 #region_footer {display:block;clear:both;}
+
+	h1, h2, h3, h4, h5, h6, p {margin-right:20px;margin-left:20px;}
+	.main_title_superscript {color:#fff;}
+	.main_title_superscript a:link, .main_title_superscript a:visited {text-decoration:none;color:#ccc;}
+	.main_title_superscript a:hover, .main_title_superscript a:active {text-decoration:underline;color:#ccc;}
+
+	/* Primary Navigation */
+	.navigation_primary {}
+	.navigation_primary ul {margin-left:20px;padding-left:20px;}
+	.navigation_primary ul li {}
+
+	/* Simple Mouse Slider */
+	.slider {display:block;height:240px;margin:0 0 16px 0;padding:10px 0;background-color:#efefef;overflow:hidden;white-space:nowrap;}
+	.slider span {margin-left:25%;}
+	.slider span img {border-radius:6px;}
+
+	/* Footer */
+	.credit {margin:10px 0;font-size:9px;color:#aaa;}
+	.credit a:link, .credit a:visited {text-decoration:none;color:#aaa;}
+	.credit a:hover, .credit a:active {text-decoration:underline;color:#eee;}
+	.badges ul {margin:0;padding:0;width:100%;}
+	.badges ul li {display:inline;}
+}
+	</style>
+<!-- END: Page Specific Styles -->
+</head>
+<body class="tabbar_fix_body">
+	<div id="main_frame"><div id="main_frame_inner">
+
+	<!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+
+		<div class="region_column1"><div class="region_column1_inner">
+
+<!-- BEGIN: Region Header -->
+			<header id="region_header">
+				<div class="main_title_superscript">Inspired by <a href="http://en.wikipedia.org/wiki/John_Resig">John Resig</a> &amp; <a href="http://en.wikipedia.org/wiki/John_D._Carmack">Software Engineer John Carmack</a></div>
+				<h1 class="main_heading"><a class="main_link" href="http://williamchang.org"><img class="main_avatar" src="http://dummyimage.com/100x100/aaa/fff.png" alt="Placeholder"><span class="main_title">William Chang</span></a></h1>
+			</header>
+<!-- END: Region Header -->
+
+			<nav class="navigation_primary tabbar"><ul>
+				<li><a href="#section_intro" style="background-color:cyan">Intro</a></li>
+				<li><a href="#section_featured" style="background-color:magenta;">Featured</a></li>
+				<li><a href="#section_resume" style="background-color:yellow;">Resume</a></li>
+				<li><a href="#section_connect" style="background-color:khaki;">Connect</a></li>
+			</ul></nav>
+
+			<div id="console">
+				<div class="log template">Test Console Log</div>
+			</div>
+
+		</div></div>
+		<div class="region_column2"><div class="region_column2_inner">
+
+<!-- BEGIN: Region Middle -->
+			<main id="region_middle">
+				<section id="section_intro">
+					<h2>Development Portfolio</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas massa purus, facilisis ut justo vel, gravida porta diam. Quisque non sem turpis. Proin odio erat, ullamcorper sit amet porttitor id, convallis a nisi. Praesent a efficitur dolor. Ut dignissim arcu blandit nibh blandit faucibus. Maecenas sit amet risus eget ipsum gravida pulvinar. In ultricies quam quis justo bibendum finibus. Integer convallis mi sit amet erat tincidunt, in pharetra nulla tincidunt.</p>
+					<p>Nullam erat nisi, dignissim et magna non, molestie mattis est. Nam non porttitor risus. Aenean hendrerit efficitur est eget accumsan. Morbi ultrices vestibulum nisl at aliquam. Pellentesque at vehicula metus. Pellentesque vulputate leo sed dapibus sollicitudin. Nam quis tincidunt mauris. Aenean sagittis maximus rhoncus. Integer a porta nisi, sit amet finibus ligula. Sed non turpis imperdiet felis congue euismod. Nulla varius massa vel dapibus ornare. Donec vulputate, sapien sit amet finibus hendrerit, metus nunc ornare mauris, posuere molestie sem purus eget lacus. Nulla ultricies, ipsum vel feugiat tempor, tortor turpis congue mi, bibendum mollis metus ligula vel nunc. Etiam eget nisl et odio semper scelerisque. Praesent eu velit at mi ultricies consectetur.</p>
+					<p>Nam fringilla ornare nulla id fermentum. Mauris posuere, purus a fringilla vehicula, dolor libero accumsan purus, vel iaculis tortor nibh et eros. Nulla feugiat nisi turpis. Duis a rutrum lorem. Morbi dictum, nunc quis ullamcorper varius, tellus urna maximus magna, tempor vulputate purus dolor et mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut finibus tortor. Quisque libero risus, laoreet eget metus non, tincidunt sagittis ante. Nam posuere urna ante, non auctor justo auctor nec. Morbi at tincidunt nibh. Nullam tincidunt pulvinar mauris et pretium. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+					<p>In condimentum metus non iaculis fermentum. Etiam ut nunc ligula. Mauris feugiat dui purus, vitae facilisis nisi tristique et. Phasellus blandit blandit mi, at ornare justo imperdiet id. Suspendisse blandit, ex vel elementum dignissim, enim nisl varius libero, eu tempor diam erat vitae lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam finibus sapien blandit, tincidunt nisi ut, luctus enim. Nulla eu enim nisl. Sed posuere, sem ac rutrum pulvinar, lacus mi consequat velit, eu lacinia sapien magna vel magna. Sed hendrerit pretium velit sed rutrum. Morbi nec fermentum odio. Ut ac egestas leo.</p>
+					<p>Morbi quis ipsum pellentesque, varius purus ut, pellentesque diam. Suspendisse in tellus enim. Praesent et euismod sapien, gravida tincidunt dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus sed velit rutrum, iaculis elit sit amet, luctus erat. Nullam molestie eros quis quam cursus, et maximus erat semper. Aenean tincidunt libero in mi consequat, in egestas ante dictum. Ut ornare mauris at luctus semper. Nulla nec nulla rutrum, faucibus nunc vitae, mollis quam. Morbi ac ligula venenatis quam malesuada aliquam eget vestibulum nisl. Etiam et hendrerit diam, eu ornare eros. Suspendisse potenti. Duis eget rhoncus orci. Aliquam vel ex aliquet, pharetra dui ut, euismod purus. Nulla purus elit, pulvinar quis erat at, tristique congue augue.</p>
+				</section>
+				<section id="section_featured">
+					<h2>Featured</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas massa purus, facilisis ut justo vel, gravida porta diam. Quisque non sem turpis. Proin odio erat, ullamcorper sit amet porttitor id, convallis a nisi. Praesent a efficitur dolor. Ut dignissim arcu blandit nibh blandit faucibus. Maecenas sit amet risus eget ipsum gravida pulvinar. In ultricies quam quis justo bibendum finibus. Integer convallis mi sit amet erat tincidunt, in pharetra nulla tincidunt.</p>
+					<h3>Project 1</h3>
+					<p>Nullam erat nisi, dignissim et magna non, molestie mattis est. Nam non porttitor risus. Aenean hendrerit efficitur est eget accumsan. Morbi ultrices vestibulum nisl at aliquam. Pellentesque at vehicula metus. Pellentesque vulputate leo sed dapibus sollicitudin. Nam quis tincidunt mauris. Aenean sagittis maximus rhoncus. Integer a porta nisi, sit amet finibus ligula. Sed non turpis imperdiet felis congue euismod. Nulla varius massa vel dapibus ornare. Donec vulputate, sapien sit amet finibus hendrerit, metus nunc ornare mauris, posuere molestie sem purus eget lacus. Nulla ultricies, ipsum vel feugiat tempor, tortor turpis congue mi, bibendum mollis metus ligula vel nunc. Etiam eget nisl et odio semper scelerisque. Praesent eu velit at mi ultricies consectetur.</p>
+					<div class="slider">
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+					</div>
+					<h3>Project 2</h3>
+					<p>Nam fringilla ornare nulla id fermentum. Mauris posuere, purus a fringilla vehicula, dolor libero accumsan purus, vel iaculis tortor nibh et eros. Nulla feugiat nisi turpis. Duis a rutrum lorem. Morbi dictum, nunc quis ullamcorper varius, tellus urna maximus magna, tempor vulputate purus dolor et mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut finibus tortor. Quisque libero risus, laoreet eget metus non, tincidunt sagittis ante. Nam posuere urna ante, non auctor justo auctor nec. Morbi at tincidunt nibh. Nullam tincidunt pulvinar mauris et pretium. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+					<div class="slider">
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+					</div>
+					<h3>Project 3</h3>
+					<p>In condimentum metus non iaculis fermentum. Etiam ut nunc ligula. Mauris feugiat dui purus, vitae facilisis nisi tristique et. Phasellus blandit blandit mi, at ornare justo imperdiet id. Suspendisse blandit, ex vel elementum dignissim, enim nisl varius libero, eu tempor diam erat vitae lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam finibus sapien blandit, tincidunt nisi ut, luctus enim. Nulla eu enim nisl. Sed posuere, sem ac rutrum pulvinar, lacus mi consequat velit, eu lacinia sapien magna vel magna. Sed hendrerit pretium velit sed rutrum. Morbi nec fermentum odio. Ut ac egestas leo.</p>
+					<div class="slider">
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+					</div>
+					<h3>Project 4</h3>
+					<p>Morbi quis ipsum pellentesque, varius purus ut, pellentesque diam. Suspendisse in tellus enim. Praesent et euismod sapien, gravida tincidunt dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus sed velit rutrum, iaculis elit sit amet, luctus erat. Nullam molestie eros quis quam cursus, et maximus erat semper. Aenean tincidunt libero in mi consequat, in egestas ante dictum. Ut ornare mauris at luctus semper. Nulla nec nulla rutrum, faucibus nunc vitae, mollis quam. Morbi ac ligula venenatis quam malesuada aliquam eget vestibulum nisl. Etiam et hendrerit diam, eu ornare eros. Suspendisse potenti. Duis eget rhoncus orci. Aliquam vel ex aliquet, pharetra dui ut, euismod purus. Nulla purus elit, pulvinar quis erat at, tristique congue augue.</p>
+					<div class="slider">
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+						<span><a href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></span>
+					</div>
+				</section>
+				<section id="section_resume">
+					<h2>Resume</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas massa purus, facilisis ut justo vel, gravida porta diam. Quisque non sem turpis. Proin odio erat, ullamcorper sit amet porttitor id, convallis a nisi. Praesent a efficitur dolor. Ut dignissim arcu blandit nibh blandit faucibus. Maecenas sit amet risus eget ipsum gravida pulvinar. In ultricies quam quis justo bibendum finibus. Integer convallis mi sit amet erat tincidunt, in pharetra nulla tincidunt.</p>
+					<p>Nullam erat nisi, dignissim et magna non, molestie mattis est. Nam non porttitor risus. Aenean hendrerit efficitur est eget accumsan. Morbi ultrices vestibulum nisl at aliquam. Pellentesque at vehicula metus. Pellentesque vulputate leo sed dapibus sollicitudin. Nam quis tincidunt mauris. Aenean sagittis maximus rhoncus. Integer a porta nisi, sit amet finibus ligula. Sed non turpis imperdiet felis congue euismod. Nulla varius massa vel dapibus ornare. Donec vulputate, sapien sit amet finibus hendrerit, metus nunc ornare mauris, posuere molestie sem purus eget lacus. Nulla ultricies, ipsum vel feugiat tempor, tortor turpis congue mi, bibendum mollis metus ligula vel nunc. Etiam eget nisl et odio semper scelerisque. Praesent eu velit at mi ultricies consectetur.</p>
+					<p>Nam fringilla ornare nulla id fermentum. Mauris posuere, purus a fringilla vehicula, dolor libero accumsan purus, vel iaculis tortor nibh et eros. Nulla feugiat nisi turpis. Duis a rutrum lorem. Morbi dictum, nunc quis ullamcorper varius, tellus urna maximus magna, tempor vulputate purus dolor et mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut finibus tortor. Quisque libero risus, laoreet eget metus non, tincidunt sagittis ante. Nam posuere urna ante, non auctor justo auctor nec. Morbi at tincidunt nibh. Nullam tincidunt pulvinar mauris et pretium. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+					<p>In condimentum metus non iaculis fermentum. Etiam ut nunc ligula. Mauris feugiat dui purus, vitae facilisis nisi tristique et. Phasellus blandit blandit mi, at ornare justo imperdiet id. Suspendisse blandit, ex vel elementum dignissim, enim nisl varius libero, eu tempor diam erat vitae lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam finibus sapien blandit, tincidunt nisi ut, luctus enim. Nulla eu enim nisl. Sed posuere, sem ac rutrum pulvinar, lacus mi consequat velit, eu lacinia sapien magna vel magna. Sed hendrerit pretium velit sed rutrum. Morbi nec fermentum odio. Ut ac egestas leo.</p>
+					<p>Morbi quis ipsum pellentesque, varius purus ut, pellentesque diam. Suspendisse in tellus enim. Praesent et euismod sapien, gravida tincidunt dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus sed velit rutrum, iaculis elit sit amet, luctus erat. Nullam molestie eros quis quam cursus, et maximus erat semper. Aenean tincidunt libero in mi consequat, in egestas ante dictum. Ut ornare mauris at luctus semper. Nulla nec nulla rutrum, faucibus nunc vitae, mollis quam. Morbi ac ligula venenatis quam malesuada aliquam eget vestibulum nisl. Etiam et hendrerit diam, eu ornare eros. Suspendisse potenti. Duis eget rhoncus orci. Aliquam vel ex aliquet, pharetra dui ut, euismod purus. Nulla purus elit, pulvinar quis erat at, tristique congue augue.</p>
+				</section>
+				<section id="section_connect">
+					<h2>Connect</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas massa purus, facilisis ut justo vel, gravida porta diam. Quisque non sem turpis. Proin odio erat, ullamcorper sit amet porttitor id, convallis a nisi. Praesent a efficitur dolor. Ut dignissim arcu blandit nibh blandit faucibus. Maecenas sit amet risus eget ipsum gravida pulvinar. In ultricies quam quis justo bibendum finibus. Integer convallis mi sit amet erat tincidunt, in pharetra nulla tincidunt.</p>
+					<p>Nullam erat nisi, dignissim et magna non, molestie mattis est. Nam non porttitor risus. Aenean hendrerit efficitur est eget accumsan. Morbi ultrices vestibulum nisl at aliquam. Pellentesque at vehicula metus. Pellentesque vulputate leo sed dapibus sollicitudin. Nam quis tincidunt mauris. Aenean sagittis maximus rhoncus. Integer a porta nisi, sit amet finibus ligula. Sed non turpis imperdiet felis congue euismod. Nulla varius massa vel dapibus ornare. Donec vulputate, sapien sit amet finibus hendrerit, metus nunc ornare mauris, posuere molestie sem purus eget lacus. Nulla ultricies, ipsum vel feugiat tempor, tortor turpis congue mi, bibendum mollis metus ligula vel nunc. Etiam eget nisl et odio semper scelerisque. Praesent eu velit at mi ultricies consectetur.</p>
+					<p>Nam fringilla ornare nulla id fermentum. Mauris posuere, purus a fringilla vehicula, dolor libero accumsan purus, vel iaculis tortor nibh et eros. Nulla feugiat nisi turpis. Duis a rutrum lorem. Morbi dictum, nunc quis ullamcorper varius, tellus urna maximus magna, tempor vulputate purus dolor et mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut finibus tortor. Quisque libero risus, laoreet eget metus non, tincidunt sagittis ante. Nam posuere urna ante, non auctor justo auctor nec. Morbi at tincidunt nibh. Nullam tincidunt pulvinar mauris et pretium. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+					<p>In condimentum metus non iaculis fermentum. Etiam ut nunc ligula. Mauris feugiat dui purus, vitae facilisis nisi tristique et. Phasellus blandit blandit mi, at ornare justo imperdiet id. Suspendisse blandit, ex vel elementum dignissim, enim nisl varius libero, eu tempor diam erat vitae lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam finibus sapien blandit, tincidunt nisi ut, luctus enim. Nulla eu enim nisl. Sed posuere, sem ac rutrum pulvinar, lacus mi consequat velit, eu lacinia sapien magna vel magna. Sed hendrerit pretium velit sed rutrum. Morbi nec fermentum odio. Ut ac egestas leo.</p>
+					<p>Morbi quis ipsum pellentesque, varius purus ut, pellentesque diam. Suspendisse in tellus enim. Praesent et euismod sapien, gravida tincidunt dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus sed velit rutrum, iaculis elit sit amet, luctus erat. Nullam molestie eros quis quam cursus, et maximus erat semper. Aenean tincidunt libero in mi consequat, in egestas ante dictum. Ut ornare mauris at luctus semper. Nulla nec nulla rutrum, faucibus nunc vitae, mollis quam. Morbi ac ligula venenatis quam malesuada aliquam eget vestibulum nisl. Etiam et hendrerit diam, eu ornare eros. Suspendisse potenti. Duis eget rhoncus orci. Aliquam vel ex aliquet, pharetra dui ut, euismod purus. Nulla purus elit, pulvinar quis erat at, tristique congue augue.</p>
+				</section>
+			</main>
+<!-- END: Region Middle -->
+
+<!-- BEGIN: Region Footer -->
+			<footer id="region_footer">
+				<div class="credit center">Designed by <a href="http://www.babybluebox.com/" title="DieHard">William Chang</a></div>
+				<div class="badges center"><ul>
+					<li><a href="http://validator.w3.org/check?uri=referer" title="W3C XHTML5 Compliant"><img src="http://www.creativecrew.org/images/valid_xhtml50_80x15.png" alt="W3C XHTML5 Compliant" title="W3C XHTML5 Compliant" height="15" width="80"/></a></li>
+					<li><a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3" title="W3C CSS3 Compliant"><img src="http://www.creativecrew.org/images/valid_css30_80x15.png" alt="W3C CSS3 Compliant" title="W3C CSS3 Compliant" height="15" width="80"/></a></li>
+					<li><a href="http://vanilla-js.com" title="Vanilla JS Compliant"><img src="http://www.creativecrew.org/images/valid_vanillajs_80x15.png" alt="Vanilla JS Compliant" title="Vanilla JS Compliant" height="15" width="80"/></a></li>
+				</ul></div>
+			</footer>
+<!-- END: Region Footer -->
+
+		</div></div>
+
+	</div></div>
+
+<!-- BEGIN: Scripts -->
+	<script>
+/*(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+e.src='//www.google-analytics.com/analytics.js';
+r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+ga('create','UA-277206-7','auto');ga('send','pageview');*/
+	</script>
+<!-- END: Scripts -->
+
+<!-- BEGIN: Page Specific Scripts -->
+	<script>
+/* Plain Old JavaScript Supporting ECMAScript 5 */
+
+function prepend(eleParent, strHtml) {
+	var eleDiv = document.createElement('div');
+	eleDiv.innerHTML = strHtml;
+	var eleSelected = document.querySelector(eleParent || 'body');
+	eleSelected.insertBefore(eleDiv.firstChild, eleSelected.childNodes[0]);
+}
+
+function append(eleParent, strHtml) {
+	var eleDiv = document.createElement('div');
+	eleDiv.innerHTML = strHtml;
+	document.querySelector(eleParent || 'body').appendChild(eleDiv.firstChild);
+}
+
+function getOrientation() {
+	if(window.innerWidth > window.innerHeight) {
+		return 'landscape';
+	} else {
+		return 'portrait';
+	}
+}
+
+function getVerticalScroll() {
+	return (window.pageYOffset || document.documentElement.scrollTop) - (document.documentElement.clientTop || 0);
+}
+
+function isSessionStorageAvailable() {
+	try {
+		window.sessionStorage.setItem('storageTestKey', 'storageTestValue');
+		window.sessionStorage.removeItem('storageTestKey');
+		return true;
+	} catch(ex) {
+		return false;
+	}
+}
+
+function setVerticalScrollFromStorage() {
+	if(isSessionStorageAvailable()) {
+		var strWindowScrollY = window.sessionStorage.getItem('windowScrollY');
+		if(strWindowScrollY != null) {
+			var numWindowScrollY = parseInt(strWindowScrollY, 10);
+			window.scroll(0, numWindowScrollY);
+			return numWindowScrollY;
+		}
+	}
+	return -1;
+}
+
+function setVerticalScrollFromWindow() {
+	if(isSessionStorageAvailable()) {
+		var numWindowScrollY = getVerticalScroll();
+		window.sessionStorage.setItem('windowScrollY', numWindowScrollY);
+		return numWindowScrollY;
+	}
+	return -1;
+}
+
+var globalInitialViewportHeight = window.innerHeight;
+var globalInitialLoadEventTime = 0;
+
+document.addEventListener('DOMContentLoaded', function(e) {
+	prepend('#console', '<div class="log">' + Date.now() + ', ' + getOrientation() + ', Event:DOMContentLoaded, ViewportHeight:' +  window.innerHeight +  ', VerticalScrollFromStorage:' + setVerticalScrollFromStorage() + ', e.currentTarget:' + e.currentTarget.defaultView.innerHeight + ', e.target:' + e.target.defaultView.innerHeight + '</div>');
+});
+
+window.addEventListener('load', function(e) {
+	prepend('#console', '<div class="log">' + Date.now() + ', ' + getOrientation() + ', Event:load, ViewportHeight:' +  window.innerHeight +  ', VerticalScroll:' + getVerticalScroll() + ', e.currentTarget:' + e.currentTarget.innerHeight + ', e.target:' + e.target.defaultView.innerHeight + '</div>');
+
+	if(window.innerHeight < globalInitialViewportHeight) {
+		globalInitialViewportHeight = window.innerHeight;
+	}
+	globalInitialLoadEventTime = Date.now();
+});
+
+window.addEventListener('resize', function(e) {
+	var numViewportHeight = window.innerHeight;
+	var strOrientation = getOrientation();
+
+	/*if(strOrientation == 'landscape') {
+		if(numViewportHeight <= globalInitialViewportHeight) {
+			// Show components.
+			document.querySelector('.tabbar').classList.remove('hide');
+		} else {
+			// Hide components.
+			document.querySelector('.tabbar').classList.add('hide');
+		}
+	}
+
+	if(strOrientation == 'portrait') {
+		if(numViewportHeight == globalInitialViewportHeight) {
+			// Show components.
+			document.querySelector('.tabbar').classList.remove('hide');
+		} else {
+			// Hide components.
+			document.querySelector('.tabbar').classList.add('hide');
+		}
+	}*/
+
+	if(strOrientation == 'landscape' && (Date.now() - globalInitialLoadEventTime) <= 500) {
+		globalInitialViewportHeight = numViewportHeight;
+		prepend('#console', '<div class="log">' + Date.now() + ', ' + strOrientation + ', Event:resize, InitialViewportHeight:' +  globalInitialViewportHeight + '</div>');
+	}
+
+	if(numViewportHeight == globalInitialViewportHeight) {
+		// Show components.
+		document.querySelector('.tabbar').classList.remove('hide');
+	} else {
+		// Hide components.
+		document.querySelector('.tabbar').classList.add('hide');
+	}
+
+	//console.log(e, e.currentTarget.innerHeight, e.target.innerHeight, e.srcElement.innerHeight);
+	prepend('#console', '<div class="log">' + Date.now() + ', ' + strOrientation + ', Event:resize, ViewportHeight:' +  numViewportHeight + '</div>');
+});
+
+window.addEventListener('orientationchange', function(e) {
+	var numViewportHeight = window.innerHeight;
+	var strOrientation = getOrientation();
+
+	setVerticalScrollFromWindow();
+	window.location.reload();
+
+	prepend('#console', '<div class="log">' + Date.now() + ', ' + strOrientation + ', Event:resize, ViewportHeight:' +  numViewportHeight + '</div>');
+});
+	</script>
+<!-- END: Page Specific Scripts -->
+</body>
+</html>

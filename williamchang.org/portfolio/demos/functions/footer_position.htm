@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head> 
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	<!--[if ie]><meta http-equiv="X-UA-Compatible" content="chrome=1"><![endif]-->
+	<meta name="author" content="William Chang"/>
+	<title>Prototype</title>
+	<!-- BEGIN: Styles -->
+	<style type="text/css" media="all">
+#footer {position:absolute;bottom:0;}
+	</style>
+	<!-- END: Styles -->
+</head>
+<body>
+<div id="frame">
+	<div id="content">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac erat nibh, non accumsan ipsum. Aenean sollicitudin hendrerit mauris non tincidunt. Donec interdum posuere eros quis tristique. Cras eget mauris nibh, cursus ornare mauris. Integer ornare turpis vel orci congue congue. Praesent nisl lectus, imperdiet ut eleifend pharetra, iaculis sed nunc. Curabitur elit purus, fringilla blandit aliquet eget, luctus sit amet velit. Maecenas et sapien a nunc rhoncus pulvinar ut sit amet enim. Curabitur sapien dui, faucibus vitae consequat ut, euismod eu nibh. Fusce sed erat ac est imperdiet vehicula ac sit amet felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean rutrum metus ut lorem vulputate vehicula interdum velit ultricies. Etiam mauris augue, tempus eu hendrerit ut, semper quis tortor. Aenean pharetra sollicitudin tellus, non luctus lacus adipiscing vel. Vivamus bibendum odio sed enim rutrum ut bibendum quam condimentum. Suspendisse eros dolor, varius et interdum ut, ornare vel ligula. Nunc eu odio nisi, eu tempor enim.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac erat nibh, non accumsan ipsum. Aenean sollicitudin hendrerit mauris non tincidunt. Donec interdum posuere eros quis tristique. Cras eget mauris nibh, cursus ornare mauris. Integer ornare turpis vel orci congue congue. Praesent nisl lectus, imperdiet ut eleifend pharetra, iaculis sed nunc. Curabitur elit purus, fringilla blandit aliquet eget, luctus sit amet velit. Maecenas et sapien a nunc rhoncus pulvinar ut sit amet enim. Curabitur sapien dui, faucibus vitae consequat ut, euismod eu nibh. Fusce sed erat ac est imperdiet vehicula ac sit amet felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean rutrum metus ut lorem vulputate vehicula interdum velit ultricies. Etiam mauris augue, tempus eu hendrerit ut, semper quis tortor. Aenean pharetra sollicitudin tellus, non luctus lacus adipiscing vel. Vivamus bibendum odio sed enim rutrum ut bibendum quam condimentum. Suspendisse eros dolor, varius et interdum ut, ornare vel ligula. Nunc eu odio nisi, eu tempor enim.</p>
+	</div>
+	<div id="footer">
+		<p>Footer</p>
+	</div>
+</div>
+<!-- BEGIN: Scripts -->
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>-->
+	<script src="jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	//<![CDATA[
+// Register ready event to be executed when the DOM document has finished loading.
+$(document).ready(function() {
+	// Get document elements.
+	var eleContent = $('#content').get(0);
+	var eleFooter = $('#footer').get(0);
+
+	// Get height of footer element.
+	var numFooterHeight = $(eleFooter).height();
+
+	// Check the footer element is over the content element or not.
+	function checkFooter() {
+		// Get the Y position of the content element, bottom left corner.
+		var numContentHeight = $(eleContent).height();
+		var numContentPositionY = $(eleContent).position().top;
+		var numContentPositionBottomY = numContentPositionY + numContentHeight;
+
+		// Get window height minus footer's element height.
+		var numWindowPositionY = $(window).height() - numFooterHeight;
+
+		// Validate the positions between the content and footer elements.
+		if(numWindowPositionY < numContentPositionBottomY) {
+			$(eleFooter).css('position', 'relative');
+		} else {
+			$(eleFooter).css('position', 'absolute');
+		}
+	}
+
+	// Bind to resie of window.
+	$(window).resize(function(evt) {
+		checkFooter();
+	});
+
+	// Procedural.
+	checkFooter();
+});
+	//]]>
+	</script>
+<!-- END: Scripts -->
+</body>
+</html>

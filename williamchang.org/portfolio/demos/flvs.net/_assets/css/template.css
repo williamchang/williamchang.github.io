@@ -1,0 +1,77 @@
+﻿/*
+//-------------------------------------------------------------------
+// File       : template.css, template_skin.css
+// Version    : 1.1
+// Created    : 2011-05-05
+// Modified   : 2011-05-25
+//
+// Author     : William Chang
+// Email      : william@creativecrew.org
+// Website    : http://www.williamchang.org
+//
+// Compatible : Microsoft Internet Explorer 6+, Mozilla Firefox 2+, Apple Safari 3+, Google Chrome 1+
+//-------------------------------------------------------------------
+/// <summary>
+/// Style sheet of template.
+/// </summary>
+///
+/// <remarks>
+/// References:
+/// http://www.cssplay.co.uk/
+/// Debug:
+/// background:-moz-linear-gradient(left, red, pink);
+/// background:-moz-linear-gradient(left, blue, lightblue);
+/// background:-moz-linear-gradient(left, green, lightgreen);
+/// </remarks>
+//-------------------------------------------------------------------
+*/
+
+/* Global
+//-------------------------------------------------------------------*/
+html {overflow-y:scroll;}
+strong {font-weight:bold;}
+
+/* Media: Screen, Projection
+//-------------------------------------------------------------------*/
+#jump {display:none;}
+.hide {display:none;}
+.debug {border:solid 1px red;}
+
+/* Framework
+//-------------------------------------------------------------------*/
+#frame {}
+#frame_splash {}
+
+/* Container Region
+//-------------------------------------------------------------------*/
+#region_container {}
+#region_container_buffer {}
+
+/* Column Region
+//-------------------------------------------------------------------*/
+#region_column {}
+#region_column_buffer {width:960px;margin:0 auto 0 auto;overflow:hidden;}
+
+#region_columntail {}
+#region_columntail_buffer {width:960px;margin:0 auto 0 auto;}
+
+/* Header Region
+//-------------------------------------------------------------------*/
+#region_header {height:143px;clear:both;}
+#region_header_logo {float:left;width:250px;height:96px;}
+#region_header_gutter {float:right;width:700px;height:96px;}
+#region_header_navigation {display:block;height:47px;clear:both;}
+
+/* Middle Region
+//-------------------------------------------------------------------*/
+#region_middle {min-height:300px;}
+#region_middle_splash {height:369px;}
+#region_middle_portal {height:353px;}
+
+/* Bottom Region
+//-------------------------------------------------------------------*/
+#region_bottom {height:200px;}
+
+/* Footer Region
+//-------------------------------------------------------------------*/
+#region_footer {height:83px;clear:both;}

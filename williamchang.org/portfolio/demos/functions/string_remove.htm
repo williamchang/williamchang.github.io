@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head> 
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	<!--[if ie]><meta http-equiv="X-UA-Compatible" content="chrome=1"><![endif]-->
+	<meta name="author" content="William Chang"/>
+	<title>String Remove - Prototype</title>
+	<!-- BEGIN: Styles -->
+	<link href="main.css" media="all" rel="stylesheet" type="text/css"/>
+	<!-- END: Styles -->
+	<!-- BEGIN: Page Specific -->
+	<style type="text/css" media="all">
+.row {margin-bottom:4px;padding:4px;overflow:hidden;}
+.row label {float:left;width:100px;margin-right:10px;text-align:right;}
+#input1 {background-color:#eee;}
+#input1 .value {margin-left:110px;}
+#input1 .value label {display:block;float:none;width:auto;margin:0;text-align:left;}
+#input1 .value label span {display:block;}
+#output1 {background-color:#ddd;}
+	</style>
+	<!-- END: Page Specific -->
+</head>
+<body>
+<div id="frame">
+	<div id="region_header">
+<!-- BEGIN: Region Header -->
+		<h1>String Remove</h1>
+<!-- END: Region Header -->
+	</div>
+	<div id="region_middle">
+<!-- BEGIN: Template Region Middle -->
+		<div id="input1" class="row"><label>Input</label><div class="value">
+			<label for="txt_source">
+				<span>Source String</span>
+				<input type="text" id="txt_source" name="txt_source" class="txtcommon" value=""/>
+			</label>
+			<label for="txt_remove">
+				<span>Remove Characters</span>
+				<input type="text" id="txt_remove" name="txt_remove" class="txtcommon" value=""/>
+			</label>
+			<div class="controlpanel"><a href="#" class="btn btn_run">Run</a></div>
+		</div></div>
+		<div id="output1" class="row"><label>Output</label><span class="value"></span></div>
+<!-- END: Template Region Middle -->
+	</div>
+	<div class="line"></div>
+	<div id="region_footer">
+<!-- BEGIN: Region Footer -->
+		<div class="credit center">Developed by <a href="http://www.williamchang.org/" title="DieHard">William Chang</a></div>
+<!-- END: Region Footer -->
+	</div>
+</div>
+<!-- BEGIN: Scripts -->
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>-->
+	<script src="jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	//<![CDATA[
+// Register ready event to be executed when the DOM document has finished loading.
+$(document).ready(function() {
+	$('#input1 .btn_run').bind('click', function(evt) {
+		var arySourceCharacters = $('#txt_source').val().split('');
+		var aryRemoveCharacters = $('#txt_remove').val().split('');
+		var boolFlags = []; // 128 ASCII Characters
+		var intSourceLength = arySourceCharacters.length;
+		var intRemoveLength = aryRemoveCharacters.length;
+		var intSource = 0, intTarget = 0;
+
+		// Set flags for characters to be removed.
+		for(var intIndex = 0;intIndex < intRemoveLength;intIndex += 1) {
+			boolFlags[aryRemoveCharacters[intIndex].charCodeAt(0)] = true;
+		}
+
+		// Copy unflagged characters using the same array.
+		while(intSource < intSourceLength) {
+			var intCharacterCode = arySourceCharacters[intSource].charCodeAt(0);
+			if(!boolFlags[intCharacterCode]) {
+				arySourceCharacters[intTarget] = arySourceCharacters[intSource];
+				intTarget += 1;
+			}
+			intSource += 1;
+		}
+
+		// Set length of modified array.
+		arySourceCharacters.length = intTarget;
+
+		// Output value.
+		$('#output1 .value').text(arySourceCharacters.join(''));
+
+		// Prevent default action.
+		return false;
+	});
+});
+	//]]>
+	</script>
+<!-- END: Scripts -->
+</body>
+</html>

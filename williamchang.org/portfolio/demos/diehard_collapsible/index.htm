@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="author" content="William Chang"/>
+	<meta name="description" content="Collapsible Component for jQuery JavaScript Library"/>
+	<meta name="keywords" content="javascript js component plugin jquery"/>
+	<title>Collapsible Component by William Chang</title>
+	<!-- BEGIN: Styles -->
+	<link href="../common/css/foundation.css" media="all" rel="stylesheet" type="text/css"/>
+	<link href="../common/css/document.css" media="screen" rel="stylesheet" type="text/css"/>
+	<link href="../common/css/print.css" media="print" rel="stylesheet" type="text/css"/>
+	<style type="text/css" media="screen">
+
+.panels {margin-bottom:16px;}
+.panels .panel {margin:0 0 8px 0;overflow:hidden;border:solid 1px #339966;}
+.panels .panel .panel_header {padding:8px;background-color:#eee;font-weight:bold;}
+.panels .panel .panel_body {padding:8px;border-top:solid 1px #339966;background-color:#deefe0;}
+
+.panels .panel .panel_header_left {float:left;width:13px;height:13px;margin:2px 8px 0 0;background:url(panel_collapse.jpg) transparent no-repeat 0 0;cursor:pointer;}
+.panels .panel .collapsible_selected_hide .panel_header_left {background:url(panel_expand.jpg) transparent no-repeat 0 0;}
+.panels .panel .panel_header {cursor:pointer;}
+.panels .panel .panel_body {display:none;}
+
+	</style>
+	<!-- END: Styles -->
+</head>
+<body>
+	<h1>Collapsible Component by William Chang</h1>
+	<p>The collapsible component is simple and flexible that allows you to easily add collapsible panels to your web page.</p>
+	<p>Supported browsers: Microsoft Internet Explorer 6+, Mozilla Firefox 3+, Apple Safari 3+, Google Chrome 1+</p>
+	<h3>Features</h3>
+	<ul>
+		<li>Easy and simple to apply to multiple panels.</li>
+		<li>Maintain collapsible state by CSS id.</li>
+		<li>Customizable through settings and CSS.</li>
+		<li>Attach callback functions to collapsible events.</li>
+		<li>Smooth fade effect and slide transition.</li>
+	</ul>
+	<div id="region_demo">
+	<h3>Demo</h3>
+	<p>Page Time (24-hour): <cite id="js_time" class="bold"></cite> &bull; <a id="js_refresh" href="#">Refresh This Page</a></p>
+<!-- BEGIN: Region Demo -->
+<div class="panels">
+	<div id="panel_1" class="panel">
+		<div class="panel_header">Test Panel Header 1</div>
+		<div class="panel_body">Lorem ipsum dolor sit amet, sed id, augue curabitur integer, rutrum leo phasellus consequat varius donec purus. Eleifend morbi gravida aenean, aut per urna luctus blandit, sed fusce viverra non consequat auctor litora. Pellentesque molestie aliquam, in neque ipsum. Dictum libero nam conubia elit vestibulum etiam, auctor malesuada blandit a augue. Luctus amet, magna tempor vivamus rhoncus. Montes ridiculus condimentum, dignissim lorem risus. Lacus nunc placerat, urna sed risus diam nec, vel urna ante eget consequat ac velit, deserunt dictum tempus lobortis diam vulputate, vestibulum massa hac consequat.</div>
+	</div>
+	<div id="panel_2" class="panel">
+		<div class="panel_header">Test Panel Header 2</div>
+		<div class="panel_body">Nibh hac, gravida eget, consectetuer est sit posuere. Mauris libero, amet id maecenas phasellus nibh sed proin, illo eu hendrerit neque egestas iaculis metus, dignissim et non interdum viverra et eu. Wisi pellentesque odio nunc dolore, velit turpis neque fermentum, a massa ante enim arcu, sed sit scelerisque leo vestibulum, tristique dictum. Praesent adipiscing mi quod suspendisse tortor tellus, augue mi tristique purus dolor nec maecenas, pede eu vestibulum, et et augue venenatis in sed. Mollis eget quam mauris ad, at vestibulum fusce mauris, id curabitur, lacus leo gravida. Sed lacus pellentesque, tortor ut in donec ut sapiente vitae, suspendisse curabitur eget in ipsum aliquet elit, duis sit rutrum est neque. Eget iusto, ut magna ut sapien justo, in pharetra vivamus potenti, metus rhoncus lacus lacus. Voluptates et scelerisque pellentesque id ac. Libero cras, libero morbi nullam sodales odio. Ante suspendisse enim vitae purus morbi amet, metus integer duis vivamus.</div>
+	</div>
+</div>
+<!-- END: Region Demo -->
+	</div>
+	<h3>API and Options</h3>
+	<p>You can pass options as key/value object to the component's function.</p>
+	<table class="tblcommon">
+	<thead>
+		<tr>
+			<th>Key</th>
+			<th>Type</th>
+			<th>Default Value</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="row">
+			<td>strPanelCss</td>
+			<td>string</td>
+			<td>panel_collapsible</td>
+			<td>The panel that surrounds the header and body markup structure. Requires a CSS class name.</td>
+		</tr>
+		<tr class="row alt">
+			<td>strCollapsibleHeaderCss</td>
+			<td>string</td>
+			<td>panel_collapsible_header</td>
+			<td>The header of the collapsible panel. Requires a CSS class name.</td>
+		</tr>
+		<tr class="row">
+			<td>strCollapsibleBodyCss</td>
+			<td>string</td>
+			<td>panel_collapsible_body</td>
+			<td>The body of the collapsible panel. Requires a CSS class name.</td>
+		</tr>
+		<tr class="row alt">
+			<td>strCookieNamespace</td>
+			<td>string</td>
+			<td>domain_</td>
+			<td>The namespace is prepended to the generated cookie name. The cookie is used to save and restore collapsible state using the CSS id.</td>
+		</tr>
+		<tr class="row">
+			<td>strCollapsibleDirection</td>
+			<td>string</td>
+			<td>vertical</td>
+			<td>The direction of the collapsible panel(s) to open and close.</td>
+		</tr>
+		<tr class="row alt">
+			<td>fnLoad</td>
+			<td>function</td>
+			<td>null</td>
+			<td>Callback function after finishing setting up the collapsible panel(s).</td>
+		</tr>
+		<tr class="row">
+			<td>fnBeforeStart</td>
+			<td>function</td>
+			<td>null</td>
+			<td>Callback function before the panel open/close.</td>
+		</tr>
+		<tr class="row alt">
+			<td>fnAfterStop</td>
+			<td>function</td>
+			<td>null</td>
+			<td>Callback function after the panel open/close.</td>
+		</tr>
+	</tbody>
+	</table>
+	<h3>Usage</h3>
+	<p>1. Include required dependencies.</p>
+	<pre><code>
+&lt;script src=&quot;../js/jquery.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../js/jquery.cookie.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../js/diehard_collapsible.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+	</code></pre>
+	<p>2. Add required markup structure using HTML.</p>
+	<pre><code>
+&lt;div id=&quot;region_panels&quot;&gt;
+	&lt;div class=&quot;panel&quot;&gt;
+		&lt;div class=&quot;panel_header&quot;&gt;Test Header&lt;/div&gt;
+		&lt;div class=&quot;panel_body&quot;&gt;Test Body&lt;/ediv&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+	</code></pre>
+	<p>3. Add required style using CSS.</p>
+	<pre><code>
+#region_panels .panel .panel_header_left {float:left;width:13px;height:13px;margin:2px 8px 0 0;background:url(../components/collapsible/panel_collapse.jpg) transparent no-repeat 0 0;cursor:pointer;}
+#region_panels .panel .collapsible_selected_hide .panel_header_left {background:url(../components/collapsible/panel_expand.jpg) transparent no-repeat 0 0;}
+#region_panels .panel .panel_header {cursor:pointer;}
+#region_panels .panel .panel_body {display:none;}
+	</code></pre>
+	<p>4. Add and run the code using JavaScript.</p>
+	<pre><code>
+$('#region_panels').diehard_collapsible({
+	strPanelCss:'panel',
+	strCollapsibleHeaderCss:'panel_header',
+	strCollapsibleBodyCss:'panel_body',
+	strCookieNamespace:'appname_'
+});
+	</code></pre>
+	<h3>Downloads</h3>
+	<ul>
+		<li><a href="http://jquery.com/">jquery.js</a></li>
+		<li><a href="jquery.cookie.js">jquery.cookie.js</a></li>
+		<li><a href="diehard_collapsible.js">diehard_collapsible.js</a></li>
+	</ul>
+	<p class="credit bold">Created by <a href="http://www.williamchang.org/portfolio/">William Chang</a></p>
+	<p class="badges"><a href="http://validator.w3.org/check?uri=referer" title="W3C XHTML Compliant"><img src="http://www.creativecrew.org/images/valid_xhtml_80x15.png" alt="W3C XHTML Compliant" title="W3C XHTML Compliant" height="15" width="80"/></a> <a href="http://jigsaw.w3.org/css-validator/check/referer" title="W3C CSS Compliant"><img src="http://www.creativecrew.org/images/valid_css_80x15.png" alt="W3C CSS Compliant" title="W3C CSS Compliant" height="15" width="80"/></a></p>
+<!-- BEGIN: Scripts -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+	<script src="jquery.cookie.js" type="text/javascript"></script>
+	<script src="diehard_collapsible.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	//<![CDATA[
+
+// Register ready event to be executed when the DOM document has finished loading.
+jQuery(document).ready(function($) {
+	var timeCurrent = new Date();
+	var timeHours = timeCurrent.getHours();
+	var timeMinutes = timeCurrent.getMinutes();
+	var timeSeconds = timeCurrent.getSeconds();
+	$('#js_time').text(timeHours + ':' + timeMinutes + ':' + timeSeconds);
+
+	$('#js_refresh').bind('click', function(e) {
+		window.location.reload();return false;
+	});
+
+	$('#region_demo .panels').diehard_collapsible({
+		strPanelCss:'panel',
+		strCollapsibleHeaderCss:'panel_header',
+		strCollapsibleBodyCss:'panel_body',
+		strCookieNamespace:'demo_'
+	});
+});
+
+	//]]>
+	</script>
+<!-- END: Scripts -->
+</body>
+</html>

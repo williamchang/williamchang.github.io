@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head> 
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	<!--[if ie]><meta http-equiv="X-UA-Compatible" content="chrome=1"><![endif]-->
+	<meta name="author" content="William Chang"/>
+	<title>Prototype</title>
+	<!-- BEGIN: Styles -->
+	<style type="text/css" media="all">
+#frame {position:relative;top:0;left:0;width:1024px;height:1024px;overflow:hidden;}
+.viewport {width:1024px;height:1024px;overflow:hidden;}
+.debug {border:solid 1px red;}
+.hide {display:none;}
+
+#image1 {position:absolute;top:0;left:0;}
+
+#image2 {position:absolute;top:0;right:0;}
+#image2 .inner {position:absolute;top:0;right:0;width:1024px;}
+
+#image3 {display:none;position:absolute;top:0;left:0;}
+#image3 .inner {position:absolute;top:0;left:0;width:1024px;}
+
+#overlay {position:absolute;top:0;left:512px;width:1024px;height:1024px;background:url(images_blind_transparentgradient.png) transparent repeat-y 0 0;}
+	</style>
+	<!-- END: Styles -->
+</head>
+<body>
+<div id="frame">
+	<span id="image1" class="viewport"><span class="inner"><img alt="image" src="images_blind_grid1.jpg"/></span></span>
+	<span id="image3" class="viewport"><span class="inner"><img alt="image" src="images_blind_grid1.jpg"/></span></span>
+	<span id="image2" class="viewport"><span class="inner"><img alt="image" src="images_blind_grid2.jpg"/></span></span>
+	<span id="overlay" class="hide"></span>
+</div>
+<!-- BEGIN: Scripts -->
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>-->
+	<script src="jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	//<![CDATA[
+// Register ready event to be executed when the DOM document has finished loading.
+$(document).ready(function() {
+	// Get document elements.
+	var eleImage1 = $('#image1').get(0);
+	var eleImage2 = $('#image2').get(0);
+	var eleImage3 = $('#image3').get(0);
+	var eleOverlay = $('#overlay').get(0);
+
+	var numTilesX = 6;
+	var numTileWidth = 170;
+	var boolIterate = false;
+
+	var numImage1OpacityCount = 1.1;
+
+	var numImage2Width = $(eleImage2).width();
+	var numImage2WidthCount = 0;
+	var numImage2OpacityCount = 0;
+
+	var numImage3Width = $(eleImage3).width();
+	var numImage3WidthCount = numImage3Width + numTileWidth;
+
+	var numOverlayWidth = $(eleOverlay).width() * -1;
+	var numOverlayPositionX = $(eleOverlay).position().left;
+	var numOverlayPositionXCount = numOverlayPositionX;
+	var numOverlayOpacityCount = 1;
+
+	var fnAnimateSlide1 = function() {animateSlide(1);};
+	var fnAnimateSlide2 = function() {animateSlide(2);};
+	var fnAnimateSlide3 = function() {
+		numImage3WidthCount -= numTileWidth;
+		eleImage3.style.display = 'block';
+		eleImage3.style.width = numImage3WidthCount + 'px';
+
+		
+		if(numImage3WidthCount >= 0) {
+			setTimeout(fnAnimateSlide3, 200);
+		} else {
+			eleImage3.style.width = 0;
+		}
+	};
+	var fnAnimateSlide4 = function() {
+		numImage1OpacityCount -= 0.01;
+		eleImage1.style.opacity = numImage1OpacityCount;
+
+		if(numImage1OpacityCount >= 0) {
+			setTimeout(fnAnimateSlide4, 15);
+		} else {
+			eleImage1.style.opacity = 0;
+		}
+	};
+
+	function animateSlide(numMode) {
+		if(!numMode) {throw 'Error at animateSlide() function.';}
+
+		//if(numImage2WidthCount <= numImage2Width && numOverlayPositionXCount < 0) {
+		if(numMode == 1 && numImage2WidthCount <= numImage2Width) {
+			numImage2WidthCount += numTileWidth;
+			eleImage2.style.width = numImage2WidthCount + 'px';
+			boolIterate = true;
+			setTimeout(fnAnimateSlide1, 200);
+		}
+
+		if(numMode == 2 && numImage2OpacityCount <= 1) {
+			numImage2OpacityCount += 0.01;
+			eleImage2.style.opacity = numImage2OpacityCount;
+			boolIterate = true;
+			setTimeout(fnAnimateSlide2, 15);
+		}
+
+		/*if(numOverlayPositionXCount > numOverlayWidth) {
+			eleOverlay.style.left = numOverlayPositionXCount + 'px';
+			numOverlayPositionXCount -= 10;
+			boolIterate = true;
+		}
+		if(numOverlayOpacityCount >= 0) {
+			eleOverlay.style.opacity = numOverlayOpacityCount;
+			numOverlayOpacityCount -= 0.001;
+			boolIterate = true;
+		}*/
+
+		//console.log(numImage2WidthCount, numImage2OpacityCount);
+		//console.log(numOverlayCount, numOverlayWidth);
+
+		/*if(boolIterate) {
+			boolIterate = false;
+			setTimeout(animateSlide, 20);
+		}*/
+	}
+
+	function init() {
+		eleImage2.style.width = '0';
+		eleImage2.style.opacity = '0';
+		setTimeout(fnAnimateSlide1, 1000);
+		setTimeout(fnAnimateSlide2, 800);
+		setTimeout(fnAnimateSlide3, 500);
+		setTimeout(fnAnimateSlide4, 400);
+	}
+
+	// Procedural.
+	init();
+
+	// References
+	// http://www.flickr.com/photos/gienna/tags/fdsflickrtoys/
+	/*
+	if(ele.currentStyle && !ele.currentStyle.hasLayout) { // IE browser.
+		ele.style.zoom = 1;
+	}
+	var intValue = parseInt(decValue * 100, 10);
+
+	ele.style.filter = 'alpha(opacity=' + intValue + ')'; // IE browser.
+	if(ele.filters) { // IE8 browser.
+		ele.filters.item('DXImageTransform.Microsoft.Alpha').Opacity = intValue;
+	}
+	*/
+});
+	//]]>
+	</script>
+<!-- END: Scripts -->
+</body>
+</html>

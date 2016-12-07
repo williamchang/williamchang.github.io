@@ -1,0 +1,805 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Wizard Menu Sort</title>
+
+	<style type="text/css" media="screen">
+/* Template Override */
+.region-middle-style {padding:24px 24px 32px 24px;}
+#region-footer {display:none;}
+
+/* Loading */
+#loading-dialog-iframe {float:right;width:100px;padding-left:20px;background:url(../css/content/loading-small.gif) left 50% no-repeat;font-size:.9em;color:#888;}
+
+/* jQuery UI Accordion */
+#frmrestaurantmenu-library {margin:1px 0 0 0;border-bottom:solid 1px #fff;}
+#frmrestaurantmenu-library .panel-header {}
+#frmrestaurantmenu-library .panel-content {}
+
+#frmrestaurantmenu-library.ui-accordion {}
+#frmrestaurantmenu-library.ui-accordion .ui-accordion-header {display:block;padding:8px;border:solid 1px #fff;border-width:1px 1px 0 1px;background:#c8e9fa;color:#000;cursor:pointer;}
+#frmrestaurantmenu-library.ui-accordion .ui-accordion-header:hover, #content-accordion.ui-accordion .ui-accordion-header:active {background:#b3dbef;text-decoration:none;color:#000;}
+#frmrestaurantmenu-library.ui-accordion .ui-accordion-header .ui-icon {float:right;width:14px;height:14px;margin:0;background:url(../css/content/sprite.png) transparent repeat scroll 0 -350px;}
+#frmrestaurantmenu-library.ui-accordion .ui-state-active {border-width:1px 1px 1px 1px;background:#5ea8db;text-decoration:none;color:#fff;}
+#frmrestaurantmenu-library.ui-accordion .ui-state-active .ui-icon {background-position:0 -400px;}
+#frmrestaurantmenu-library.ui-accordion .ui-state-active:hover, #content-accordion.ui-accordion .ui-state-active:active {background:#5ea8db;text-decoration:none;color:#fff;}
+
+/* jQuery UI Dialog */
+.ui-dialog {border:solid 4px #bbb;background:#fff;}
+.ui-dialog .ui-dialog-container {}
+.ui-dialog .ui-dialog-titlebar {display:none;}
+.ui-dialog .ui-dialog-content {}
+.ui-dialog .ui-dialog-content .ui-dialog-content-buffer {width:640px;height:480px;overflow:auto;}
+.ui-dialog .ui-dialog-content .ui-dialog-content-buffer .frmcommon {width:580px;padding:16px 0 16px 20px;}
+.ui-dialog .ui-dialog-content .ui-dialog-content-buffer .frmiframe {width:620px;padding:16px 0 16px 10px;}
+.ui-dialog .iframe {width:100%;height:414px;margin:0;padding:0;border:0;}
+
+/* jQuery UI Draggable */
+.ui-draggable-handle {float:right;width:32px;height:32px;margin:0;background:#b2d281;line-height:30px;text-align:center;font-size:9px;overflow:hidden;cursor:move;}
+		
+/* jQuery UI Sortable */
+.controlpanel {display:none;}
+.menu-group {margin:16px 0;padding:4px 16px;border:solid 1px #008000;background:#fbfbfb;}
+.menu-group .header {margin:0;padding:4px;font-weight:bold;color:#008000;}
+.menu-group .body {margin:0;padding:0 0 0 8px;}
+.menu-item {height:32px;margin:8px 0;padding:4px;border:solid 1px #0000ff;background:#eee;overflow:hidden;}
+.menu-item .header {margin:0;padding:0;font-weight:bold;color:#0000cc;}
+.menu-item .body {display:none;}
+.menu-item .price {display:none;}
+.ui-sortable-helper {font-size:0.9em;}
+.ui-sort-placeholder {border:dashed 1px #008000;}
+
+/* Restaurant Menu Control Panel */
+.frmrestaurantmenu-controlpanel {float:right;}
+
+/* Restaurant Menu Library */
+#panel-left {top:26px;left:0;width:336px;border-right:solid 2px #666699;background:#eee;}
+#panel-left-buffer {}
+#frmrestaurantmenu-library {}
+#frmrestaurantmenu-library .row {background:#fff;}
+#frmrestaurantmenu-library .alt {background:#fbfbfb;}
+#frmrestaurantmenu-library #sp1 {background:#eee;overflow:auto;}
+#frmrestaurantmenu-library #sp1 strong {padding:0 2px 1px 3px;background:#e8e7d3;display:inline;font-weight:normal;}
+#frmrestaurantmenu-library #sp1 .row {min-height:32px;margin:0;padding:4px;border:solid 1px #ccc;border-width:0 0 1px 0;clear:both;}
+#frmrestaurantmenu-library #sp1 .row input {float:right;}
+#frmrestaurantmenu-library #sp2 {background:#eee;overflow:auto;}
+#frmrestaurantmenu-library #sp2 strong {padding:0 2px 1px 3px;background:#e8e7d3;display:inline;font-weight:normal;}
+#frmrestaurantmenu-library #sp2 .row {min-height:32px;margin:0;padding:4px;border:solid 1px #ccc;border-width:0 0 1px 0;clear:both;}
+#frmrestaurantmenu-library #sp2 .row input {float:right;}
+
+/* Restaurant Menu Container */
+#frmrestaurantmenu-main-container {}
+#frmrestaurantmenu-main-container ul {margin:0;padding:0;}
+#frmrestaurantmenu-main-container li {list-style:none;}
+#frmrestaurantmenu-main-container .controlpanel {display:inline;}
+#frmrestaurantmenu-main-container .controlpanel .drag {float:right;width:32px;height:32px;margin:0;padding:0;background:#b2d281;overflow:hidden;cursor:move;}
+#frmrestaurantmenu-main-container .controlpanel .remove {float:right;width:16px;height:16px;margin:0 6px 0 0;padding:0;background:url(../css/content/close.png) no-repeat 50% 50%;overflow:hidden;cursor:pointer;}
+#frmrestaurantmenu-main-container .controlpanel .keywords {float:right;width:16px;height:16px;margin:0 6px 0 0;padding:0;background:url(../css/content/add.png) no-repeat 50% 50%;overflow:hidden;cursor:pointer;}
+#frmrestaurantmenu-main-container .controlpanel .options {float:right;width:16px;height:16px;margin:0 6px 0 0;padding:0;background:url(../css/content/options.gif) no-repeat 50% 50%;overflow:hidden;cursor:pointer;}
+#frmrestaurantmenu-main-container .controlpanel .edit {float:right;width:16px;height:16px;margin:0 6px 0 0;padding:0;background:url(../css/content/edit.png) no-repeat 50% 50%;overflow:hidden;cursor:pointer;}
+#frmrestaurantmenu-main-container .menu-group {margin:16px 0;padding:4px 8px;border:solid 1px #008000;}
+#frmrestaurantmenu-main-container .menu-group .header {margin:0;padding:10px 0;font-weight:bold;color:#008000;}
+#frmrestaurantmenu-main-container .menu-group .body {margin:0;padding:0 0 0 8px;display:none;}
+#frmrestaurantmenu-main-container .menu-item {height:32px;margin:8px 0;padding:4px;border:solid 1px #0000ff;background:#eee;overflow:hidden;}
+#frmrestaurantmenu-main-container .menu-item .header {margin:0;padding:0 0 2px 0;font-weight:bold;color:#4b0082;}
+#frmrestaurantmenu-main-container .menu-item .body {margin:0;padding:0;line-height:18px;display:block;}
+	</style>
+
+	<script src="../js/yui_json.js" type="text/javascript"></script>
+	<script src="../js/jquery/ui.core.min.js" type="text/javascript"></script>
+	<script src="../js/jquery/ui.sortable.min.js" type="text/javascript"></script>
+	<script src="../js/jquery/ui.accordion.min.js" type="text/javascript"></script>
+	<script src="../js/jquery/ui.dialog.min.js" type="text/javascript"></script>
+	<script src="../js/jquery/effects.core.min.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+	//<![CDATA[
+function classMenuCrud(idRegion, idInner, idPanel, idContainerMain, idInputHidden, idContainerDialog) {
+	var memberPublic = this;
+	memberPublic.init = init;
+	memberPublic.idRegion = idRegion;
+	memberPublic.idInner = idInner;
+	memberPublic.idPanel = idPanel;
+	memberPublic.idContainerMain = idContainerMain;
+	memberPublic.idInputHidden = idInputHidden;
+	memberPublic.idContainerDialog = idContainerDialog;
+	var eleRegion, elePanel, eleSubPanel1, eleSubPanel2, eleContainerMain, eleInputHidden, eleSortable, eleContainerDialog;
+	var eleDummies = [];
+	var windowHeight, windowHeightOffset;
+	var sortableWidth, sortableItemX = 0, sortableItemY = 0;
+	var strMenuGroupControlPanel = '<div class=\"controlpanel\"><div class=\"drag ui-draggable-handle\">Move</div><div class=\"remove\" title=\"Remove\">&nbsp;</div><div class=\"edit\" title=\"Edit\">&nbsp;</div><div class=\"options\" title=\"Options\">&nbsp;</div></div>';
+	var strMenuItemControlPanel = '<div class=\"controlpanel\"><div class=\"drag ui-draggable-handle\">Move</div><div class=\"remove\" title=\"Remove\">&nbsp;</div><div class=\"keywords\" title=\"Keywords\">&nbsp;</div><div class=\"edit\" title=\"Edit\">&nbsp;</div><div class=\"options\" title=\"Options\">&nbsp;</div></div>';
+
+	function _onEditMenuOptions(e) {
+		var result;
+		// Create dialog.
+		var eleDialog = $('#frmrestaurantmenu-options-dialog').get(0);
+		var eleDialogFooter = $('.footer', eleDialog).get(0);
+		_createDialog(eleDialog);
+        // Get id for database.
+		var indexChar = e.data.element.id.lastIndexOf('_') + 1;
+        var qsValue1 = e.data.element.id.substring(indexChar, e.data.element.id.length);
+        // Get type for database.
+        var qsValue2 = 0;
+        if($(e.data.element).hasClass('menu-group')) {
+			qsValue2 = 1;
+        } else if($(e.data.element).hasClass('menu-item')) {
+			qsValue2 = 2;
+        }
+        // Create iframe.
+		var eleIframe = _createIframeDialog(eleDialog, 'iframe_options_item', 'id=' + qsValue1 + '&type=' + qsValue2, function(e) {
+			if(isEmpty(this.contentWindow.result)) {
+				//$(this).contents().find('body').append('<div class=\"center\">IFrame Loaded</div>');
+				var eleIframeInput = $(this).contents().find('form input.ajax-form-add').get(0);
+				var eleDialogInput = document.getElementById(eleIframeInput.id);
+				if(!isEmpty(eleDialogInput)) {
+					$(eleDialogInput).remove();
+				}
+				eleDialogInput = $('<input type=\"button\" id=\"' + eleIframeInput.id + '\" class=\"' + eleIframeInput.className +  '\" value=\"' + eleIframeInput.value + '\"/>', eleDialog).prependTo(eleDialogFooter).get(0);
+				$(eleDialogInput).unbind().bind('click', function(e) {
+                    $(eleIframeInput).trigger('click');
+                });
+			} else {
+				// Get result.
+				result = this.contentWindow.result;
+				//console.log(result);
+				// Close dialog.
+				$(eleDialog).dialog('destroy');
+			}
+		});
+	}
+	function _onEditMenuKeywords(e) {
+		var result;
+		// Create dialog.
+		var eleDialog = $('#frmrestaurantmenu-keywords-dialog').get(0);
+		var eleDialogFooter = $('.footer', eleDialog).get(0);
+		_createDialog(eleDialog);
+        // Get id for database.
+		var indexChar = e.data.element.id.lastIndexOf('_') + 1;
+        var qsValue = e.data.element.id.substring(indexChar, e.data.element.id.length);
+        // Create iframe.
+		var eleIframe = _createIframeDialog(eleDialog, 'iframe_keywords_item', 'id=' + qsValue, function(e) {
+			if(isEmpty(this.contentWindow.result)) {
+				//$(this).contents().find('body').append('<div class=\"center\">IFrame Loaded</div>');
+				var eleIframeInput = $(this).contents().find('form input.ajax-form-add').get(0);
+				var eleDialogInput = document.getElementById(eleIframeInput.id);
+				if(!isEmpty(eleDialogInput)) {
+					$(eleDialogInput).remove();
+				}
+				eleDialogInput = $('<input type=\"button\" id=\"' + eleIframeInput.id + '\" class=\"' + eleIframeInput.className +  '\" value=\"' + eleIframeInput.value + '\"/>', eleDialog).prependTo(eleDialogFooter).get(0);
+				$(eleDialogInput).unbind().bind('click', function(e) {
+                    $(eleIframeInput).trigger('click');
+                });
+			} else {
+				// Get result.
+				result = this.contentWindow.result;
+				//console.log(result);
+				// Close dialog.
+				$(eleDialog).dialog('destroy');
+			}
+		});
+	}
+	function _onEditMenuItem(e) {
+		var result;
+		// Create dialog.
+		var eleDialog = $('#frmrestaurantmenu-item-dialog').get(0);
+		var eleDialogFooter = $('.footer', eleDialog).get(0);
+		_createDialog(eleDialog);
+		// Get id for database.
+		var eleContainer = e.data.element;
+		var indexChar = eleContainer.id.lastIndexOf('_') + 1;
+        var qsValue = eleContainer.id.substring(indexChar, e.data.element.id.length);
+		// Create iframe.
+		var eleIframe = _createIframeDialog(eleDialog, 'iframe_menu_item', 'id=' + qsValue, function(e) {
+			if(isEmpty(this.contentWindow.result)) {
+				//$(this).contents().find('body').append('<div class=\"center\">IFrame Loaded</div>');
+			} else {
+				// Hide loading notification.
+				_toggleLoadingNotificationDialog(eleDialogFooter, 'off');
+				// Get result.
+				result = this.contentWindow.result;
+				//console.log(result);
+				// Update.
+				$('.header', eleContainer).html(result.header);
+				$('.price', eleContainer).html(result.price);
+				$('.body', eleContainer).html(result.body);
+				// Close dialog.
+				$(eleDialog).dialog('destroy');
+			}
+		});
+		// Bind submit event.
+		$('.ajax-dialog-submit', eleDialog).unbind().bind('click', function(e) {
+			_toggleLoadingNotificationDialog(eleDialogFooter, 'on');
+			$(this).attr('disabled', 'disabled');
+			$(eleIframe).contents().find('form input.ajax-form-submit:eq(0)').trigger('click');
+		}).removeAttr('disabled');
+	}
+	function _onEditMenuGroup(e) {
+		var result;
+		// Create dialog.
+		var eleDialog = $('#frmrestaurantmenu-group-dialog').get(0);
+		var eleDialogFooter = $('.footer', eleDialog).get(0);
+		_createDialog(eleDialog);
+		// Get id for database.
+		var eleContainer = e.data.element;
+		var indexChar = eleContainer.id.lastIndexOf('_') + 1;
+        var qsValue = eleContainer.id.substring(indexChar, e.data.element.id.length);
+		// Create iframe.
+		var eleIframe = _createIframeDialog(eleDialog, 'iframe_group_item', 'id=' + qsValue, function(e) {
+			if(isEmpty(this.contentWindow.result)) {
+				//$(this).contents().find('body').append('<div class=\"center\">IFrame Loaded</div>');
+			} else {
+				// Hide loading notification.
+				_toggleLoadingNotificationDialog(eleDialogFooter, 'off');
+				// Get result.
+				result = this.contentWindow.result;
+				//console.log(result);
+				// Update.
+				$('> .header', eleContainer).html(result.header);
+				// Close dialog.
+				$(eleDialog).dialog('destroy');
+			}
+		});
+		// Bind submit event.
+		$('.ajax-dialog-submit', eleDialog).unbind().bind('click', function(e) {
+			_toggleLoadingNotificationDialog(eleDialogFooter, 'on');
+			$(this).attr('disabled', 'disabled');
+			$(eleIframe).contents().find('form input.ajax-form-submit:eq(0)').trigger('click');
+		}).removeAttr('disabled');
+	}
+	function _onCreateMenuItem(e) {
+		var result;
+		// Create dialog.
+		var eleDialog = $('#frmrestaurantmenu-item-dialog').get(0);
+		var eleDialogFooter = $('.footer', eleDialog).get(0);
+		_createDialog(eleDialog);
+		// Create iframe.
+		var eleIframe = _createIframeDialog(eleDialog, 'iframe_menu_item', '', function(e) {
+			if(isEmpty(this.contentWindow.result)) {
+				//$(this).contents().find('body').append('<div class=\"center\">IFrame Loaded</div>');
+			} else {
+				// Hide loading notification.
+				_toggleLoadingNotificationDialog(eleDialogFooter, 'off');
+				// Get result.
+				result = this.contentWindow.result;
+				//console.log(result);
+				// Append to menu.				
+				var eleMenu = $('> .ui-sortable', eleContainerMain).get(0);
+				$('<li id=\"frmrestaurantmenuitem_' + result.id + '\" class=\"menu-item\">' + strMenuItemControlPanel + '<div class=\"header\">' + result.header + '</div><div class=\"price\">' + result.price + '</div><div class=\"body\">' + result.body + '</div></li>').appendTo(eleMenu);
+				_refreshSortableItemsEvents();
+				// Close dialog.
+				$(eleDialog).dialog('destroy');
+			}
+		});
+		// Bind submit event.
+		$('.ajax-dialog-submit', eleDialog).unbind().bind('click', function(e) {
+			_toggleLoadingNotificationDialog(eleDialogFooter, 'on');
+			$(this).attr('disabled', 'disabled');
+			$(eleIframe).contents().find('form input.ajax-form-submit:eq(0)').trigger('click');
+		}).removeAttr('disabled');
+	}
+	function _onCreateMenuGroup(e) {
+		var result;
+		// Create dialog.
+		var eleDialog = $('#frmrestaurantmenu-group-dialog').get(0);
+		var eleDialogFooter = $('.footer', eleDialog).get(0);
+		_createDialog(eleDialog);
+		// Create iframe.
+		var eleIframe = _createIframeDialog(eleDialog, 'iframe_group_item', '', function(e) {
+			if(isEmpty(this.contentWindow.result)) {
+				//$(this).contents().find('body').append('<div class=\"center\">IFrame Loaded</div>');
+			} else {
+				// Hide loading notification.
+				_toggleLoadingNotificationDialog(eleDialogFooter, 'off');
+				// Get result.
+				result = this.contentWindow.result;
+				//console.log(result);
+				// Close dialog.
+				$(eleDialog).dialog('destroy');
+				// Append to menu.
+				var eleMenu = $('> .ui-sortable', eleContainerMain).get(0);
+				$('<li id=\"frmrestaurantmenugroup_' + result.id + '\" class=\"menu-group\" style=\"display:none;\">' + strMenuGroupControlPanel + '<div class=\"header\">' + result.header + '</div><div class=\"body\">' + result.body + '</div><ul><li class=\"ui-sort-dummy menu-item\" style=\"display:block;\"><div class="header">&nbsp;</div><div class="body">&nbsp;</div></li></ul></li>').appendTo(eleMenu).fadeIn('slow');
+				_refreshSortableItems();
+			}
+		});
+		// Bind submit event.
+		$('.ajax-dialog-submit', eleDialog).unbind().bind('click', function(e) {
+			_toggleLoadingNotificationDialog(eleDialogFooter, 'on');
+			$(this).attr('disabled', 'disabled');
+			$(eleIframe).contents().find('form input.ajax-form-submit:eq(0)').trigger('click');
+		}).removeAttr('disabled');
+	}
+	function _onRemoveMenuItem(e) {
+		// Confirm user.
+		var boolConfirmAnswer = confirm('Are you sure you want to remove this item?');
+		if(!boolConfirmAnswer) {return false;}
+		// Get id for database.
+		var indexChar = e.data.element.id.lastIndexOf('_') + 1;
+        var qsValue = e.data.element.id.substring(indexChar, e.data.element.id.length);
+		// Create data interchange format.
+		var jsonObject = {
+			"intItemId":parseInt(qsValue, 10)
+		};
+		var jsonString = YUI().use("json").JSON.stringify(jsonObject);
+		// Perform AJAX.
+		jsonAjaxWebservice('menu', 'removeMenuItem', jsonString, null, function(status, data) {
+			if(status == 'success' && data.d == true) {
+				$(e.data.element).fadeOut('slow', function() {
+					$(this).remove();
+					_updateSortableHierarchy();
+				});
+			} else {
+				//console.log(status);
+				//console.log(data.d);
+			}
+		});
+	}
+	function _onRemoveMenuGroup(e) {
+		// Confirm user.
+		var boolConfirmAnswer = confirm('Are you sure you want to remove this group?');
+		if(!boolConfirmAnswer) {return false;}
+		// Get id for database.
+		var indexChar = e.data.element.id.lastIndexOf('_') + 1;
+        var qsValue = e.data.element.id.substring(indexChar, e.data.element.id.length);
+		// Create data interchange format.
+		var jsonObject = {
+			"intGroupId":parseInt(qsValue, 10)
+		};
+		var jsonString = YUI().use("json").JSON.stringify(jsonObject);
+		// Perform AJAX.
+		jsonAjaxWebservice('menu', 'removeMenuGroup', jsonString, null, function(status, data) {
+			if(status == 'success' && data.d == true) {
+				var eleItems = $('> ul > .menu-item', e.data.element).hide().get();
+				$('> .ui-sortable', eleContainerMain).append(eleItems);
+				$(e.data.element).fadeOut('slow', function() {
+					$(this).remove();
+					$(eleItems).filter('.ui-sort-dummy').remove();
+					$(eleItems).fadeIn('slow');
+					_refreshSortableItems();
+				});
+			} else {
+				//console.log(status);
+				//console.log(data.d);
+			}
+		});
+	}
+	function _onRemoveMenu(e) {
+		// Confirm user.
+		var boolConfirmAnswer = confirm('Are you sure you want to remove this menu?');
+		if(!boolConfirmAnswer) {return false;}
+		// Get id for database.
+        var qsValue = $(e.data.element).find('.ajax-id').html();
+        // Create data interchange format.
+		var jsonObject = {
+			"intMenuId":parseInt(qsValue, 10)
+		};
+		var jsonString = YUI().use("json").JSON.stringify(jsonObject);
+		// Perform AJAX.
+		jsonAjaxWebservice('menu', 'removeMenu', jsonString, null, function(status, data) {
+			if(status == 'success' && data.d == true) {
+				$(e.data.element).fadeOut('slow', function() {
+					$(this).remove();
+				});
+			} else {
+				//console.log(status);
+				//console.log(data.d);
+			}
+		});
+	}
+	function _onSaveMenu(e) {
+		// Update hierarchy for outcast items on the root.
+		$('> li', eleSortable).each(function(index) {
+			if($(this).hasClass('menu-item')) {
+				var aryStrings = this.id.split('_');
+				this.id = aryStrings[0] + '-outcast_' + aryStrings[1];
+			}
+		});
+		// Create data interchange format.
+		var jsonObject = {
+			"strSerializedData":$(eleSortable).sortable('serialize')
+		};
+		var jsonString = YUI().use("json").JSON.stringify(jsonObject);
+		// Perform AJAX.
+		jsonAjaxWebservice('menu', 'createMenu', jsonString, null, function(status, data) {
+			if(status == 'success' && data.d == true) {
+				__doPostBack('onWizard', 'nav=next'); // Call ASP.NET postback function.
+			} else {
+				//console.log(status);
+				//console.log(data.d);
+			}
+		});
+	}
+	function _onExitMenu(e) {
+		// Update hierarchy for outcast items on the root.
+		$('> li', eleSortable).each(function(index) {
+			if($(this).hasClass('menu-item')) {
+				var aryStrings = this.id.split('_');
+				this.id = aryStrings[0] + '-outcast_' + aryStrings[1];
+			}
+		});
+		// Serialize menu hierarchy to input hidden.
+		eleInputHidden.value = $(eleSortable).sortable('serialize');
+		// Call server-side to save menu hierarchy.
+		__doPostBack('onWizard', 'nav=next'); // Call ASP.NET postback function.
+	}
+	function _onSortableStop(e, ui) {
+		//console.log('Stop', ui.item);
+		if(e.handler.type == 'draggable') {
+			var eleClone = ui.item.removeClass('ui-draggable').get(0);		
+			var eleId = $('.ajax-id', eleClone).get(0);
+			var intId = parseInt($(eleId).html(), 10);
+			eleClone.removeChild(eleId);
+
+			if($(eleClone).hasClass('menu-item')) {
+				eleClone.id = 'frmrestaurantmenuitem_' + intId;
+				$(eleClone).children('.controlpanel').remove().end().prepend(strMenuItemControlPanel);
+				_refreshSortableItemsEvents();
+			} else if($(eleClone).hasClass('menu-group')) {
+				eleClone.id = 'frmrestaurantmenugroup_' + intId;
+				$(eleClone).children('.controlpanel, .body').remove().end().prepend(strMenuGroupControlPanel).append('<ul><li class=\"ui-sort-dummy menu-item\" style=\"display:block;\"><div class="header">&nbsp;</div><div class="body">&nbsp;</div></li></ul>');
+				_getGroupItems(eleClone, intId);
+			}
+		}
+		/*
+		var ele = ui.item.get(0);
+		var eleParent = ui.item.get(0).parentNode.parentNode;
+		if($(ele).hasClass('menu-group') && $(eleParent).hasClass('menu-group')) {
+			console.log('Group Inside Group', ui.item);
+			ui.item.get(0).style.top = sortableItemY;
+		}
+		*/
+		_updateSortableHierarchy();
+	}
+	function _onSortableUpdate(e, ui) {
+		//console.log('Update');
+	}
+	function _onSortableChange(e, ui) {
+		//console.log('Change');
+		
+		var ele = ui.item.get(0);
+		var eleParent = ui.item.get(0).parentNode.parentNode;
+		if($(ele).hasClass('menu-group') && $(eleParent).hasClass('menu-group')) {
+			//console.log('Update Group');
+		}
+	}
+	function _onSortableStart(e, ui) {
+		//console.log('Start');
+		ui.placeholder.width(sortableWidth + 'px').height(ui.helper.height() + 'px');
+		ui.placeholder.get(0).style.margin = '0 auto 0 auto';
+		//ui.helper.width()
+		//ui.placeholder.parent().get(0).clientWidth // Another way to get width, but doesn't work for IE.
+
+		sortableItemX = ui.item.position.left + 'px';
+		sortableItemY = ui.item.position.top + 'px';
+		//console.log(sortableItemX, sortableItemY);*/
+	}
+	function _updateSortableHierarchy() {
+		// Toggle sortable item dummies for empyty groups.
+		$(eleDummies).each(function(index) {
+			if($(this).siblings().length > 0) {
+				$(this).fadeOut('slow');
+			} else {
+				$(this).fadeIn('slow');
+			}
+		});
+	}
+	function _updatePanel() {
+		eleRegion.style.marginLeft = $(elePanel).css('width');
+		elePanel.style.height = (windowHeight - windowHeightOffset) + 'px';
+		$('#frmrestaurantmenu-library .panel-content > div', elePanel).each(function(index) {
+			this.style.height = (windowHeight - windowHeightOffset - 65) + 'px';
+		});
+	}
+	function _onResizeWindow(e) {
+		windowHeight = $(window).height();
+		_updatePanel();
+	}
+	function _refreshSortableItemsEvents() {
+		$('.menu-item > .controlpanel > .edit', eleSortable).each(function(index) {
+			$(this).unbind().bind('click', {element:this.parentNode.parentNode}, _onEditMenuItem);
+		});
+		$('.menu-item > .controlpanel > .remove', eleSortable).each(function(index) {
+			$(this).unbind().bind('click', {element:this.parentNode.parentNode}, _onRemoveMenuItem);
+		});
+		$('.menu-group > .controlpanel > .edit', eleSortable).each(function(index) {
+			$(this).unbind().bind('click', {element:this.parentNode.parentNode}, _onEditMenuGroup);
+		});
+		$('.menu-group > .controlpanel > .remove', eleSortable).each(function(index) {
+			$(this).unbind().bind('click', {element:this.parentNode.parentNode}, _onRemoveMenuGroup);
+		});
+		$('.controlpanel > .options', eleSortable).each(function(index) {
+			$(this).unbind().bind('click', {element:this.parentNode.parentNode}, _onEditMenuOptions);
+		});
+		$('.controlpanel > .keywords', eleSortable).each(function(index) {
+			$(this).unbind().bind('click', {element:this.parentNode.parentNode}, _onEditMenuKeywords);
+		});
+	}
+	function _refreshSortableItems() {
+		eleDummies = $('.ui-sort-dummy', eleContainerMain).get();
+		$(eleSortable).sortable('refresh');
+		_refreshSortableItemsEvents();
+	}
+	function _createSortableItems() {
+		eleDummies = $('.ui-sort-dummy', eleContainerMain).get();
+		eleSortable = $('> .ui-sortable', eleContainerMain).get(0);
+		sortableWidth = eleSortable.offsetWidth - 30; // For ui.placeholder.width
+		$('li', eleSortable).each(function(index) {
+			// Skip sortable dummy.
+			if(isEmpty(this.id)) {return;}
+			// Prepend control panel.
+			if($(this).hasClass('menu-item')) {
+				$(this).prepend(strMenuItemControlPanel);
+			} else if($(this).hasClass('menu-group')) {
+				$(this).prepend(strMenuGroupControlPanel);
+			}
+		});
+		$(eleSortable).sortable({
+			items:'li',
+			handle:'.ui-draggable-handle',
+			placeholder:'ui-sort-placeholder',
+			helper:function(e, ele) {
+				return ele.clone().css('width', ele.width() + 'px').get(0);
+			},
+			appendTo:'body',
+			revert:true,
+			opacity:0.7,
+			start:_onSortableStart,
+			stop:_onSortableStop,
+			change:_onSortableChange,
+			update:_onSortableUpdate
+		});
+		_refreshSortableItemsEvents();
+		_updateSortableHierarchy();
+	}
+	function _toggleLoadingNotificationDialog(ele, strOnOff) {
+		var eleLoading = document.getElementById('loading-dialog-iframe');
+		if(isEmpty(eleLoading)) {
+			eleLoading = $('<span id="loading-dialog-iframe">Working...</span>').prependTo(ele).get(0);
+		}
+		if(strOnOff.toLowerCase() == 'on') {			
+			$('#loading-dialog-iframe').fadeIn('slow');
+		} else if(strOnOff.toLowerCase() == 'off') {
+			$('#loading-dialog-iframe').fadeOut('slow');
+		}
+		return eleLoading;
+	}
+	function _createIframeDialog(eleDialog, idIframe, strQueryString, fnCallback) {
+		// Get iframe location.		
+        var eleLocation = $('.iframe_location', eleDialog).get(0);
+		var iframeSrc = $(eleLocation, eleDialog).html();
+		if(iframeSrc.indexOf('?') < 0){
+			if(!isEmpty(strQueryString)) {strQueryString = '?' + strQueryString;}		  
+		} else {
+			if(!isEmpty(strQueryString)) {strQueryString = '&' + strQueryString;}
+		}
+		// Init.
+		var eleForm = $(eleLocation).parent().get(0);
+		var eleExist = document.getElementById(idIframe);
+		if(!isEmpty(eleExist)) {
+			eleForm.removeChild(eleExist);
+		}
+		// Load and prepend to dialog.
+		var eleIframe = $('<iframe src=\"' + iframeSrc + strQueryString + '\" id=\"' + idIframe + '\" name=\"' + idIframe + '\" class=\"iframe\" frameborder=\"0\"></iframe>').prependTo(eleForm).get(0);
+		// Bind load event for function callback.
+		$(eleIframe).bind('load', function(e) {
+			if(jQuery.isFunction(fnCallback)) {fnCallback.call(this, e);}
+		});
+		return eleIframe;
+	}
+	function _createDialog(ele) {
+		$(ele).dialog({
+			modal:true,
+			overlay:{opacity:0.5, background:'#000'},
+			resizable:false,
+			draggable:false,
+			width:640,
+			height:480
+		});
+		ele.style.display = 'block';
+		$('.ajax-dialog-cancel', ele).unbind().bind('click', function(e) {$(ele).dialog('destroy');return false;});
+	}
+	function _createAccordion() {
+		$('#frmrestaurantmenu-library', elePanel).accordion({
+			header:'.panel-header',
+			alwaysOpen:true,
+			autoHeight:false,
+			clearStyle:true,
+			navigation:false,
+			active:1,
+			animated:false
+		});
+	}
+	function _createPanelEvents() {
+		// Bind window resize event.
+		$(window).bind('resize', _onResizeWindow);
+		// Bind menu list events.
+		$('a#btn-menulist-new', eleSubPanel1).bind('click', function(e) {
+			__doPostBack('onMenuList', 'mode=new'); // Call ASP.NET postback function.
+		});
+		$('a[href=\'#\']', eleSubPanel1).each(function(index) {
+			var eleRow = this.parentNode.parentNode.parentNode;
+			var intRowId = parseInt($(eleRow).find('.ajax-id').html(), 10);
+			if($(this).hasClass('edit')) {
+				$(this).bind('click', function(e) {
+					__doPostBack('onMenuList', 'mode=edit&id=' + intRowId); // Call ASP.NET postback function.
+					return false;
+				});
+			} else if($(this).hasClass('remove')) {
+				$(this).bind('click', {element:eleRow}, _onRemoveMenu);
+			} else if($(this).hasClass('clone')) {
+				$(this).bind('click', function(e) {
+					__doPostBack('onMenuList', 'mode=clone&id=' + intRowId); // Call ASP.NET postback function.
+					return false;
+				});
+			}
+		});
+		// Bind create events.
+		$('input#btn-group-create', eleSubPanel2).bind('click', _onCreateMenuGroup);
+		$('input#btn-item-create', eleSubPanel2).bind('click', _onCreateMenuItem);
+		// Bind wizard events.
+		$('input#btn-panel-back').bind('click', function(e) {
+			__doPostBack('onWizard', 'nav=back'); // Call ASP.NET postback function.
+		});
+		$('input#btn-panel-next').bind('click', _onExitMenu);
+		$('input#btn-panel-back-bottom').bind('click', function(e) {
+			__doPostBack('onWizard', 'nav=back'); // Call ASP.NET postback function.
+		});
+		$('input#btn-panel-next-bottom').bind('click', _onExitMenu);
+	}
+	function _createPanel() {
+		// Create markup code.
+		$(eleRegion).append('<div id=\"panel-left\" style=\"display:block;\"><div id=\"panel-left-buffer\"></div></div>');
+		$('#' + idPanel + ' > div', eleRegion).append($('#' + idInner + ' > *', eleRegion))
+		elePanel = $('#' + idPanel).get(0);
+		elePanel.style.position = 'fixed';
+		elePanel.style.left = '0';
+		windowHeightOffset = parseInt($(elePanel).css('top'));
+		// Get subpanels.
+		eleSubPanel1 = $('#sp1', elePanel).get(0);
+		eleSubPanel2 = $('#sp2', elePanel).get(0);
+		// Add css class to alternate rows.
+		$(eleSubPanel1).find('> div:odd').addClass('alt');
+		$(eleSubPanel2).find('> div:odd').addClass('alt');
+	}
+	function init() {
+		eleRegion = $('#' + idRegion).get(0);
+		eleContainerMain = $('#' + idContainerMain, eleRegion).get(0);
+		eleInputHidden = $('#' + idInputHidden, eleRegion).get(0);
+		eleContainerDialog = $('#' + idContainerDialog, eleRegion).get(0);
+		_createPanel();
+		_onResizeWindow(null);
+		_createPanelEvents();
+		_createSortableItems();
+		_createAccordion();
+	}
+}
+
+var crudMenu = new classMenuCrud('region-middle', 'inner-panel-right', 'panel-left', 'frmrestaurantmenu-main-container', 'hidMenuSerialize', 'frmrestaurantmenu-dialog-container');
+$(document).ready(function() {
+	crudMenu.init();
+});
+	//]]>
+	</script>
+
+</head>
+<body>
+<div id="inner-panel-right" style="display:none;"><div id="frmrestaurantmenu-library">
+	<a href="#" class="panel-header">Menu List</a>
+	<div class="panel-content"><div id="sp1">
+	<asp:placeholder id="plhNewMenuCreation" runat="server">
+		<div class="row">
+			<strong>New Menu</strong>
+			<ul>
+				<li><a id="btn-menulist-new" href="#">Create a brand new menu.</a></li>
+			</ul>
+		</div>
+	</asp:placeholder>
+<!-- BEGIN: Dynamic Data -->
+		<div class="row">
+			<strong>Olive Garden</strong>
+			<ul>
+				<li><a href="#" class="edit">Edit this menu.</a></li>
+				<li><a href="#" class="remove">Delete this menu.</a></li>
+				<li><a href="#" class="clone">Clone this menu to start a new menu.</a></li>
+			</ul>
+			<div class="ajax-id" style="display:none;">1</div>
+		</div>
+		<div class="row">
+			<strong>Seito Sushi</strong>
+			<ul>
+				<li><a href="#" class="edit">Edit this menu.</a></li>
+				<li><a href="#" class="remove">Delete this menu.</a></li>
+				<li><a href="#" class="clone">Clone this menu to start a new menu.</a></li>
+			</ul>
+			<div class="ajax-id" style="display:none;">2</div>
+		</div>
+		<div class="row">
+			<strong>Wendy</strong>
+			<ul>
+				<li><a href="#" class="edit">Edit this menu.</a></li>
+				<li><a href="#" class="remove">Delete this menu.</a></li>
+				<li><a href="#" class="clone">Clone this menu to start a new menu.</a></li>
+			</ul>
+			<div class="ajax-id" style="display:none;">3</div>
+		</div>
+		<div class="row">
+			<strong>Plaent Smoothie</strong>
+			<ul>
+				<li><a href="#" class="edit">Edit this menu.</a></li>
+				<li><a href="#" class="remove">Delete this menu.</a></li>
+				<li><a href="#" class="clone">Clone this menu to start a new menu.</a></li>
+			</ul>
+			<div class="ajax-id" style="display:none;">4</div>
+		</div>
+<!-- END: Dynamic Data -->
+	</div></div>
+	<a href="#" class="panel-header">Create</a>
+	<div class="panel-content"><div id="sp2">
+		<div class="row">
+			<input type="button" id="btn-group-create" class="btncreate" value="Create"/>
+			<strong>Create a group</strong> to categorize your items in the right pane.
+		</div>
+		<div class="row">
+			<input type="button" id="btn-item-create" class="btncreate" value="Create"/>
+			<strong>Create an item</strong>. The item you created will be added to this sidebar.
+		</div>
+	</div></div>
+</div></div>
+<div class="frmrestaurantmenu-controlpanel">
+	<input type="button" id="btn-panel-back" class="btnback" value="Back"/>
+	<input type="button" id="btn-panel-next" class="btnnext" value="Finish"/>
+</div>
+<h3>Menu Wizard: Manage Items</h3>
+<h5>On menu titled: Wackadoo's Grub &amp; Brew</h5>
+<div id="frmrestaurantmenu-main-container">
+<input type="hidden" id="hidMenuSerialize" value=""/>
+<ul class="ui-sortable">
+<!-- BEGIN: Dynamic Data -->
+	<li id='frmrestaurantmenugroup_1' class="menu-group">
+		<div class="header"><%#DataBinder.Eval(Container.DataItem, "Title")%></div>
+		<ul>
+			<li class="ui-sort-dummy menu-item" style="display:none;">
+				<div class="header">&nbsp;</div>
+				<div class="body">&nbsp;</div>
+			</li>
+			<li id='frmrestaurantmenuitem_1' class="menu-item">
+				<div class="header"><%#DataBinder.Eval(Container.DataItem, "Title")%></div>
+				<div class="body"><%#DataBinder.Eval(Container.DataItem, "Description").ToString().Replace("\r\n", "<br />")%></div>
+			</li>
+		</ul>
+	</li>
+	<li id='frmrestaurantmenuitem_2' class="menu-item">
+		<div class="header"><%#DataBinder.Eval(Container.DataItem, "Title")%></div>
+		<div class="body"><%#DataBinder.Eval(Container.DataItem, "Description").ToString().Replace("\r\n","<br />")%></div>
+	</li>
+<!-- END: Dynamic Data -->
+</ul>
+</div>
+<div class="frmrestaurantmenu-controlpanel" style="margin-top:18px;">
+	<input type="button" id="btn-panel-back-bottom" class="btnback" value="Back"/>
+	<input type="button" id="btn-panel-next-bottom" class="btnnext" value="Finish"/>
+</div>
+<div id="frmrestaurantmenu-dialog-container" style="display:none;">
+	<div id="frmrestaurantmenu-item-dialog"><div class="ui-dialog-content-buffer"><div class="frmiframe">
+		<div class="iframe_location" style="display:none;"><%=ResolveClientUrl("~/restaurant/controlpanel/menu_item_crud.aspx?rid=" + m_restaurantid + "&mid=" + m_menuid)%></div>
+		<div class="footer">
+			<input type="button" class="ajax-dialog-submit btnsubmit" value="Submit"/> <input type="button" class="ajax-dialog-cancel btncancel" value="Cancel"/>
+		</div>
+	</div></div></div>
+	<div id="frmrestaurantmenu-group-dialog"><div class="ui-dialog-content-buffer"><div class="frmiframe">
+		<div class="iframe_location" style="display:none;"><%=ResolveClientUrl("~/restaurant/controlpanel/menu_group_crud.aspx?rid=" + m_restaurantid + "&mid=" + m_menuid)%></div>
+		<div class="footer">
+			<input type="button" class="ajax-dialog-submit btnsubmit" value="Submit"/> <input type="button" class="ajax-dialog-cancel btncancel" value="Cancel"/>
+		</div>
+	</div></div></div>
+	<div id="frmrestaurantmenu-options-dialog"><div class="ui-dialog-content-buffer"><div class="frmiframe">
+		<div class="iframe_location" style="display:none;"><%=ResolveClientUrl("~/restaurant/controlpanel/menu_options_crud.aspx?rid=" + m_restaurantid + "&mid=" + m_menuid)%></div>
+		<div class="footer">&nbsp;<input type="button" class="ajax-dialog-cancel btncancel" value="Close"/></div>
+	</div></div></div>
+	<div id="frmrestaurantmenu-keywords-dialog"><div class="ui-dialog-content-buffer"><div class="frmiframe">
+		<div class="iframe_location" style="display:none;"><%=ResolveClientUrl("~/restaurant/controlpanel/menu_keywords_crud.aspx")%></div>
+		<div class="footer">&nbsp;<input type="button" class="ajax-dialog-cancel btncancel" value="Close"/></div>
+	</div></div></div>
+</div>
+</body>
+</html>
