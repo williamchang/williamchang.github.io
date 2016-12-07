@@ -1,14 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
-	<!-- XHTML 1.0 Strict, Designed By William Chang, Version 2.1, Created 2010-03-05, Modified 2016-12-07 -->
+	<!-- Version 2.0, Created 2010-03-05, Modified 2015-05-20 -->
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 	<meta name="author" content="William Chang"/>
 	<meta name="description" content="The portfolio of Software Engineer William Chang contains projects, programming source codes (C, C++, C#, VB, Java, PHP, JavaScript, SQL), and screenshots."/>
 	<meta name="keywords" content="development, portfolio, resume, cv, curriculum vitae, job, work, career, research, architect, programmer, developer, software engineer, program manager, computer, projects, technologies, applications, programming, evangelist, it, information technology"/>
 	<title>Software Development Engineer Portfolio of William Chang</title>
-	<link rel="shortcut icon" href="/favicon.ico" />
-	<link rel="apple-touch-icon" href="/apple-touch-icon-256x256.png" />
 	<!-- BEGIN: Styles -->
 	<link href="js/fancybox/jquery.fancybox.css" media="screen" rel="stylesheet" type="text/css"/>
 	<style type="text/css" media="screen">
@@ -38,7 +36,7 @@ em.s4 {height:2px;margin:0 1px;}
 /* Content */
 .content {width:640px;margin:0 auto;overflow:hidden;border:solid 1px #666;background:#fff;}
 .content .buffer {margin:6px 10px 10px 10px;}
-.content .section {margin:10px 0 0 0;padding:10px 0 0 10px;background:url(http://creativecrew.org/images/left-top-corner-box.jpg) transparent no-repeat top left;}
+.content .section {margin:10px 0 0 0;padding:10px 0 0 10px;background:url(http://www.creativecrew.org/images/left-top-corner-box.jpg) transparent no-repeat top left;}
 /* Base Elements */
 h1 {color:#3c475b;font-weight:bold;font-size:180%;font-family:Georgia, "Times New Roman", Times, serif;}
 h2 {color:#3c475b;font-weight:bold;font-size:150%;font-family:"Courier New", Courier, monospace;}
@@ -67,7 +65,6 @@ strong {font-weight:bold;}
 	font-family:Tahoma, Helvetica, sans-serif;font-weight:bold;text-transform:uppercase;color:#115098;
 }
 .top {margin:4px 0 0 0;text-align:center;font-size:80%;}
-.hide {display:none;}
 /*.flash {border:solid 1px #ccc;}*/
 #viewer-resume {border-top-color:rgb(0, 0, 0);}
 @media only screen and (max-width:980px) {
@@ -139,19 +136,19 @@ a:link, a:visited, a:hover, a:active {text-decoration:none;color:#000;}
 	<div class="buffer"><div class="content"><div class="buffer">
 <!-- BEGIN: Region Header -->
 	<div class="titlesuperscript">Inspired by <a href="http://en.wikipedia.org/wiki/John_Resig">John Resig</a> &amp; <a href="http://en.wikipedia.org/wiki/John_D._Carmack">Software Engineer John Carmack</a></div>
-	<h1><a href="http://williamchang.org/portfolio/">Development Portfolio</a></h1>
+	<h1><a href="http://www.williamchang.org/portfolio/">Development Portfolio</a></h1>
 <!-- END: Region Header -->
 	<div class="line"></div>
 <!-- BEGIN: Template Region Right -->
 	<div class="box printhide"><ul>
 		<li class="header">Showcase</li>
-        <li><a href="https://github.com/williamchang">GitHub</a></li>
-		<li><a href="https://code.google.com/archive/p/creativecrew/">Google Code Project</a></li>
-		<li><a href="https://bitbucket.org/williamchang/">Bitbucket</a></li>
-		<li><a href="https://www.youtube.com/user/creativecrewchannel">Videos</a></li>
+		<li><a href="http://creativecrew.googlecode.com/">Google Code Project</a></li>
+        <li><a href="http://github.com/williamchang/">GitHub</a></li>
+		<li><a href="http://bitbucket.org/williamchang/">Bitbucket</a></li>
+		<li><a href="http://www.youtube.com/user/creativecrewchannel">Videos</a></li>
 		<li class="header">External</li>
-		<li><a href="http://creativecrew.org/">Creative Crew</a></li>
-		<li><a href="http://creativecrew.org/wiki/">Wiki</a></li>
+		<li><a href="http://www.creativecrew.org/">Creative Crew</a></li>
+		<li><a href="http://www.creativecrew.org/wiki/">Wiki</a></li>
 	</ul></div>
 <!-- END: Template Region Right -->
 <!-- BEGIN: Template Region Middle -->
@@ -166,10 +163,10 @@ a:link, a:visited, a:hover, a:active {text-decoration:none;color:#000;}
 	<div id="sectionabout" class="section">
 		<h3>William Chang</h3>
 		<p>I have a passion for creating and enhancing anything technology related. When it comes to building, my ultimate goal is to make the world a better place. I'm a developer on the bleeding edge of technology.</p>
-		<h4 class="hide">On the Web</h4>
-		<p class="hide">The computer languages I use are Visual Basic (VB), C#, Java, XHTML, CSS, XML, <a href="http://www.json.org/">JSON</a>, JavaScript, PHP 5, and SQL (standard SQL-92, Transact-SQL). The technologies and libraries I utilize are Microsoft IIS, Microsoft ASP.NET (Web Forms and MVC), Apache, PHP (MVC Framework: <a href="http://www.symfony-project.org/">Symfony</a>), AJAX, <a href="http://jquery.com/">jQuery</a>, <a href="http://jqueryui.com/">jQuery UI</a>, <a href="http://developer.yahoo.com/yui/">Yahoo! User Interface (YUI)</a>, and <a href="http://tinymce.moxiecode.com/">TinyMCE</a>. The tools I work with are <a href="http://git-scm.com/">Git</a> with <a href="http://github.com/">GitHub</a>, <a href="http://tortoisesvn.net/">TortoiseSVN</a> (<a href="http://subversion.tigris.org/">Subversion</a>), Microsoft Visual Studio, Microsoft SQL Server Management Studio, Microsoft Team Foundation Server (TFS), <a href="http://www.eclipse.org/">Eclipse</a>, <a href="http://notepad-plus.sourceforge.net/">Notepad++</a>, <a href="http://getfirebug.com/">Firebug</a>, <a href="http://code.google.com/p/httpfox/">HttpFox</a>, Adobe Photoshop, Adobe Illustrator, and Adobe Flash.</p>
-		<h4 class="hide">On the Desktop and Mobile</h4>
-		<p class="hide">The computer languages I use are MS-DOS QBasic, C, C++, Objective-C 2.0, Java. The libraries I utilize are <a href="http://www.ogre3d.org/">OGRE</a>, <a href="http://www.bulletphysics.com/">Bullet</a>, <a href="http://www.box2d.org/">Box2D</a>, OpenGL, and OpenGL ES 1.1. The tools I work with are <a href="http://git-scm.com/">Git</a> with <a href="http://github.com/">GitHub</a>, <a href="http://tortoisesvn.net/">TortoiseSVN</a> (<a href="http://subversion.tigris.org/">Subversion</a>), Borland Turbo C++ 3, Microsoft Visual Studio, <a href="http://www.eclipse.org/">Eclipse</a>, <a href="http://developer.apple.com/tools/xcode/">Apple Xcode</a>, <a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a>, and Adobe Photoshop.</p>
+		<h4>On the Web</h4>
+		<p>The computer languages I use are Visual Basic (VB), C#, Java, XHTML, CSS, XML, <a href="http://www.json.org/">JSON</a>, JavaScript, PHP 5, and SQL (standard SQL-92, Transact-SQL). The technologies and libraries I utilize are Microsoft IIS, Microsoft ASP.NET (Web Forms and MVC), Apache, PHP (MVC Framework: <a href="http://www.symfony-project.org/">Symfony</a>), AJAX, <a href="http://jquery.com/">jQuery</a>, <a href="http://jqueryui.com/">jQuery UI</a>, <a href="http://developer.yahoo.com/yui/">Yahoo! User Interface (YUI)</a>, and <a href="http://tinymce.moxiecode.com/">TinyMCE</a>. The tools I work with are <a href="http://git-scm.com/">Git</a> with <a href="http://github.com/">GitHub</a>, <a href="http://tortoisesvn.net/">TortoiseSVN</a> (<a href="http://subversion.tigris.org/">Subversion</a>), Microsoft Visual Studio, Microsoft SQL Server Management Studio, Microsoft Team Foundation Server (TFS), <a href="http://www.eclipse.org/">Eclipse</a>, <a href="http://notepad-plus.sourceforge.net/">Notepad++</a>, <a href="http://getfirebug.com/">Firebug</a>, <a href="http://code.google.com/p/httpfox/">HttpFox</a>, Adobe Photoshop, Adobe Illustrator, and Adobe Flash.</p>
+		<h4>On the Desktop and Mobile</h4>
+		<p>The computer languages I use are MS-DOS QBasic, C, C++, Objective-C 2.0, Java. The libraries I utilize are <a href="http://www.ogre3d.org/">OGRE</a>, <a href="http://www.bulletphysics.com/">Bullet</a>, <a href="http://www.box2d.org/">Box2D</a>, OpenGL, and OpenGL ES 1.1. The tools I work with are <a href="http://git-scm.com/">Git</a> with <a href="http://github.com/">GitHub</a>, <a href="http://tortoisesvn.net/">TortoiseSVN</a> (<a href="http://subversion.tigris.org/">Subversion</a>), Borland Turbo C++ 3, Microsoft Visual Studio, <a href="http://www.eclipse.org/">Eclipse</a>, <a href="http://developer.apple.com/tools/xcode/">Apple Xcode</a>, <a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a>, and Adobe Photoshop.</p>
 		<h4>Specialities</h4>
 		<p>I have extensive experience in many related fields, but the work I am most passionate about are developing web applications, developing smartphone applications, frontend engineering, and project management.</p>
 		<h4>Positions, roles, and responsibilities</h4>
@@ -180,7 +177,7 @@ a:link, a:visited, a:hover, a:active {text-decoration:none;color:#000;}
 		<h3>My Information</h3>
 		<ul>
 			<li>Email: <a href="mailto:william@creativecrew.org">william@creativecrew.org</a></li>
-			<li>LinkedIn: <a href="https://www.linkedin.com/in/william-chang-11971020">https://www.linkedin.com/in/william-chang-11971020</a></li>
+			<li>Twitter: <a href="http://twitter.com/williamchang">http://twitter.com/williamchang</a></li>
 			<li>Resume:<ul>
 				<li><a href="resume/resume.pdf">Adobe PDF</a></li>
 				<li><a href="resume/resume.doc">Microsoft Word DOC</a></li>
@@ -251,7 +248,7 @@ a:link, a:visited, a:hover, a:active {text-decoration:none;color:#000;}
 				<p>Prototyping the business logic on the client-side. All communications (HTTP, request and reponse protocols) to the database is by AJAX to the server-side (PHP) abstract interface. A small web application using AJAX, JSON, and JSON RPC, the cutting edge web technologies. Developed with jQuery (JavaScript Library), PHP, and MySQL.</p>
 				<p class="italic bold">Available for public review: <a href="http://creativecrew.googlecode.com/svn/web_php/trunk/domaingenerator/">Source Code</a></p>
 				<ul>
-					<li><a href="http://williamchang.org/domaingenerator/">Demo</a></li>
+					<li><a href="http://www.williamchang.org/domaingenerator/">Demo</a></li>
 				</ul>
 			</div>
 			<a class="panel-header" href="#project_6">Seminole County Government Florida <span class="meta">[ASPNET VB, MS SQL, YUI, Ext JS, Flash]</span></a>
@@ -350,7 +347,7 @@ a:link, a:visited, a:hover, a:active {text-decoration:none;color:#000;}
 			</div>
 			<a class="panel-header" href="#project_15">Discover Game Engine <span class="meta">[C++, OpenGL, DirectX, 3D Physics]</span></a>
 			<div class="panel-content">
-				<p>An old project started in 2004 for my organization called <a href="http://creativecrew.org/">Creative Crew</a> (was known as, Developers Club) at University of Central Florida (UCF). The game engine's main component is <a href="http://www.ogre3d.org/">OGRE</a>, a object-oriented graphics rendering engine, seamlessly using OpenGL and DirectX on multiple operating systems: Microsoft Windows, Linux, and Apple Mac OS X. The physics engine has been replaced multiple times because of operating system dependency or closed source: <a href="http://www.newtondynamics.com/">Newton Game Dynamics</a>, <a href="http://developer.nvidia.com/object/physx.html">NVIDIA PhysX</a>, and <a href="http://www.bulletphysics.com/">Bullet</a>. The project was written in C++ programming language.</p>
+				<p>An old project started in 2004 for my organization called <a href="http://www.creativecrew.org/">Creative Crew</a> (was known as, Developers Club) at University of Central Florida (UCF). The game engine's main component is <a href="http://www.ogre3d.org/">OGRE</a>, a object-oriented graphics rendering engine, seamlessly using OpenGL and DirectX on multiple operating systems: Microsoft Windows, Linux, and Apple Mac OS X. The physics engine has been replaced multiple times because of operating system dependency or closed source: <a href="http://www.newtondynamics.com/">Newton Game Dynamics</a>, <a href="http://developer.nvidia.com/object/physx.html">NVIDIA PhysX</a>, and <a href="http://www.bulletphysics.com/">Bullet</a>. The project was written in C++ programming language.</p>
 				<p class="italic bold">Available for public review: <a href="http://creativecrew.googlecode.com/svn/desktop/trunk/discover/">Source Code</a></p>
 				<ul>
 					<li><a class="video" href="http://www.youtube.com/watch?v=yn5SnbdeE6U">Video Early Development 1</a></li>
@@ -379,8 +376,8 @@ a:link, a:visited, a:hover, a:active {text-decoration:none;color:#000;}
 <!-- BEGIN: Region Footer -->
 	<div class="credit center">Designed by <a href="http://www.babybluebox.com/" title="DieHard">William Chang</a></div>
 	<div class="badges center"><ul>
-		<li><a href="http://validator.w3.org/check?uri=referer" title="W3C XHTML Compliant"><img src="http://creativecrew.org/images/valid_xhtml_80x15.png" alt="W3C XHTML Compliant" title="W3C XHTML Compliant" height="15" width="80"/></a></li>
-		<li><a href="http://jigsaw.w3.org/css-validator/check/referer" title="W3C CSS Compliant"><img src="http://creativecrew.org/images/valid_css_80x15.png" alt="W3C CSS Compliant" title="W3C CSS Compliant" height="15" width="80"/></a></li>
+		<li><a href="http://validator.w3.org/check?uri=referer" title="W3C XHTML Compliant"><img src="http://www.creativecrew.org/images/valid_xhtml_80x15.png" alt="W3C XHTML Compliant" title="W3C XHTML Compliant" height="15" width="80"/></a></li>
+		<li><a href="http://jigsaw.w3.org/css-validator/check/referer" title="W3C CSS Compliant"><img src="http://www.creativecrew.org/images/valid_css_80x15.png" alt="W3C CSS Compliant" title="W3C CSS Compliant" height="15" width="80"/></a></li>
 	</ul></div>
 <!-- END: Region Footer -->
 </div>
