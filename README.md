@@ -1,6 +1,8 @@
 # williamchang.github.io
 
-The source for the williamchang.github.io static website. Contributions are welcome. Feel free to submit issues if you run into problems or you have suggestions on how to improve it!
+The source for the [williamchang.github.io](https://williamchang.github.io) static website. Contributions are welcome. Feel free to submit issues if you run into problems or you have suggestions on how to improve it!
+
+Created by [William Chang](http://williamchang.org).
 
 ## How to contribute?
 
@@ -14,6 +16,4 @@ The source for the williamchang.github.io static website. Contributions are welc
 
 ## Legal and Licensing
 
-My scripts are licensed under the [MIT license][].
-
-[MIT license]: LICENSE.txt
+This project is licensed under the [MIT license](LICENSE.txt).
