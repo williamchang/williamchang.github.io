@@ -145,7 +145,7 @@ a:link, a:visited, a:hover, a:active {text-decoration:none;color:#000;}
 <!-- BEGIN: Template Region Right -->
 	<div class="box printhide"><ul>
 		<li class="header">Showcase</li>
-        <li><a href="https://github.com/williamchang">GitHub</a></li>
+		<li><a href="https://github.com/williamchang">GitHub</a></li>
 		<li><a href="https://code.google.com/archive/p/creativecrew/">Google Code Project</a></li>
 		<li><a href="https://bitbucket.org/williamchang/">Bitbucket</a></li>
 		<li><a href="https://www.youtube.com/user/creativecrewchannel">Videos</a></li>
@@ -181,9 +181,9 @@ a:link, a:visited, a:hover, a:active {text-decoration:none;color:#000;}
 		<ul>
 			<li>Email: <a href="mailto:william@creativecrew.org">william@creativecrew.org</a></li>
 			<li>LinkedIn: <a href="https://www.linkedin.com/in/william-chang-11971020">https://www.linkedin.com/in/william-chang-11971020</a></li>
+			<li>GitHub: <a href="https://github.com/williamchang">https://github.com/williamchang</a></li>
 			<li>Resume:<ul>
 				<li><a href="resume/resume.pdf">Adobe PDF</a></li>
-				<li><a href="resume/resume.doc">Microsoft Word DOC</a></li>
 				<li><a href="resume/resume.txt">Text Document TXT</a></li>
 			</ul></li>
 		</ul>
@@ -390,10 +390,10 @@ a:link, a:visited, a:hover, a:active {text-decoration:none;color:#000;}
 	<script src="js/jquery/jquery.ui.core.min.js" type="text/javascript"></script>
 	<script src="js/jquery/jquery.ui.widget.min.js" type="text/javascript"></script>
 	<script src="js/jquery/jquery.ui.accordion.min.js" type="text/javascript"></script>
-    <script src="js/fancybox/jquery.mousewheel-3.0.6.pack.js" type="text/javascript"></script>
-    <script src="js/fancybox/jquery.easing-1.3.pack.js" type="text/javascript"></script>
+	<script src="js/fancybox/jquery.mousewheel-3.0.6.pack.js" type="text/javascript"></script>
+	<script src="js/fancybox/jquery.easing-1.3.pack.js" type="text/javascript"></script>
 	<script src="js/fancybox/jquery.fancybox.js" type="text/javascript"></script>
-    <script src="js/fancybox/helpers/jquery.fancybox-media.js" type="text/javascript"></script>
+	<script src="js/fancybox/helpers/jquery.fancybox-media.js" type="text/javascript"></script>
 	<script type="text/javascript">
 	//<![CDATA[
 
@@ -495,8 +495,8 @@ function classPortfolio(strRegionId, strPanelsId, strResumeViewerId) {
 				closeSpeed:500,
 				openEffect:'elastic',
 				closeEffect:'elastic',
-                nextEffect:'none',
-                prevEffect:'none',
+				nextEffect:'none',
+				prevEffect:'none',
 				openEasing:'easeOutBack',
 				closeEasing:'easeInBack',
 				helpers:{
