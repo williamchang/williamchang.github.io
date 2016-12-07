@@ -12,6 +12,9 @@
 	<meta name="keywords" content="development, portfolio, resume, cv, curriculum vitae, job, work, career, research, architect, programmer, developer, software engineer, program manager, computer, projects, technologies, applications, programming, evangelist, it, information technology" />
 	<meta name="author" content="William Chang" />
 
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon-256x256.png" />
+
 <!-- BEGIN: Styles -->
 	<style>
 /*! normalize.css v4.2.0 | MIT License | github.com/necolas/normalize.css */
@@ -98,7 +101,8 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 
 	/* Simple Touch Slider */
 	.slider {display:block;z-index:0;height:240px;margin-bottom:16px;padding:10px 0 10px 10px;background-color:#555;overflow-x:scroll;overflow-y:hidden;-webkit-overflow-scrolling:touch;white-space:nowrap;}
-	.slider span {padding-right:10px;}
+	.slider span {display:inline-block;padding-right:10px;}
+	.slider span a {display:inline-block;}
 	.slider span img {border-radius:6px;}
 
 	/* Footer */
@@ -169,9 +173,12 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 <body class="tabbar_fix_body">
 	<div id="main_frame"><div id="main_frame_inner">
 
-	<!--[if lt IE 8]>
-		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-	<![endif]-->
+		<!--[if lt IE 8]>
+			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<div id="console">
+			<div class="log template">Test Console Log</div>
+		</div>
 
 		<div class="region_column1"><div class="region_column1_inner">
 
@@ -188,10 +195,6 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 				<li><a href="#section_resume" style="background-color:yellow;">Resume</a></li>
 				<li><a href="#section_connect" style="background-color:khaki;">Connect</a></li>
 			</ul></nav>
-
-			<div id="console">
-				<div class="log template">Test Console Log</div>
-			</div>
 
 		</div></div>
 		<div class="region_column2"><div class="region_column2_inner">
@@ -421,6 +424,28 @@ window.addEventListener('orientationchange', function(e) {
 
 	prepend('#console', '<div class="log">' + Date.now() + ', ' + strOrientation + ', Event:resize, ViewportHeight:' +  numViewportHeight + '</div>');
 });
+
+
+
+document.querySelector('.slider').addEventListener('scroll', function(e) {
+	var eleSlider = e.target;
+	var eleSlide = document.querySelectorAll('.slider span')[1];
+
+	console.log(e.target.scrollLeft, eleSlide.offsetLeft);
+
+	if(eleSlider.scrollLeft >= eleSlide.offsetLeft) {
+		document.querySelector('.slider').scrollLeft = 346;
+
+		/*window.setTimeout(function() {
+			console.log(eleSlider);
+			eleSlider.scrollLeft = eleSlide.offsetLeft;
+			document.querySelector('.slider').scrollLeft = 100;
+		}, 500);*/
+	}
+
+	//prepend('#console', '<div class="log">' + Date.now() + ', Event:resize, Scroll:' +  numViewportHeight + '</div>');
+});
+
 	</script>
 <!-- END: Page Specific Scripts -->
 </body>
