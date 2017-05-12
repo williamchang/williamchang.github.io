@@ -90,11 +90,12 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 	.main_title_superscript a:hover, .main_title_superscript a:active {text-decoration:underline;color:#000;}
 
 	/* Simple Touch Tab Bar */
-	.tabbar {position:fixed;z-index:1000;width:100%;height:40px;bottom:0;left:0;overflow:hidden;transform:translateY(0);transition:transform 0.1s;border-top:solid 1px #bbb;background-color:#fff;opacity:0.96;}
-	.tabbar.hide {display:block;transform:translateY(100%);}
+	.tabbar {position:fixed;z-index:1000;width:100%;height:80px;bottom:-40px;left:0;overflow:hidden;transition:bottom 0.1s;border-top:solid 1px #bbb;background-color:#fff;opacity:0.96;}
+	.tabbar.tabbar_hide {bottom:-80px;}
+	.tabbar.tabbar_show {bottom:-40px;}
 	.tabbar ul {display:table;table-layout:fixed;width:100%;height:100%;margin:0;padding:0;list-style:none;}
 	.tabbar ul li {display:table-cell;}
-	.tabbar ul li a {display:block;height:40px;text-align:center;line-height:40px;}
+	.tabbar ul li a {display:block;height:80px;text-align:center;line-height:40px;}
 	/*.tabbar_fix_html {height:100%;overflow-y:scroll;-webkit-overflow-scrolling:touch;}
 	.tabbar_fix_body {height:100%;overflow-y:scroll;-webkit-overflow-scrolling:touch;}*/
 	::-webkit-scrollbar {display:none;}
@@ -126,7 +127,7 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 /* Medium devices (tablets, less than 992px) */
 @media (min-width:768px) and (max-width:1024px) {
 	.tabbar {transform:none;transition:none;}
-	.tabbar.hide {display:block;transform:none;}
+	.tabbar.tabbar_hide {display:block;transform:none;}
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -187,7 +188,7 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 		<!--[if lt IE 8]>
 			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div id="console" style="display:none;">
+		<div id="console">
 			<div class="log template">Test Console Log</div>
 		</div>
 
@@ -354,103 +355,90 @@ function getVerticalScroll() {
 	return (window.pageYOffset || document.documentElement.scrollTop) - (document.documentElement.clientTop || 0);
 }
 
-function isSessionStorageAvailable() {
-	try {
-		window.sessionStorage.setItem('storageTestKey', 'storageTestValue');
-		window.sessionStorage.removeItem('storageTestKey');
-		return true;
-	} catch(ex) {
-		return false;
-	}
-}
-
-function setVerticalScrollFromStorage() {
-	if(isSessionStorageAvailable()) {
-		var strWindowScrollY = window.sessionStorage.getItem('windowScrollY');
-		if(strWindowScrollY != null) {
-			var numWindowScrollY = parseInt(strWindowScrollY, 10);
-			window.scroll(0, numWindowScrollY);
-			return numWindowScrollY;
-		}
-	}
-	return -1;
-}
-
-function setVerticalScrollFromWindow() {
-	if(isSessionStorageAvailable()) {
-		var numWindowScrollY = getVerticalScroll();
-		window.sessionStorage.setItem('windowScrollY', numWindowScrollY);
-		return numWindowScrollY;
-	}
-	return -1;
-}
-
+var globalFirstViewportHeight = window.innerHeight;
 var globalInitialViewportHeight = window.innerHeight;
+var globalInitialViewportDifference = 0;
 var globalInitialLoadEventTime = 0;
 
 document.addEventListener('DOMContentLoaded', function(e) {
-	prepend('#console', '<div class="log">' + Date.now() + ', ' + getOrientation() + ', Event:DOMContentLoaded, ViewportHeight:' +  window.innerHeight +  ', VerticalScrollFromStorage:' + setVerticalScrollFromStorage() + ', e.currentTarget:' + e.currentTarget.defaultView.innerHeight + ', e.target:' + e.target.defaultView.innerHeight + '</div>');
+	// Browser loaded document object model.
+	prepend('#console', '<div class="log">' + Date.now() + ', ' + getOrientation() + ', Event:DOMContentLoaded, ViewportHeight:' +  window.innerHeight + ', e.currentTarget:' + e.currentTarget.defaultView.innerHeight + ', e.target:' + e.target.defaultView.innerHeight + '</div>');
 });
 
 window.addEventListener('load', function(e) {
+	// Browser loaded document object model and all resources.
 	prepend('#console', '<div class="log">' + Date.now() + ', ' + getOrientation() + ', Event:load, ViewportHeight:' +  window.innerHeight +  ', VerticalScroll:' + getVerticalScroll() + ', e.currentTarget:' + e.currentTarget.innerHeight + ', e.target:' + e.target.defaultView.innerHeight + '</div>');
 
 	if(window.innerHeight < globalInitialViewportHeight) {
+		globalInitialViewportDifference = globalInitialViewportHeight - window.innerHeight;
 		globalInitialViewportHeight = window.innerHeight;
 	}
 	globalInitialLoadEventTime = Date.now();
+
+	/*if(window.location.hash.length != 0) {
+		window.location = window.location.hash;
+	}*/
 });
 
 window.addEventListener('resize', function(e) {
 	var numViewportHeight = window.innerHeight;
 	var strOrientation = getOrientation();
-
-	/*if(strOrientation == 'landscape') {
-		if(numViewportHeight <= globalInitialViewportHeight) {
-			// Show components.
-			document.querySelector('.tabbar').classList.remove('hide');
-		} else {
-			// Hide components.
-			document.querySelector('.tabbar').classList.add('hide');
-		}
-	}
-
-	if(strOrientation == 'portrait') {
-		if(numViewportHeight == globalInitialViewportHeight) {
-			// Show components.
-			document.querySelector('.tabbar').classList.remove('hide');
-		} else {
-			// Hide components.
-			document.querySelector('.tabbar').classList.add('hide');
-		}
-	}*/
+	var isFirst = false;
+	var eleBar = document.querySelector('.tabbar');
+	var numLogDateNow = Date.now();
 
 	if(strOrientation == 'landscape' && (Date.now() - globalInitialLoadEventTime) <= 500) {
 		globalInitialViewportHeight = numViewportHeight;
-		prepend('#console', '<div class="log">' + Date.now() + ', ' + strOrientation + ', Event:resize, InitialViewportHeight:' +  globalInitialViewportHeight + '</div>');
+		isFirst = true;
+		prepend('#console', '<div class="log">' + numLogDateNow + ', ' + strOrientation + ', Event:resize, InitialViewportHeight:' +  globalInitialViewportHeight + '</div>');
 	}
 
-	if(numViewportHeight == globalInitialViewportHeight) {
+	if(numViewportHeight < globalFirstViewportHeight) {
+		globalInitialViewportDifference = globalFirstViewportHeight - numViewportHeight;
+	}
+	prepend('#console', '<div class="log">' + numLogDateNow + ', ' + strOrientation + ', Event:resize, ' + globalFirstViewportHeight + ', ' + numViewportHeight + '</div>');
+
+	if(globalInitialViewportHeight == numViewportHeight) {
 		// Show components.
-		document.querySelector('.tabbar').classList.remove('hide');
+		eleBar.classList.remove('tabbar_hide');
+		eleBar.classList.add('tabbar_show');
+		if(strOrientation == 'landscape' && globalInitialViewportDifference == 44 && isFirst == true) {
+			eleBar.style.bottom = '-40px';
+		} else if(strOrientation == 'landscape' && globalInitialViewportDifference == 44) {
+			eleBar.style.bottom = '4px';
+		}
+		prepend('#console', '<div class="log">' + numLogDateNow + ', ' + strOrientation + ', Event:resize, Show components</div>');
 	} else {
 		// Hide components.
-		document.querySelector('.tabbar').classList.add('hide');
+		eleBar.classList.add('tabbar_hide');
+		eleBar.classList.remove('tabbar_show');
+		if(strOrientation == 'landscape' && globalInitialViewportDifference == 44) {
+			eleBar.style.bottom = '-88px';
+		}
+		prepend('#console', '<div class="log">' + numLogDateNow + ', ' + strOrientation + ', Event:resize, Hide components</div>');
 	}
 
-	//console.log(e, e.currentTarget.innerHeight, e.target.innerHeight, e.srcElement.innerHeight);
-	prepend('#console', '<div class="log">' + Date.now() + ', ' + strOrientation + ', Event:resize, ViewportHeight:' +  numViewportHeight + '</div>');
+	prepend('#console', '<div class="log">' + numLogDateNow + ', ' + strOrientation + ', Event:resize, ViewportHeight:' +  numViewportHeight + '</div>');
 });
 
 window.addEventListener('orientationchange', function(e) {
+	window.location.reload();
+});
+
+/*window.addEventListener('scroll', function(e) {
 	var numViewportHeight = window.innerHeight;
 	var strOrientation = getOrientation();
 
-	setVerticalScrollFromWindow();
-	window.location.reload();
-
-	prepend('#console', '<div class="log">' + Date.now() + ', ' + strOrientation + ', Event:resize, ViewportHeight:' +  numViewportHeight + '</div>');
-});
+	if(strOrientation == 'landscape' && globalInitialViewportHeight != numViewportHeight) {
+		var eleBar = document.querySelector('.tabbar');
+		if(eleBar.classList.contains('tabbar_show')) {
+			// Hide components.
+			eleBar.classList.add('tabbar_hide');
+			eleBar.classList.remove('tabbar_show');
+		}
+		prepend('#console', '<div class="log">' + numLogDateNow + ', ' + strOrientation + ', Event:resize, InitialViewportHeight:' +  globalInitialViewportHeight + '</div>');
+	}
+});*/
 
 var eleSliderPrevActions = document.querySelectorAll('.slider .prev');
 for(var numIndex = 0;numIndex < eleSliderPrevActions.length;numIndex += 1) {
@@ -476,8 +464,8 @@ for(var numIndex = 0;numIndex < eleSliderPrevActions.length;numIndex += 1) {
 }
 
 var eleSliderNextActions = document.querySelectorAll('.slider .next');
-	for(var numIndex = 0;numIndex < eleSliderNextActions.length;numIndex += 1) {
-		eleSliderNextActions[numIndex].addEventListener('click', function(e) {
+for(var numIndex = 0;numIndex < eleSliderNextActions.length;numIndex += 1) {
+	eleSliderNextActions[numIndex].addEventListener('click', function(e) {
 		var eleThis = this;
 		var eleSlider = eleThis.parentNode;
 		var eleSlides = eleSlider.querySelectorAll('.slides figure');
@@ -497,25 +485,6 @@ var eleSliderNextActions = document.querySelectorAll('.slider .next');
 		}
 	});
 }
-
-/*document.querySelector('.slider').addEventListener('scroll', function(e) {
-	var eleSlider = e.target;
-	var eleSlide = document.querySelectorAll('.slider span')[1];
-
-	console.log(e.target.scrollLeft, eleSlide.offsetLeft);
-
-	if(eleSlider.scrollLeft >= eleSlide.offsetLeft) {
-		document.querySelector('.slider').scrollLeft = 346;
-
-		//window.setTimeout(function() {
-		//	console.log(eleSlider);
-		//	eleSlider.scrollLeft = eleSlide.offsetLeft;
-		//	document.querySelector('.slider').scrollLeft = 100;
-		//}, 500);
-	}
-
-	//prepend('#console', '<div class="log">' + Date.now() + ', Event:resize, Scroll:' +  numViewportHeight + '</div>');
-});*/
 
 	</script>
 <!-- END: Page Specific Scripts -->
