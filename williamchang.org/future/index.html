@@ -2,7 +2,7 @@
 
 <!-- XHTML5 Mobile-First Responsive Boilerplate, Designed By William Chang, Created 2016-07-27, Modified 2017-05-10 -->
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="tabbar_fix_html">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -77,28 +77,23 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 	#main_frame #region_header .main_heading .main_link {display:block;}
 	#main_frame #region_header .main_heading .main_link .main_avatar {width:100px;height:100px;margin:20px 0 10px 0;border-radius:50%;}
 	#main_frame #region_header .main_heading .main_link .main_title {display:block;}
-	/*#main_frame #region_header .main_title_superscript {display:none;position:relative;width:210px;height:0;top:10px;left:110px;font-size:12px;}
-	#main_frame #region_header .main_heading {margin:0;padding-bottom:10px;overflow:hidden;}
-	#main_frame #region_header .main_heading .main_link {}
-	#main_frame #region_header .main_heading .main_link .main_avatar {float:left;width:100px;height:100px;margin-left:10px;border-radius:50%;}
-	#main_frame #region_header .main_heading .main_link .main_title {float:left;width:60%;margin-top:36px;margin-left:10px;}*/
 	#main_frame #region_middle {margin:0;padding-top:2px;border-top-right-radius:10px;border-top-left-radius:10px;background-color:#fff;font-size:16px;}
 	#main_frame #region_footer {margin-top:-20px;padding:10px 0 60px 0;background-color:#fff;}
 	h1, h2, h3, h4, h5, h6, p, .main_title_superscript {margin-right:10px;margin-left:10px;}
-	.main_title_superscript {color:#3c475b;}
-	.main_title_superscript a:link, .main_title_superscript a:visited {text-decoration:none;color:#3c475b;}
-	.main_title_superscript a:hover, .main_title_superscript a:active {text-decoration:underline;color:#000;}
+	.main_title_superscript {color:#ccc;}
+	.main_title_superscript a:link, .main_title_superscript a:visited {text-decoration:none;color:#ccc;}
+	.main_title_superscript a:hover, .main_title_superscript a:active {text-decoration:underline;color:#ccc;}
+	.main_heading {color:#fff;}
+	.main_heading a:link, .main_heading a:visited {text-decoration:none;color:#fff;}
+	.main_heading a:hover, .main_heading a:active {text-decoration:none;color:#fff;}
 
 	/* Simple Touch Tab Bar */
-	.tabbar {position:fixed;z-index:1000;width:100%;height:80px;bottom:-40px;left:0;overflow:hidden;transition:bottom 0.1s;border-top:solid 1px #bbb;background-color:#fff;opacity:0.96;}
-	.tabbar.tabbar_hide {bottom:-80px;}
-	.tabbar.tabbar_show {bottom:-40px;}
-	.tabbar ul {display:table;table-layout:fixed;width:100%;height:100%;margin:0;padding:0;list-style:none;}
-	.tabbar ul li {display:table-cell;}
-	.tabbar ul li a {display:block;height:80px;text-align:center;line-height:40px;}
-	/*.tabbar_fix_html {height:100%;overflow-y:scroll;-webkit-overflow-scrolling:touch;}
-	.tabbar_fix_body {height:100%;overflow-y:scroll;-webkit-overflow-scrolling:touch;}*/
-	::-webkit-scrollbar {display:none;}
+	#tabbar {position:fixed;z-index:1000;width:100%;height:40px;overflow:hidden;background-color:#fff;opacity:0.96;}
+	#tabbar.tabbar_hide {}
+	#tabbar.tabbar_show {}
+	#tabbar ul {display:table;table-layout:fixed;width:100%;height:100%;margin:0;padding:0;list-style:none;}
+	#tabbar ul li {display:table-cell;}
+	#tabbar ul li a {display:block;height:40px;text-align:center;line-height:40px;}
 
 	/* Simple Touch Slider */
 	.slider {display:block;z-index:0;height:240px;margin-bottom:16px;padding:10px 0 10px 10px;background-color:#555;overflow-x:scroll;overflow-y:hidden;-webkit-overflow-scrolling:touch;white-space:nowrap;}
@@ -118,6 +113,23 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 	.badges ul li {display:inline;}
 }
 
+/* All portrait, Extra small devices, Small devices, Medium devices */
+@media (max-width:1024px) and (orientation:portrait) {
+	/* Simple Touch Tab Bar */
+	#tabbar {position:fixed;bottom:0;left:0;transition:bottom 0.1s;}
+	#tabbar.tabbar_hide {bottom:-40px;}
+	#tabbar.tabbar_show {bottom:0;}
+}
+
+/* All landscape, Extra small devices, Small devices, Medium devices */
+@media (max-width:1024px) and (orientation:landscape) {
+	#main_frame #region_header {margin-top:40px;}
+	/* Simple Touch Tab Bar */
+	#tabbar {position:fixed;top:0;left:0;transition:top 0.1s;}
+	#tabbar.tabbar_hide {top:-40px;}
+	#tabbar.tabbar_show {top:0;}
+}
+
 /* Extra extra small devices (portrait phones, less than 321px) */
 /*@media (max-width:320px) {
 	#main_frame #region_header .main_title_superscript {display:none;width:180px;top:0;}
@@ -126,8 +138,8 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 
 /* Medium devices (tablets, less than 992px) */
 @media (min-width:768px) and (max-width:1024px) {
-	.tabbar {transform:none;transition:none;}
-	.tabbar.tabbar_hide {display:block;transform:none;}
+	#tabbar {transform:none;transition:none;}
+	#tabbar.tabbar_hide {display:block;transform:none;}
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -179,16 +191,17 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 	.badges ul {margin:0;padding:0;width:100%;}
 	.badges ul li {display:inline;}
 }
+
 	</style>
 <!-- END: Page Specific Styles -->
 </head>
-<body class="tabbar_fix_body">
+<body>
 	<div id="main_frame"><div id="main_frame_inner">
 
 		<!--[if lt IE 8]>
 			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div id="console">
+		<div id="console" class="hide">
 			<div class="log template">Test Console Log</div>
 		</div>
 
@@ -201,7 +214,7 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 			</header>
 <!-- END: Region Header -->
 
-			<nav class="navigation_primary tabbar"><ul>
+			<nav id="tabbar" class="navigation_primary"><ul>
 				<li><a href="#section_intro" style="background-color:cyan">Intro</a></li>
 				<li><a href="#section_featured" style="background-color:magenta;">Featured</a></li>
 				<li><a href="#section_resume" style="background-color:yellow;">Resume</a></li>
@@ -355,67 +368,52 @@ function getVerticalScroll() {
 	return (window.pageYOffset || document.documentElement.scrollTop) - (document.documentElement.clientTop || 0);
 }
 
-var globalFirstViewportHeight = window.innerHeight;
-var globalInitialViewportHeight = window.innerHeight;
-var globalInitialViewportDifference = 0;
+var globalLargestViewportHeight = window.innerHeight;
 var globalInitialLoadEventTime = 0;
+var globalPreviousVerticalScroll = 0;
 
 document.addEventListener('DOMContentLoaded', function(e) {
 	// Browser loaded document object model.
 	prepend('#console', '<div class="log">' + Date.now() + ', ' + getOrientation() + ', Event:DOMContentLoaded, ViewportHeight:' +  window.innerHeight + ', e.currentTarget:' + e.currentTarget.defaultView.innerHeight + ', e.target:' + e.target.defaultView.innerHeight + '</div>');
+
+	if(getOrientation() == 'landscape' && window.location.hash.length != 0) {
+		var eleBar = document.getElementById('tabbar');
+		eleBar.classList.add('tabbar_hide');
+		eleBar.classList.remove('tabbar_show');
+		globalPreviousVerticalScroll = getVerticalScroll();
+	}
 });
 
 window.addEventListener('load', function(e) {
 	// Browser loaded document object model and all resources.
 	prepend('#console', '<div class="log">' + Date.now() + ', ' + getOrientation() + ', Event:load, ViewportHeight:' +  window.innerHeight +  ', VerticalScroll:' + getVerticalScroll() + ', e.currentTarget:' + e.currentTarget.innerHeight + ', e.target:' + e.target.defaultView.innerHeight + '</div>');
 
-	if(window.innerHeight < globalInitialViewportHeight) {
-		globalInitialViewportDifference = globalInitialViewportHeight - window.innerHeight;
-		globalInitialViewportHeight = window.innerHeight;
+	if(window.innerHeight < globalLargestViewportHeight) {
+		globalLargestViewportHeight = window.innerHeight;
 	}
 	globalInitialLoadEventTime = Date.now();
-
-	/*if(window.location.hash.length != 0) {
-		window.location = window.location.hash;
-	}*/
 });
 
 window.addEventListener('resize', function(e) {
 	var numViewportHeight = window.innerHeight;
 	var strOrientation = getOrientation();
-	var isFirst = false;
-	var eleBar = document.querySelector('.tabbar');
+	var eleBar = document.getElementById('tabbar');
 	var numLogDateNow = Date.now();
 
 	if(strOrientation == 'landscape' && (Date.now() - globalInitialLoadEventTime) <= 500) {
-		globalInitialViewportHeight = numViewportHeight;
-		isFirst = true;
-		prepend('#console', '<div class="log">' + numLogDateNow + ', ' + strOrientation + ', Event:resize, InitialViewportHeight:' +  globalInitialViewportHeight + '</div>');
+		globalLargestViewportHeight = numViewportHeight;
 	}
 
-	if(numViewportHeight < globalFirstViewportHeight) {
-		globalInitialViewportDifference = globalFirstViewportHeight - numViewportHeight;
-	}
-	prepend('#console', '<div class="log">' + numLogDateNow + ', ' + strOrientation + ', Event:resize, ' + globalFirstViewportHeight + ', ' + numViewportHeight + '</div>');
-
-	if(globalInitialViewportHeight == numViewportHeight) {
+	if(globalLargestViewportHeight == numViewportHeight) {
 		// Show components.
 		eleBar.classList.remove('tabbar_hide');
 		eleBar.classList.add('tabbar_show');
-		if(strOrientation == 'landscape' && globalInitialViewportDifference == 44 && isFirst == true) {
-			eleBar.style.bottom = '-40px';
-		} else if(strOrientation == 'landscape' && globalInitialViewportDifference == 44) {
-			eleBar.style.bottom = '4px';
-		}
-		prepend('#console', '<div class="log">' + numLogDateNow + ', ' + strOrientation + ', Event:resize, Show components</div>');
+		prepend('#console', '<div class="log">' + numLogDateNow + ', ' + strOrientation + ', Event:resize, Show</div>');
 	} else {
 		// Hide components.
 		eleBar.classList.add('tabbar_hide');
 		eleBar.classList.remove('tabbar_show');
-		if(strOrientation == 'landscape' && globalInitialViewportDifference == 44) {
-			eleBar.style.bottom = '-88px';
-		}
-		prepend('#console', '<div class="log">' + numLogDateNow + ', ' + strOrientation + ', Event:resize, Hide components</div>');
+		prepend('#console', '<div class="log">' + numLogDateNow + ', ' + strOrientation + ', Event:resize, Hide</div>');
 	}
 
 	prepend('#console', '<div class="log">' + numLogDateNow + ', ' + strOrientation + ', Event:resize, ViewportHeight:' +  numViewportHeight + '</div>');
@@ -425,20 +423,38 @@ window.addEventListener('orientationchange', function(e) {
 	window.location.reload();
 });
 
-/*window.addEventListener('scroll', function(e) {
-	var numViewportHeight = window.innerHeight;
-	var strOrientation = getOrientation();
+window.addEventListener('scroll', function(e) {
+	if(getOrientation() == 'landscape') {
+		var eleBar = document.getElementById('tabbar');
 
-	if(strOrientation == 'landscape' && globalInitialViewportHeight != numViewportHeight) {
-		var eleBar = document.querySelector('.tabbar');
-		if(eleBar.classList.contains('tabbar_show')) {
+		if(eleBar.classList.contains('tabbar_clicked')) {
+			globalPreviousVerticalScroll = getVerticalScroll();
+			eleBar.classList.remove('tabbar_clicked');
+		}
+		if(getVerticalScroll() < (globalPreviousVerticalScroll - 10)) {
+			if(eleBar.classList.contains('tabbar_hide')) {
+				// Show components.
+				eleBar.classList.remove('tabbar_hide');
+				eleBar.classList.add('tabbar_show');
+			}
+		}
+	}
+});
+
+var eleTabActions = document.querySelectorAll('#tabbar a');
+for(var numIndex = 0;numIndex < eleTabActions.length;numIndex += 1) {
+	eleTabActions[numIndex].addEventListener('click', function(e) {
+		var eleThis = this;
+		var eleBar = eleThis.parentNode.parentNode.parentNode;
+
+		if(getOrientation() == 'landscape') {
+			eleBar.classList.add('tabbar_clicked');
 			// Hide components.
 			eleBar.classList.add('tabbar_hide');
 			eleBar.classList.remove('tabbar_show');
 		}
-		prepend('#console', '<div class="log">' + numLogDateNow + ', ' + strOrientation + ', Event:resize, InitialViewportHeight:' +  globalInitialViewportHeight + '</div>');
-	}
-});*/
+	});
+}
 
 var eleSliderPrevActions = document.querySelectorAll('.slider .prev');
 for(var numIndex = 0;numIndex < eleSliderPrevActions.length;numIndex += 1) {
