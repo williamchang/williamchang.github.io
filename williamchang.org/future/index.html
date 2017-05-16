@@ -73,6 +73,11 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 #console .log:first-child {border-top:0;}
 #console .log.template {display:none;}
 
+/* Safe Mode */
+.main_avatar {display:none;}
+.slider .prev {display:none;}
+.slider .next {display:none;}
+
 /* Extra small devices (portrait phones, less than 544px), Small devices (landscape phones, less than 768px), Medium devices (tablets, less than 992px) */
 @media (max-width:991px) {
 	/* General Rules */
@@ -84,12 +89,13 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 	#main_frame #region_header .main_title_superscript {display:block;text-align:center;font-size:12px;}
 	#main_frame #region_header .main_heading {margin:0;text-align:center;}
 	#main_frame #region_header .main_heading .main_link {display:block;}
-	#main_frame #region_header .main_heading .main_link .main_avatar {width:100px;height:100px;margin:20px 0 10px 0;border-radius:50%;}
+	#main_frame #region_header .main_heading .main_link .main_avatar {display:inline;width:100px;height:100px;margin:20px 0 10px 0;border-radius:50%;}
 	#main_frame #region_header .main_heading .main_link .main_title {display:block;}
 	#main_frame #region_middle {margin:0;padding-top:2px;border-top-right-radius:10px;border-top-left-radius:10px;background-color:#fff;font-size:16px;}
 	#main_frame #region_footer {margin-top:-20px;padding:10px 0 60px 0;background-color:#fff;}
 
 	h1, h2, h3, h4, h5, h6, p, .main_title_superscript {margin-right:10px;margin-left:10px;}
+	h1, h2, h3, h4, h5, h6 {text-align:center;}
 	.main_title_superscript {color:#ccc;}
 	.main_title_superscript a:link, .main_title_superscript a:visited {text-decoration:none;color:#ccc;}
 	.main_title_superscript a:hover, .main_title_superscript a:active {text-decoration:underline;color:#ccc;}
@@ -121,8 +127,8 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 	.credit {margin:10px 0;font-size:10px;color:#666;}
 	.credit a:link, .credit a:visited {text-decoration:none;color:#666;}
 	.credit a:hover, .credit a:active {text-decoration:underline;color:#aaa;}
-	.badges ul {margin:0;padding:0;width:100%;}
-	.badges ul li {display:inline;}
+	.badges dl {margin:0;padding:0;width:100%;}
+	.badges dl dt {display:inline;}
 }
 
 /* All portrait, Extra small devices, Small devices, Medium devices */
@@ -173,7 +179,7 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 	#main_frame .region_column1 #region_header .main_title_superscript {margin-left:20px;font-size:9px;color:#fff;}
 	#main_frame .region_column1 #region_header .main_heading {margin-bottom:12px;}
 	#main_frame .region_column1 #region_header .main_heading .main_link {}
-	#main_frame .region_column1 #region_header .main_heading .main_link .main_avatar {box-shadow:0 0 30px 0 rgba(0,0,0,0.4);border-radius:50%;}
+	#main_frame .region_column1 #region_header .main_heading .main_link .main_avatar {display:inline;box-shadow:0 0 30px 0 rgba(0,0,0,0.4);border-radius:50%;}
 	#main_frame .region_column1 #region_header .main_heading .main_link .main_title {font-size:14px;color:#fff;}
 	#main_frame .region_column2 #region_middle {padding:10px 0 10px 0;border-radius:10px;background:#fff;}
 	#main_frame .region_column2 #region_footer {display:block;clear:both;}
@@ -206,8 +212,8 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 	.credit {margin:10px 0;font-size:9px;color:#aaa;}
 	.credit a:link, .credit a:visited {text-decoration:none;color:#aaa;}
 	.credit a:hover, .credit a:active {text-decoration:underline;color:#eee;}
-	.badges ul {margin:0;padding:0;width:100%;}
-	.badges ul li {display:inline;}
+	.badges dl {margin:0;padding:0;width:100%;}
+	.badges dl dt {display:inline;}
 }
 
 	</style>
@@ -334,11 +340,11 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 <!-- BEGIN: Region Footer -->
 			<footer id="region_footer">
 				<div class="credit center">Designed by <a href="http://www.babybluebox.com/" title="DieHard">William Chang</a></div>
-				<div class="badges center"><ul>
-					<li><a href="http://validator.w3.org/check?uri=referer" title="W3C XHTML5 Compliant"><img src="http://www.creativecrew.org/images/valid_xhtml50_80x15.png" alt="W3C XHTML5 Compliant" title="W3C XHTML5 Compliant" height="15" width="80"/></a></li>
-					<li><a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3" title="W3C CSS3 Compliant"><img src="http://www.creativecrew.org/images/valid_css30_80x15.png" alt="W3C CSS3 Compliant" title="W3C CSS3 Compliant" height="15" width="80"/></a></li>
-					<li><a href="http://vanilla-js.com" title="Vanilla JS Compliant"><img src="http://www.creativecrew.org/images/valid_vanillajs_80x15.png" alt="Vanilla JS Compliant" title="Vanilla JS Compliant" height="15" width="80"/></a></li>
-				</ul></div>
+				<div class="badges center"><dl>
+					<dt><a href="http://validator.w3.org/check?uri=referer" title="W3C XHTML5 Compliant"><img src="http://www.creativecrew.org/images/valid_xhtml50_80x15.png" alt="W3C XHTML5 Compliant" title="W3C XHTML5 Compliant" height="15" width="80"/></a></dt>
+					<dt><a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3" title="W3C CSS3 Compliant"><img src="http://www.creativecrew.org/images/valid_css30_80x15.png" alt="W3C CSS3 Compliant" title="W3C CSS3 Compliant" height="15" width="80"/></a></dt>
+					<dt><a href="http://vanilla-js.com" title="Vanilla JS Compliant"><img src="http://www.creativecrew.org/images/valid_vanillajs_80x15.png" alt="Vanilla JS Compliant" title="Vanilla JS Compliant" height="15" width="80"/></a></dt>
+				</dl></div>
 			</footer>
 <!-- END: Region Footer -->
 
@@ -396,9 +402,12 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
 	if(getOrientation() == 'landscape' && window.location.hash.length != 0) {
 		var eleBar = document.getElementById('tabbar');
-		eleBar.classList.add('tabbar_hide');
-		eleBar.classList.remove('tabbar_show');
+
 		globalPreviousVerticalScroll = getVerticalScroll();
+		if(globalPreviousVerticalScroll > eleBar.offsetHeight) {
+			eleBar.classList.add('tabbar_hide');
+			eleBar.classList.remove('tabbar_show');
+		}
 	}
 });
 
@@ -445,16 +454,16 @@ window.addEventListener('scroll', function(e) {
 	if(getOrientation() == 'landscape') {
 		var eleBar = document.getElementById('tabbar');
 
-		if(eleBar.classList.contains('tabbar_clicked')) {
-			globalPreviousVerticalScroll = getVerticalScroll();
-			eleBar.classList.remove('tabbar_clicked');
-		}
 		if(getVerticalScroll() < (globalPreviousVerticalScroll - 10)) {
 			if(eleBar.classList.contains('tabbar_hide')) {
 				// Show components.
 				eleBar.classList.remove('tabbar_hide');
 				eleBar.classList.add('tabbar_show');
 			}
+			eleBar.classList.remove('tabbar_clicked');
+		}
+		if(eleBar.classList.contains('tabbar_clicked')) {
+			globalPreviousVerticalScroll = getVerticalScroll();
 		}
 	}
 });
