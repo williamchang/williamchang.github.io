@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!-- XHTML5 Mobile-First Responsive Boilerplate, Designed By William Chang, Created 2016-07-27, Modified 2017-05-10 -->
+<!-- XHTML5 Mobile-First Responsive Boilerplate, Designed By William Chang, Created 2016-07-27, Modified 2017-05-18 -->
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
@@ -29,7 +29,7 @@ body {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:14px;color:#00
 h1 {color:#3c475b;font-weight:bold;}
 h2 {color:#3c475b;font-weight:bold;}
 h3 {color:#3c475b;font-weight:bold;}
-h4 {color:#3c475b;font-weight:bold;}
+h4 {color:#3c475b;font-weight:normal;text-transform:uppercase;font-family:Tahoma, Helvetica, sans-serif;}
 p {margin:0 0 16px 0;}
 ul {margin:0 0 16px 30px;list-style-type:disc;}
 ul ul {margin:0 0 0 30px;list-style-type:circle;}
@@ -73,10 +73,15 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 #console .log:first-child {border-top:0;}
 #console .log.template {display:none;}
 
-/* Safe Mode */
+/* Browser Safe Mode */
 .main_avatar {display:none;}
+.navigation_primary ul li {background-position:-100% -100%;}
 .slider .prev {display:none;}
 .slider .next {display:none;}
+.badges ul {margin:0;padding:0;list-style:none;}
+
+/* Browser Upgrade Prompt */
+.browserupgrade {margin:0.2em 0;background:#ccc;color:#000;padding:0.2em 0;}
 
 /* Extra small devices (portrait phones, less than 544px), Small devices (landscape phones, less than 768px), Medium devices (tablets, less than 992px) */
 @media (max-width:991px) {
@@ -127,8 +132,8 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 	.credit {margin:10px 0;font-size:10px;color:#666;}
 	.credit a:link, .credit a:visited {text-decoration:none;color:#666;}
 	.credit a:hover, .credit a:active {text-decoration:underline;color:#aaa;}
-	.badges dl {margin:0;padding:0;width:100%;}
-	.badges dl dt {display:inline;}
+	.badges ul {margin:0;padding:0;width:100%;list-style:none;}
+	.badges ul li {display:inline;}
 }
 
 /* All portrait, Extra small devices, Small devices, Medium devices */
@@ -176,7 +181,7 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 	#main_frame .region_column2 > .region_column2_inner {}
 
 	#main_frame .region_column1 #region_header {color:#000;}
-	#main_frame .region_column1 #region_header .main_title_superscript {margin-left:20px;font-size:9px;color:#fff;}
+	#main_frame .region_column1 #region_header .main_title_superscript {margin:0 10px 0 20px;font-size:9px;color:#fff;}
 	#main_frame .region_column1 #region_header .main_heading {margin-bottom:12px;}
 	#main_frame .region_column1 #region_header .main_heading .main_link {}
 	#main_frame .region_column1 #region_header .main_heading .main_link .main_avatar {display:inline;box-shadow:0 0 30px 0 rgba(0,0,0,0.4);border-radius:50%;}
@@ -212,8 +217,8 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 	.credit {margin:10px 0;font-size:9px;color:#aaa;}
 	.credit a:link, .credit a:visited {text-decoration:none;color:#aaa;}
 	.credit a:hover, .credit a:active {text-decoration:underline;color:#eee;}
-	.badges dl {margin:0;padding:0;width:100%;}
-	.badges dl dt {display:inline;}
+	.badges ul {margin:0;padding:0;width:100%;list-style:none;}
+	.badges ul li {display:inline;}
 }
 
 	</style>
@@ -222,8 +227,8 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 <body>
 	<div id="main_frame"><div id="main_frame_inner">
 
-		<!--[if lt IE 8]>
-			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<!--[if lte IE 9]>
+			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 		<![endif]-->
 		<div id="console" class="hide">
 			<div class="log template">Test Console Log</div>
@@ -233,7 +238,7 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 
 <!-- BEGIN: Region Header -->
 			<header id="region_header">
-				<div class="main_title_superscript">Inspired by <a href="http://en.wikipedia.org/wiki/John_Resig">John Resig</a> &amp; <a href="http://en.wikipedia.org/wiki/John_D._Carmack">Software Engineer John Carmack</a></div>
+				<div class="main_title_superscript">Following my role models <a href="https://en.wikipedia.org/wiki/John_Resig">John Resig</a>, <a href="https://en.wikipedia.org/wiki/John_Carmack">John Carmack</a>, &amp; <a href="https://www.hanselman.com">Scott Hanselman</a></div>
 				<h1 class="main_heading"><a class="main_link" href="/future"><img class="main_avatar" src="http://dummyimage.com/100x100/aaa/fff.png" alt="Placeholder"><span class="main_title">William Chang</span></a></h1>
 			</header>
 <!-- END: Region Header -->
@@ -340,11 +345,11 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 <!-- BEGIN: Region Footer -->
 			<footer id="region_footer">
 				<div class="credit center">Designed by <a href="http://www.babybluebox.com/" title="DieHard">William Chang</a></div>
-				<div class="badges center"><dl>
-					<dt><a href="http://validator.w3.org/check?uri=referer" title="W3C XHTML5 Compliant"><img src="http://www.creativecrew.org/images/valid_xhtml50_80x15.png" alt="W3C XHTML5 Compliant" title="W3C XHTML5 Compliant" height="15" width="80"/></a></dt>
-					<dt><a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3" title="W3C CSS3 Compliant"><img src="http://www.creativecrew.org/images/valid_css30_80x15.png" alt="W3C CSS3 Compliant" title="W3C CSS3 Compliant" height="15" width="80"/></a></dt>
-					<dt><a href="http://vanilla-js.com" title="Vanilla JS Compliant"><img src="http://www.creativecrew.org/images/valid_vanillajs_80x15.png" alt="Vanilla JS Compliant" title="Vanilla JS Compliant" height="15" width="80"/></a></dt>
-				</dl></div>
+				<div class="badges center"><ul>
+					<li><a href="http://validator.w3.org/check?uri=referer" title="W3C XHTML5 Compliant"><img src="http://www.creativecrew.org/images/valid_xhtml50_80x15.png" alt="W3C XHTML5 Compliant" title="W3C XHTML5 Compliant" height="15" width="80"/></a></li>
+					<li><a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3" title="W3C CSS3 Compliant"><img src="http://www.creativecrew.org/images/valid_css30_80x15.png" alt="W3C CSS3 Compliant" title="W3C CSS3 Compliant" height="15" width="80"/></a></li>
+					<li><a href="http://vanilla-js.com" title="Vanilla JS Compliant"><img src="http://www.creativecrew.org/images/valid_vanillajs_80x15.png" alt="Vanilla JS Compliant" title="Vanilla JS Compliant" height="15" width="80"/></a></li>
+				</ul></div>
 			</footer>
 <!-- END: Region Footer -->
 
