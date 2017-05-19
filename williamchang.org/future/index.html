@@ -60,6 +60,15 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 .a-light a:link, .a-light a:visited {text-decoration:none;color:#ddd;}
 .a-light a:hover, .a-light a:active {text-decoration:underline;color:#ddd;}
 
+/* Collapsable */
+details {}
+details summary {padding:16px 0 16px 0;border-top:solid 1px #d6d6d6;font-size:18px;font-weight:bold;color:#3c475b;cursor:pointer;}
+details summary:focus {outline-style:none;}
+details summary::-webkit-details-marker {display:none;}
+details summary:after {content:'+';float:right;width:25px;height:25px;margin-top:-2px;border-radius:4px;background-color:#c0c0c0;text-align:center;font-size:20px;font-weight:bold;color:#fff;}
+details:first-of-type summary {border-top:0;}
+details[open] summary:after {content:'\2013';}
+
 /* Icons */
 .navigation_home {background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgUFVCTElDICctLy9XM0MvL0RURCBTVkcgMS4xLy9FTicgJ2h0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCc+PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MCA1MCIgaGVpZ2h0PSI1MHB4IiBpZD0iTGF5ZXJfMSIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNTAgNTAiIHdpZHRoPSI1MHB4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cmVjdCBmaWxsPSJub25lIiBoZWlnaHQ9IjUwIiB3aWR0aD0iNTAiLz48cG9seWxpbmUgZmlsbD0ibm9uZSIgcG9pbnRzPSI0NCwyMSA0NCw0OSA2LDQ5IDYsMjEiIHN0cm9rZT0iIzgwODA4MCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIvPjxwb2x5bGluZSBmaWxsPSJub25lIiBwb2ludHM9IjE5LDQ5IDE5LDI4IDMxLDI4IDMxLDQ5ICIgc3Ryb2tlPSIjODA4MDgwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBvbHlnb24gcG9pbnRzPSIzNSw1IDM1LDguMDE2IDM3LDEwLjA5NCAzNyw3IDM5LDcgMzksMTIuMjAzIDQxLDE0LjI2NiA0MSw1IiBmaWxsPSIjODA4MDgwIi8+PHBvbHlsaW5lIGZpbGw9Im5vbmUiIHBvaW50cz0iMS4xMSwyNS45NDIgMjUsMS4wNTMgNDguODksMjUuOTQzIiBzdHJva2U9IiM4MDgwODAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4=');}
 .navigation_intro {background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgUFVCTElDICctLy9XM0MvL0RURCBTVkcgMS4xLy9FTicgJ2h0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCc+PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MCA1MCIgaGVpZ2h0PSI1MHB4IiBpZD0iTGF5ZXJfMSIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNTAgNTAiIHdpZHRoPSI1MHB4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48Y2lyY2xlIGN4PSIyNSIgY3k9IjI1IiBmaWxsPSJub25lIiByPSIyNCIgc3Ryb2tlPSIjYzBjMGMwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHJlY3QgZmlsbD0ibm9uZSIgaGVpZ2h0PSI1MCIgd2lkdGg9IjUwIi8+PHBhdGggZD0iTTI5LjkzMywzNS41MjhjLTAuMTQ2LTEuNjEyLTAuMDktMi43MzctMC4wOS00LjIxYzAuNzMtMC4zODMsMi4wMzgtMi44MjUsMi4yNTktNC44ODhjMC41NzQtMC4wNDcsMS40NzktMC42MDcsMS43NDQtMi44MTggYzAuMTQzLTEuMTg3LTAuNDI1LTEuODU1LTAuNzcxLTIuMDY1YzAuOTM0LTIuODA5LDIuODc0LTExLjQ5OS0zLjU4OC0xMi4zOTdjLTAuNjY1LTEuMTY4LTIuMzY4LTEuNzU5LTQuNTgxLTEuNzU5IGMtOC44NTQsMC4xNjMtOS45MjIsNi42ODYtNy45ODEsMTQuMTU2Yy0wLjM0NSwwLjIxLTAuOTEzLDAuODc4LTAuNzcxLDIuMDY1YzAuMjY2LDIuMjExLDEuMTcsMi43NzEsMS43NDQsMi44MTggYzAuMjIsMi4wNjIsMS41OCw0LjUwNSwyLjMxMiw0Ljg4OGMwLDEuNDczLDAuMDU1LDIuNTk4LTAuMDkxLDQuMjFjLTEuMjYxLDMuMzktNy43MzcsMy42NTUtMTEuNDczLDYuOTI0IGMzLjkwNiwzLjkzMywxMC4yMzYsNi43NDYsMTYuOTE2LDYuNzQ2czE0LjUzMi01LjI3NCwxNS44MzktNi43MTNDMzcuNjg4LDM5LjE4NiwzMS4xOTcsMzguOTMsMjkuOTMzLDM1LjUyOHoiIGZpbGw9IiNjMGMwYzAiLz48L3N2Zz4=');}
@@ -99,7 +108,7 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 	#main_frame #region_middle {margin:0;padding-top:2px;border-top-right-radius:10px;border-top-left-radius:10px;background-color:#fff;font-size:16px;}
 	#main_frame #region_footer {margin-top:-20px;padding:10px 0 60px 0;background-color:#fff;}
 
-	h1, h2, h3, h4, h5, h6, p, .main_title_superscript {margin-right:10px;margin-left:10px;}
+	h1, h2, h3, h4, h5, h6, summary, p, .main_title_superscript {margin-right:10px;margin-left:10px;}
 	h1, h2, h3, h4, h5, h6 {text-align:center;}
 	.main_title_superscript {color:#ccc;}
 	.main_title_superscript a:link, .main_title_superscript a:visited {text-decoration:none;color:#ccc;}
@@ -189,7 +198,7 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 	#main_frame .region_column2 #region_middle {padding:10px 0 10px 0;border-radius:10px;background:#fff;}
 	#main_frame .region_column2 #region_footer {display:block;clear:both;}
 
-	h1, h2, h3, h4, h5, h6, p {margin-right:20px;margin-left:20px;}
+	h1, h2, h3, h4, h5, h6, summary, p {margin-right:20px;margin-left:20px;}
 	.main_title_superscript {color:#fff;}
 	.main_title_superscript a:link, .main_title_superscript a:visited {text-decoration:none;color:#ccc;}
 	.main_title_superscript a:hover, .main_title_superscript a:active {text-decoration:underline;color:#ccc;}
@@ -208,10 +217,11 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 	.slider .slides figure a {}
 	.slider .slides figure img {border-radius:6px;}
 	.slider .slides figure figcaption {position:absolute;bottom:20px;width:318px;text-align:center;text-shadow:0 0 4px rgba(0,0,0,0.5);color:#fff;}
-	.slider .prev {position:absolute;top:0;left:0;width:25%;height:100%;}
+	.slider .prev {position:absolute;display:block;top:0;left:0;width:25%;height:100%;}
 	.slider .prev span {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:40px;font-weight:bold;color:#ccc;}
-	.slider .next {position:absolute;top:0;right:0;width:25%;height:100%;}
+	.slider .next {position:absolute;display:block;top:0;right:0;width:25%;height:100%;}
 	.slider .next span {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:40px;font-weight:bold;color:#ccc;}
+	.slider a:focus {outline-style:none;}
 
 	/* Footer */
 	.credit {margin:10px 0;font-size:9px;color:#aaa;}
@@ -223,6 +233,21 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 
 	</style>
 <!-- END: Page Specific Styles -->
+
+<!--[if lt IE 9]>
+	<script>
+document.createElement('header');
+document.createElement('nav');
+document.createElement('main');
+document.createElement('section');
+document.createElement('details');
+document.createElement('summary');
+document.createElement('figure');
+document.createElement('figcaption');
+document.createElement('footer');
+	</script>
+<![endif]-->
+
 </head>
 <body>
 	<div id="main_frame"><div id="main_frame_inner">
@@ -266,62 +291,70 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 				<section id="section_featured">
 					<h2>Featured</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas massa purus, facilisis ut justo vel, gravida porta diam. Quisque non sem turpis. Proin odio erat, ullamcorper sit amet porttitor id, convallis a nisi. Praesent a efficitur dolor. Ut dignissim arcu blandit nibh blandit faucibus. Maecenas sit amet risus eget ipsum gravida pulvinar. In ultricies quam quis justo bibendum finibus. Integer convallis mi sit amet erat tincidunt, in pharetra nulla tincidunt.</p>
-					<h3>Project 1</h3>
-					<p>Nullam erat nisi, dignissim et magna non, molestie mattis est. Nam non porttitor risus. Aenean hendrerit efficitur est eget accumsan. Morbi ultrices vestibulum nisl at aliquam. Pellentesque at vehicula metus. Pellentesque vulputate leo sed dapibus sollicitudin. Nam quis tincidunt mauris. Aenean sagittis maximus rhoncus. Integer a porta nisi, sit amet finibus ligula. Sed non turpis imperdiet felis congue euismod. Nulla varius massa vel dapibus ornare. Donec vulputate, sapien sit amet finibus hendrerit, metus nunc ornare mauris, posuere molestie sem purus eget lacus. Nulla ultricies, ipsum vel feugiat tempor, tortor turpis congue mi, bibendum mollis metus ligula vel nunc. Etiam eget nisl et odio semper scelerisque. Praesent eu velit at mi ultricies consectetur.</p>
-					<div class="slider">
-						<div class="slides">
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a><figcaption>Slide One</figcaption></figure>
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a><figcaption>Slide Two</figcaption></figure>
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a><figcaption>Slide Three</figcaption></figure>
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a><figcaption>Slide Four</figcaption></figure>
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a><figcaption>Slide Five</figcaption></figure>
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a><figcaption>Slide Six</figcaption></figure>
+					<details open="open">
+						<summary>Project 1</summary>
+						<p>Nullam erat nisi, dignissim et magna non, molestie mattis est. Nam non porttitor risus. Aenean hendrerit efficitur est eget accumsan. Morbi ultrices vestibulum nisl at aliquam. Pellentesque at vehicula metus. Pellentesque vulputate leo sed dapibus sollicitudin. Nam quis tincidunt mauris. Aenean sagittis maximus rhoncus. Integer a porta nisi, sit amet finibus ligula. Sed non turpis imperdiet felis congue euismod. Nulla varius massa vel dapibus ornare. Donec vulputate, sapien sit amet finibus hendrerit, metus nunc ornare mauris, posuere molestie sem purus eget lacus. Nulla ultricies, ipsum vel feugiat tempor, tortor turpis congue mi, bibendum mollis metus ligula vel nunc. Etiam eget nisl et odio semper scelerisque. Praesent eu velit at mi ultricies consectetur.</p>
+						<div class="slider">
+							<div class="slides">
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a><figcaption>Slide One</figcaption></figure>
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a><figcaption>Slide Two</figcaption></figure>
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a><figcaption>Slide Three</figcaption></figure>
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a><figcaption>Slide Four</figcaption></figure>
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a><figcaption>Slide Five</figcaption></figure>
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a><figcaption>Slide Six</figcaption></figure>
+							</div>
+							<a href="javascript:;" class="prev"><span>&lt;</span></a>
+							<a href="javascript:;" class="next"><span>&gt;</span></a>
 						</div>
-						<a href="javascript:;" class="prev"><span>&lt;</span></a>
-						<a href="javascript:;" class="next"><span>&gt;</span></a>
-					</div>
-					<h3>Project 2</h3>
-					<p>Nam fringilla ornare nulla id fermentum. Mauris posuere, purus a fringilla vehicula, dolor libero accumsan purus, vel iaculis tortor nibh et eros. Nulla feugiat nisi turpis. Duis a rutrum lorem. Morbi dictum, nunc quis ullamcorper varius, tellus urna maximus magna, tempor vulputate purus dolor et mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut finibus tortor. Quisque libero risus, laoreet eget metus non, tincidunt sagittis ante. Nam posuere urna ante, non auctor justo auctor nec. Morbi at tincidunt nibh. Nullam tincidunt pulvinar mauris et pretium. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-					<div class="slider">
-						<div class="slides">
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
+					</details>
+					<details>
+						<summary>Project 2</summary>
+						<p>Nam fringilla ornare nulla id fermentum. Mauris posuere, purus a fringilla vehicula, dolor libero accumsan purus, vel iaculis tortor nibh et eros. Nulla feugiat nisi turpis. Duis a rutrum lorem. Morbi dictum, nunc quis ullamcorper varius, tellus urna maximus magna, tempor vulputate purus dolor et mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut finibus tortor. Quisque libero risus, laoreet eget metus non, tincidunt sagittis ante. Nam posuere urna ante, non auctor justo auctor nec. Morbi at tincidunt nibh. Nullam tincidunt pulvinar mauris et pretium. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+						<div class="slider">
+							<div class="slides">
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
+							</div>
+							<a href="javascript:;" class="prev"><span>&lt;</span></a>
+							<a href="javascript:;" class="next"><span>&gt;</span></a>
 						</div>
-						<a href="javascript:;" class="prev"><span>&lt;</span></a>
-						<a href="javascript:;" class="next"><span>&gt;</span></a>
-					</div>
-					<h3>Project 3</h3>
-					<p>In condimentum metus non iaculis fermentum. Etiam ut nunc ligula. Mauris feugiat dui purus, vitae facilisis nisi tristique et. Phasellus blandit blandit mi, at ornare justo imperdiet id. Suspendisse blandit, ex vel elementum dignissim, enim nisl varius libero, eu tempor diam erat vitae lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam finibus sapien blandit, tincidunt nisi ut, luctus enim. Nulla eu enim nisl. Sed posuere, sem ac rutrum pulvinar, lacus mi consequat velit, eu lacinia sapien magna vel magna. Sed hendrerit pretium velit sed rutrum. Morbi nec fermentum odio. Ut ac egestas leo.</p>
-					<div class="slider">
-						<div class="slides">
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
+					</details>
+					<details>
+						<summary>Project 3</summary>
+						<p>In condimentum metus non iaculis fermentum. Etiam ut nunc ligula. Mauris feugiat dui purus, vitae facilisis nisi tristique et. Phasellus blandit blandit mi, at ornare justo imperdiet id. Suspendisse blandit, ex vel elementum dignissim, enim nisl varius libero, eu tempor diam erat vitae lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam finibus sapien blandit, tincidunt nisi ut, luctus enim. Nulla eu enim nisl. Sed posuere, sem ac rutrum pulvinar, lacus mi consequat velit, eu lacinia sapien magna vel magna. Sed hendrerit pretium velit sed rutrum. Morbi nec fermentum odio. Ut ac egestas leo.</p>
+						<div class="slider">
+							<div class="slides">
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
+							</div>
+							<a href="javascript:;" class="prev"><span>&lt;</span></a>
+							<a href="javascript:;" class="next"><span>&gt;</span></a>
 						</div>
-						<a href="javascript:;" class="prev"><span>&lt;</span></a>
-						<a href="javascript:;" class="next"><span>&gt;</span></a>
-					</div>
-					<h3>Project 4</h3>
-					<p>Morbi quis ipsum pellentesque, varius purus ut, pellentesque diam. Suspendisse in tellus enim. Praesent et euismod sapien, gravida tincidunt dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus sed velit rutrum, iaculis elit sit amet, luctus erat. Nullam molestie eros quis quam cursus, et maximus erat semper. Aenean tincidunt libero in mi consequat, in egestas ante dictum. Ut ornare mauris at luctus semper. Nulla nec nulla rutrum, faucibus nunc vitae, mollis quam. Morbi ac ligula venenatis quam malesuada aliquam eget vestibulum nisl. Etiam et hendrerit diam, eu ornare eros. Suspendisse potenti. Duis eget rhoncus orci. Aliquam vel ex aliquet, pharetra dui ut, euismod purus. Nulla purus elit, pulvinar quis erat at, tristique congue augue.</p>
-					<div class="slider">
-						<div class="slides">
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
-							<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
+					</details>
+					<details>
+						<summary>Project 4</summary>
+						<p>Morbi quis ipsum pellentesque, varius purus ut, pellentesque diam. Suspendisse in tellus enim. Praesent et euismod sapien, gravida tincidunt dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus sed velit rutrum, iaculis elit sit amet, luctus erat. Nullam molestie eros quis quam cursus, et maximus erat semper. Aenean tincidunt libero in mi consequat, in egestas ante dictum. Ut ornare mauris at luctus semper. Nulla nec nulla rutrum, faucibus nunc vitae, mollis quam. Morbi ac ligula venenatis quam malesuada aliquam eget vestibulum nisl. Etiam et hendrerit diam, eu ornare eros. Suspendisse potenti. Duis eget rhoncus orci. Aliquam vel ex aliquet, pharetra dui ut, euismod purus. Nulla purus elit, pulvinar quis erat at, tristique congue augue.</p>
+						<div class="slider">
+							<div class="slides">
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
+								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
+							</div>
+							<a href="javascript:;" class="prev"><span>&lt;</span></a>
+							<a href="javascript:;" class="next"><span>&gt;</span></a>
 						</div>
-						<a href="javascript:;" class="prev"><span>&lt;</span></a>
-						<a href="javascript:;" class="next"><span>&gt;</span></a>
-					</div>
+					</details>
 				</section>
 				<section id="section_resume">
 					<h2>Resume</h2>
