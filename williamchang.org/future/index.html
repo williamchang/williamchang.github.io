@@ -62,7 +62,7 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 
 /* Collapsable */
 details {}
-details summary {padding:16px 0 16px 0;border-top:solid 1px #d6d6d6;font-size:18px;font-weight:bold;color:#3c475b;cursor:pointer;}
+details summary {display:block;padding:16px 0 16px 0;border-top:solid 1px #d6d6d6;font-size:18px;font-weight:bold;color:#3c475b;cursor:pointer;}
 details summary:focus {outline-style:none;}
 details summary::-webkit-details-marker {display:none;}
 details summary:after {content:'+';float:right;width:25px;height:25px;margin-top:-2px;border-radius:4px;background-color:#c0c0c0;text-align:center;font-size:20px;font-weight:bold;color:#fff;}
@@ -236,6 +236,7 @@ details[open] summary:after {content:'\2013';}
 
 <!--[if lt IE 9]>
 	<script>
+/* HTML5 Shiv for Microsoft Internet Explorer */
 document.createElement('header');
 document.createElement('nav');
 document.createElement('main');
