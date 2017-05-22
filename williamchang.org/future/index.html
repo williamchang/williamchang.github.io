@@ -65,9 +65,10 @@ details {}
 details summary {display:block;padding:16px 0 16px 0;border-top:solid 1px #d6d6d6;font-size:18px;font-weight:bold;color:#3c475b;cursor:pointer;}
 details summary:focus {outline-style:none;}
 details summary::-webkit-details-marker {display:none;}
-details summary:after {content:'+';float:right;width:25px;height:25px;margin-top:-2px;border-radius:4px;background-color:#c0c0c0;text-align:center;font-size:20px;font-weight:bold;color:#fff;}
+details summary:before {content:'+';float:right;width:25px;height:25px;margin-top:-2px;border-radius:4px;background-color:#c0c0c0;text-align:center;font-size:20px;font-weight:bold;color:#fff;}
+details summary span {display:block;margin-top:4px;font-size:10px;font-weight:normal;}
 details:first-of-type summary {border-top:0;}
-details[open] summary:after {content:'\2013';}
+details[open] summary:before {content:'\2013';}
 
 /* Icons */
 .navigation_home {background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgUFVCTElDICctLy9XM0MvL0RURCBTVkcgMS4xLy9FTicgJ2h0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCc+PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MCA1MCIgaGVpZ2h0PSI1MHB4IiBpZD0iTGF5ZXJfMSIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNTAgNTAiIHdpZHRoPSI1MHB4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cmVjdCBmaWxsPSJub25lIiBoZWlnaHQ9IjUwIiB3aWR0aD0iNTAiLz48cG9seWxpbmUgZmlsbD0ibm9uZSIgcG9pbnRzPSI0NCwyMSA0NCw0OSA2LDQ5IDYsMjEiIHN0cm9rZT0iIzgwODA4MCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIvPjxwb2x5bGluZSBmaWxsPSJub25lIiBwb2ludHM9IjE5LDQ5IDE5LDI4IDMxLDI4IDMxLDQ5ICIgc3Ryb2tlPSIjODA4MDgwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBvbHlnb24gcG9pbnRzPSIzNSw1IDM1LDguMDE2IDM3LDEwLjA5NCAzNyw3IDM5LDcgMzksMTIuMjAzIDQxLDE0LjI2NiA0MSw1IiBmaWxsPSIjODA4MDgwIi8+PHBvbHlsaW5lIGZpbGw9Im5vbmUiIHBvaW50cz0iMS4xMSwyNS45NDIgMjUsMS4wNTMgNDguODksMjUuOTQzIiBzdHJva2U9IiM4MDgwODAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4=');}
@@ -130,10 +131,10 @@ details[open] summary:after {content:'\2013';}
 	/* Simple Touch Slider */
 	.slider {display:block;z-index:0;height:240px;margin-bottom:16px;padding:10px 0 10px 10px;background-color:#555;overflow-x:scroll;overflow-y:hidden;-webkit-overflow-scrolling:touch;white-space:nowrap;}
 	.slider .slides {}
-	.slider .slides figure {position:relative;display:inline-block;margin:0;padding-right:10px;}
+	.slider .slides figure {position:relative;display:inline-block;width:320px;height:240px;margin:0 10px 0 0;background-color:#aaa;border-radius:6px;text-align:center;overflow:hidden;}
 	.slider .slides figure a {}
-	.slider .slides figure img {border-radius:6px;}
-	.slider .slides figure figcaption {position:absolute;bottom:20px;width:318px;text-align:center;text-shadow:0 0 4px rgba(0,0,0,0.5);color:#fff;}
+	.slider .slides figure img {}
+	.slider .slides figure figcaption {position:absolute;bottom:20px;width:318px;text-align:center;text-shadow:0 0 5px rgba(0,0,0,1);color:#fff;}
 	.slider .prev {display:none;}
 	.slider .next {display:none;}
 
@@ -213,10 +214,10 @@ details[open] summary:after {content:'\2013';}
 	/* Simple Click Slider */
 	.slider {position:relative;display:block;height:240px;margin:0 0 16px 0;padding:10px 0;background-color:#efefef;overflow:hidden;white-space:nowrap;}
 	.slider .slides {position:absolute;width:10000px;height:240px;}
-	.slider .slides figure {position:relative;float:left;margin:0 0 0 160px;transition:0.5s ease-in-out;}
+	.slider .slides figure {position:relative;float:left;width:320px;height:240px;margin:0 0 0 160px;transition:0.5s ease-in-out;background-color:#aaa;border-radius:6px;text-align:center;overflow:hidden;}
 	.slider .slides figure a {}
-	.slider .slides figure img {border-radius:6px;}
-	.slider .slides figure figcaption {position:absolute;bottom:20px;width:318px;text-align:center;text-shadow:0 0 4px rgba(0,0,0,0.5);color:#fff;}
+	.slider .slides figure img {}
+	.slider .slides figure figcaption {position:absolute;bottom:20px;width:318px;text-align:center;text-shadow:0 0 5px rgba(0,0,0,1);color:#fff;}
 	.slider .prev {position:absolute;display:block;top:0;left:0;width:25%;height:100%;}
 	.slider .prev span {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:40px;font-weight:bold;color:#ccc;}
 	.slider .next {position:absolute;display:block;top:0;right:0;width:25%;height:100%;}
@@ -293,7 +294,7 @@ document.createElement('footer');
 					<h2>Featured</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas massa purus, facilisis ut justo vel, gravida porta diam. Quisque non sem turpis. Proin odio erat, ullamcorper sit amet porttitor id, convallis a nisi. Praesent a efficitur dolor. Ut dignissim arcu blandit nibh blandit faucibus. Maecenas sit amet risus eget ipsum gravida pulvinar. In ultricies quam quis justo bibendum finibus. Integer convallis mi sit amet erat tincidunt, in pharetra nulla tincidunt.</p>
 					<details open="open">
-						<summary>Project 1</summary>
+						<summary>Project 1 <span>Subheading</span></summary>
 						<p>Nullam erat nisi, dignissim et magna non, molestie mattis est. Nam non porttitor risus. Aenean hendrerit efficitur est eget accumsan. Morbi ultrices vestibulum nisl at aliquam. Pellentesque at vehicula metus. Pellentesque vulputate leo sed dapibus sollicitudin. Nam quis tincidunt mauris. Aenean sagittis maximus rhoncus. Integer a porta nisi, sit amet finibus ligula. Sed non turpis imperdiet felis congue euismod. Nulla varius massa vel dapibus ornare. Donec vulputate, sapien sit amet finibus hendrerit, metus nunc ornare mauris, posuere molestie sem purus eget lacus. Nulla ultricies, ipsum vel feugiat tempor, tortor turpis congue mi, bibendum mollis metus ligula vel nunc. Etiam eget nisl et odio semper scelerisque. Praesent eu velit at mi ultricies consectetur.</p>
 						<div class="slider">
 							<div class="slides">
@@ -309,7 +310,7 @@ document.createElement('footer');
 						</div>
 					</details>
 					<details>
-						<summary>Project 2</summary>
+						<summary>Project 2 <span>Subheading</span></summary>
 						<p>Nam fringilla ornare nulla id fermentum. Mauris posuere, purus a fringilla vehicula, dolor libero accumsan purus, vel iaculis tortor nibh et eros. Nulla feugiat nisi turpis. Duis a rutrum lorem. Morbi dictum, nunc quis ullamcorper varius, tellus urna maximus magna, tempor vulputate purus dolor et mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut finibus tortor. Quisque libero risus, laoreet eget metus non, tincidunt sagittis ante. Nam posuere urna ante, non auctor justo auctor nec. Morbi at tincidunt nibh. Nullam tincidunt pulvinar mauris et pretium. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
 						<div class="slider">
 							<div class="slides">
@@ -325,23 +326,16 @@ document.createElement('footer');
 						</div>
 					</details>
 					<details>
-						<summary>Project 3</summary>
+						<summary>Project 3 <span>Subheading</span></summary>
 						<p>In condimentum metus non iaculis fermentum. Etiam ut nunc ligula. Mauris feugiat dui purus, vitae facilisis nisi tristique et. Phasellus blandit blandit mi, at ornare justo imperdiet id. Suspendisse blandit, ex vel elementum dignissim, enim nisl varius libero, eu tempor diam erat vitae lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam finibus sapien blandit, tincidunt nisi ut, luctus enim. Nulla eu enim nisl. Sed posuere, sem ac rutrum pulvinar, lacus mi consequat velit, eu lacinia sapien magna vel magna. Sed hendrerit pretium velit sed rutrum. Morbi nec fermentum odio. Ut ac egestas leo.</p>
-						<div class="slider">
-							<div class="slides">
-								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
-								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
-								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
-								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
-								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
-								<figure><a tabindex="-1" href="javascript:;"><img src="http://dummyimage.com/320x240/aaa/fff.png" alt="Placeholder"></a></figure>
-							</div>
-							<a href="javascript:;" class="prev"><span>&lt;</span></a>
-							<a href="javascript:;" class="next"><span>&gt;</span></a>
-						</div>
+						<ul>
+							<li><a href="javascript:;">Link 1</a></li>
+							<li><a href="javascript:;">Link 2</a></li>
+							<li><a href="javascript:;">Link 3</a></li>
+						</ul>
 					</details>
 					<details>
-						<summary>Project 4</summary>
+						<summary>Project 4 <span>Subheading</span></summary>
 						<p>Morbi quis ipsum pellentesque, varius purus ut, pellentesque diam. Suspendisse in tellus enim. Praesent et euismod sapien, gravida tincidunt dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus sed velit rutrum, iaculis elit sit amet, luctus erat. Nullam molestie eros quis quam cursus, et maximus erat semper. Aenean tincidunt libero in mi consequat, in egestas ante dictum. Ut ornare mauris at luctus semper. Nulla nec nulla rutrum, faucibus nunc vitae, mollis quam. Morbi ac ligula venenatis quam malesuada aliquam eget vestibulum nisl. Etiam et hendrerit diam, eu ornare eros. Suspendisse potenti. Duis eget rhoncus orci. Aliquam vel ex aliquet, pharetra dui ut, euismod purus. Nulla purus elit, pulvinar quis erat at, tristique congue augue.</p>
 						<div class="slider">
 							<div class="slides">
