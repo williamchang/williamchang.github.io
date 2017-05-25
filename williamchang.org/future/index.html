@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!-- XHTML5 Mobile-First Responsive Boilerplate, Designed By William Chang, Created 2016-07-27, Modified 2017-05-18 -->
+<!-- XHTML5 Mobile-First Responsive Boilerplate, Designed By William Chang, Created 2016-07-27, Modified 2017-05-23 -->
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
@@ -46,6 +46,7 @@ strong {font-weight:bold;}
 .center {text-align:center;}
 .hide {display:none;}
 .list_heading {margin-bottom:4px;}
+.word_break {word-break:break-all;}
 
 /* Links */
 a {color:#524cc3;}
@@ -61,7 +62,7 @@ h3 a:hover, h3 a:active {text-decoration:none;color:#000;}
 .a-light a:link, .a-light a:visited {text-decoration:none;color:#ddd;}
 .a-light a:hover, .a-light a:active {text-decoration:underline;color:#ddd;}
 
-/* Collapsable */
+/* Collapsible */
 details {}
 details summary {display:block;padding:16px 0 16px 0;border-top:solid 1px #d6d6d6;font-size:17px;font-weight:bold;color:#3c475b;cursor:pointer;}
 details summary:focus {outline-style:none;}
@@ -444,6 +445,19 @@ function getVerticalScroll() {
 	return (window.pageYOffset || document.documentElement.scrollTop) - (document.documentElement.clientTop || 0);
 }
 
+function loadLazyImages(eleImages) {
+	if(eleImages != null) {
+		for(var numIndex = 0;numIndex < eleImages.length;numIndex += 1) {
+			var strImageDataSrc = eleImages[numIndex].getAttribute('data-src');
+
+			if(strImageDataSrc != null && strImageDataSrc.length > 0) {
+				eleImages[numIndex].setAttribute('src', strImageDataSrc);
+				eleImages[numIndex].removeAttribute('data-src');
+			}
+		}
+	}
+}
+
 document.addEventListener('DOMContentLoaded', function(e) {
 	// Browser loaded document object model.
 	prepend('#console', '<div class="log">' + Date.now() + ', ' + getOrientation() + ', Event:DOMContentLoaded, ViewportHeight:' +  window.innerHeight + ', e.currentTarget:' + e.currentTarget.defaultView.innerHeight + ', e.target:' + e.target.defaultView.innerHeight + '</div>');
@@ -533,6 +547,20 @@ for(var numIndex = 0;numIndex < eleTabActions.length;numIndex += 1) {
 			eleBar.classList.remove('tabbar_show');
 		}
 	});
+}
+
+var eleCollapsibleHeader = document.querySelectorAll('details summary');
+for(var numIndex = 0;numIndex < eleCollapsibleHeader.length;numIndex += 1) {
+	// Or document.querySelectorAll('details:not([open]) summary');
+	var eleDetailsContainer = eleCollapsibleHeader[numIndex].parentNode;
+
+	if(eleDetailsContainer.hasAttribute('open')) {
+		loadLazyImages(eleDetailsContainer.querySelectorAll('img'))
+	} else {
+		eleCollapsibleHeader[numIndex].addEventListener('click', function(e) {
+			loadLazyImages(this.parentNode.querySelectorAll('img'))
+		});
+	}
 }
 
 var eleSliderSlides = document.querySelectorAll('.slider .slides figure');
