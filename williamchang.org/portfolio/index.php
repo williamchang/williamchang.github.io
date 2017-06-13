@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 
-<!-- XHTML5 Mobile-First Responsive Boilerplate, Designed By William Chang, Created 2016-07-27, Modified 2017-05-23 -->
+<!-- XHTML5 Mobile-First Responsive Boilerplate, Designed By William Chang, Created 2016-07-27, Modified 2017-05-25 -->
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="x-ua-compatible" content="ie=edge" />
-	<title>Software Development Engineer Portfolio of William Chang</title>
+	<title>William Chang Software Development Engineer Portfolio</title>
 	<meta name="description" content="The portfolio of Software Engineer William Chang contains projects, programming source codes (C, C++, C#, VB, Java, PHP, JavaScript, SQL), and screenshots." />
 	<meta name="keywords" content="development, portfolio, resume, cv, curriculum vitae, job, work, career, research, architect, programmer, developer, software engineer, program manager, computer, projects, technologies, applications, programming, evangelist, it, information technology" />
 	<meta name="author" content="William Chang" />
@@ -37,6 +37,8 @@ ul ul ul {list-style-type:square;}
 ol {margin:0 0 16px 30px;list-style-type:decimal;}
 ol ol {margin:0 0 0 30px;}
 strong {font-weight:bold;}
+h1, h2, h3, h4, h5, h6, p, li, dl dt, dl dd {line-height:1.4;}
+img:not([src]) {visibility: hidden;}
 
 /* Basic Classes */
 .bold {font-weight:bold;}
@@ -296,15 +298,32 @@ document.createElement('footer');
 					<p>Hi, I'm a Full-Stack Software Development Engineer, Architect, IT Team Leader, <a href="https://en.wikipedia.org/wiki/DevOps">DevOps</a>, Programming Tutor, and Best Practice Enforcer. The following principles I embrace are <a href="https://en.wikipedia.org/wiki/KISS_principle">KISS</a> (Keep It Simple, Stupid), <a href="https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it">YAGNI</a> (You Aren't Gonna Need It), <a href="https://en.wikipedia.org/wiki/Component-based_software_engineering">Component-Based Development</a> (CBD), and <a href="https://en.wikipedia.org/wiki/Service-oriented_architecture">Service-Oriented Architecture</a> (SOA). I have a passion for creating and enhancing anything technology related. My motivation in development is to help end-users achieve their objectives and to empower them to excel.</p>
 					<h4>Specialities</h4>
 					<p>I have extensive experience in many fields of technology, but the work I am most passionate about are related to developing full-stack web applications, creating mobile apps, designing user experiences, IT <a href="https://en.wikipedia.org/wiki/Release_management">release management</a>, and managing <a href="https://en.wikipedia.org/wiki/Cross-functional_team">various teams</a>. The CMS (<a href="https://en.wikipedia.org/wiki/Content_management_system">Content Management System</a>) is another field of technology I have many years of experience. The popular CMS I work with mostly are <a href="https://en.wikipedia.org/wiki/WordPress">WordPress</a>, <a href="https://en.wikipedia.org/wiki/Drupal">Drupal</a>, <a href="https://en.wikipedia.org/wiki/Umbraco">Umbraco</a>, and <a href="https://www.sitecore.net/">Sitecore</a>. My specialization in CMS development is migrating content from old systems, integrating services (eg <a href="https://en.wikipedia.org/wiki/Web_analytics">Analytics</a>, <a href="https://en.wikipedia.org/wiki/Coveo">Coveo</a>, <a href="https://en.wikipedia.org/wiki/Apache_Lucene">Lucene</a>, <a href="https://en.wikipedia.org/wiki/Apache_Solr">Solr</a>), and architecting multiple sites. IT Infrastructure is another specialty that I lead as DevOps establishing strategies from source control branching to release management, creating environments (DEV, QA, STAGE, PROD) to be deployed sequentially, and automating the process of software delivery (aka <a href="https://en.wikipedia.org/wiki/Continuous_delivery">Continuous Delivery</a>).</p>
-					<h4>More About Me</h4>
-					<p>I'm a minimalist always seeking for efficiency and optimization. I read a lot of technology and science news. I don't sleep much because I love learning new technologies. From experience at work, I practice stakeholder consultant, managing teams, training developers, enforcing standard practices, creating automation tools, developing applications, software engineering, and user interface engineering. During my spare time, I enjoy doing technology research and prototyping experimental technologies for the future.</p>
 				</section>
 				<section id="section_featured">
 					<h2>Featured</h2>
-					<p>The list below is a long history of projects between my hobbies and jobs. The most recent projects are on the top and the oldest projects are at the bottom of the list.</p>
+					<p>Take a look at what I've done so far. Below is a long history of featured projects from my development hobby and jobs. The most recent projects are on the top and the oldest projects are at the bottom of the list.</p>
 					<details open="open">
+						<summary>GitHub Projects <span>.NET, Java, SQL, PowerShell, MSBuild, Sitecore, Umbraco</span></summary>
+						<p>Highlighting some of my Git repositories or see all by visiting my <a href="https://github.com/williamchang">GitHub</a>. I have used many version control systems (VCS) and project hosting services, like SourceForge and CodePlex. The previous hosting service that I migrated from was <a href="https://code.google.com/archive/p/creativecrew/">Google Code</a>, under the organization name I founded and started called Creative Crew (was known as, Developers Club) at University of Central Florida (UCF).</p>
+						<ul>
+							<li><a href="https://github.com/williamchang/powershell-scripts">PowerShell Scripts, MSBuild Scripts</a></li>
+							<li><a href="https://github.com/williamchang/crossdomain-aspnet">Cross-Domain Demonstration, Sharing Data Between Multiple Websites</a></li>
+							<li><a href="https://github.com/williamchang/sandbox-aspnetcore-mvc1">ASP.NET Core MVC Full-Stack App</a></li>
+							<li><a href="https://github.com/williamchang/sandbox-javaee-tomcat-embedded">Java EE Full-Stack App</a></li>
+							<li><a href="https://github.com/williamchang/creativecrew-web-aspnet-foundation_aspnet_webforms">ASP.NET Web Forms Full-Stack App</a></li>
+							<li><a href="https://github.com/williamchang/pushboard">WebSocket Demonstration, Multiplayer Game, Java EE</a>
+							<li><a href="https://github.com/williamchang/umbraco-webforms-contrib">Umbraco CMS Contrib</a></li>
+							<li><a href="https://github.com/williamchang/sitecore-mvc-contrib">Sitecore MVC Contrib</a></li>
+						</ul>
+					</details>
+					<details>
 						<summary>Enterprise Apps, SeaWorld Parks &amp; Entertainment <span>Sitecore Certified, ASP.NET MVC C#, MS SQL, JavaScript</span></summary>
 						<p>An enterprise system composed of many applications (eg sitecore, ecommerce, resellers), services (eg reservations, payments), and data (eg accounts, products, orders) all working together in unison. I started as a full-stack developer and then taking on many roles as a Sitecore Architect, IT Team Leader, and DevOps. For many years, I developed many enterprise applications for the company, implemented many features, and automated the infrastructure for the IT department. My colleagues recognized me as their production problem solver (digging through layers of code and data to find the cause) and their CMS expert for all Sitecore projects.</p>
+						<p class="list_heading">The following documents I created to enforce company standards and best practices:</p>
+						<ul>
+							<li><a href="http://williamchang.org/portfolio/docs_etc/Sitecore_Organization_And_Structure_For_Multiple_MVC_Projects.pdf">Sitecore - Organization and Structure for Multiple MVC Projects</a></li>
+							<li><a href="http://williamchang.org/portfolio/docs_etc/Sitecore_Development_Requirements_For_New_MVC_Projects.pdf">Sitecore - Development Requirements for New MVC Projects</a></li>
+						</ul>
 						<div class="slider">
 							<div class="slides">
 								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_seaworld_buschgardens_ecommerce1.png" alt="Ecommerce"></a></figure>
@@ -343,37 +362,7 @@ document.createElement('footer');
 						</div>
 					</details>
 					<details>
-						<summary>Apple iPhone App <span>Objective-C, C++, OpenGL ES, Physics 2D</span></summary>
-						<p>One of my hobby projects I do on my spare time. I created a console (CLI, command line interface) to quickly experiment features and a game using OpenGL ES 1.1 and Box2D physics engine for collision, bounce, and friction. This project is a prototype, by creating a simple application that explore the possibilities on Apple iPhone.</p>
-						<p class="italic bold">Review My <a href="https://github.com/williamchang/creativecrew-native-mobile-ios-sandbox">Source Code</a></p>
-						<div class="slider">
-							<div class="slides">
-								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/appleiphone_sandbox4.png" alt="Game Development"></a></figure>
-								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/appleiphone_sandbox5.png" alt="Physics Debugging"></a></figure>
-								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/appleiphone_sandbox2.png" alt="Console"></a></figure>
-								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/appleiphone_sandbox3.png" alt="Title Screen"></a></figure>
-								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/appleiphone_sandbox1.png" alt="Branding"></a></figure>
-							</div>
-							<a href="javascript:;" class="prev"><span>&lt;</span></a>
-							<a href="javascript:;" class="next"><span>&gt;</span></a>
-						</div>
-					</details>
-					<details>
-						<summary>Google Android App <span>Java</span></summary>
-						<p>One of my hobby projects I do on my spare time is creating a simple prototype application that explore the possibilities on Google Android. I created a console (CLI, command line interface) to quickly experiment features and a 2D graphics simulation by side scrolling a level using tiles. The tiles are cutouts from a single image for graphics performance and conserving memory. The tiles are used as building blocks to construct a seamless world.</p>
-						<p class="italic bold">Review My <a href="https://github.com/williamchang/creativecrew-native-mobile-android-sandbox">Source Code</a></p>
-						<div class="slider">
-							<div class="slides">
-								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/googleandroid_sandbox3.png" alt="2D Tiles Side Scrolling"></a></figure>
-								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/googleandroid_sandbox2.png" alt="Console"></a></figure>
-								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/googleandroid_sandbox1.png" alt="Branding"></a></figure>
-							</div>
-							<a href="javascript:;" class="prev"><span>&lt;</span></a>
-							<a href="javascript:;" class="next"><span>&gt;</span></a>
-						</div>
-					</details>
-					<details>
-						<summary>JavaScript Components and Helpers, jQuery Plugins</summary>
+						<summary>JS Components, JS Helpers, jQuery Plugins <span>JavaScript</span></summary>
 						<p>The following JavaScript components and helper functions I created and reused to meet the needs of many web applications.</p>
 						<p class="list_heading">Demos and Documentations</p>
 						<ul>
@@ -398,61 +387,12 @@ document.createElement('footer');
 						<p class="italic bold">Review My <a href="https://github.com/williamchang/creativecrew-web-php-domaingenerator">Source Code</a> and <a href="http://williamchang.org/domaingenerator/">Demo</a></p>
 					</details>
 					<details>
-						<summary>SCINET, Seminole County Government Florida <span>ASP.NET VB, MS SQL, YUI JavaScript, Ext JS</span></summary>
-						<p>A large project started in June 2003 that I helped developed with the goal of analyzing government business process, providing recommendations for process improvement, and software development to support the process changes. Since then analysis and refinement of hundreds of processes has taken place along with the supporting software development saving Seminole County millions of dollars in efficiency improvements annually.</p>
-						<div class="slider">
-							<div class="slides">
-								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_scinet1.png" alt="Parcel Viewer"></a></figure>
-								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_scinet2.png" alt="Desktop User Interface"></a></figure>
-							</div>
-							<a href="javascript:;" class="prev"><span>&lt;</span></a>
-							<a href="javascript:;" class="next"><span>&gt;</span></a>
-						</div>
-					</details>
-					<details>
 						<summary>FINDER, Florida Law Enforcement <span>ASP.NET C#, MS SQL</span></summary>
 						<p>A large project started in 2002 that I helped developed with a team. The first version of FINDER (Florida Integrated Network for Data Exchange and Retrieval) was installed in October 2003 connecting five law enforcement agencies in a federated peer-to-peer data sharing system and now has users from nearly every major law enforcement agency in the state of Florida. This application provides searching capability of hundreds of data sources and has provided a key role in solving hundreds of crimes.</p>
 						<div class="slider">
 							<div class="slides">
 								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_finder1.png" alt="Portal"></a></figure>
 								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_finder2.png" alt="Search Form"></a></figure>
-							</div>
-							<a href="javascript:;" class="prev"><span>&lt;</span></a>
-							<a href="javascript:;" class="next"><span>&gt;</span></a>
-						</div>
-					</details>
-					<details>
-						<summary>Program Assessment, UCF OEAS <span>ASP.NET VB, MS SQL, YUI JavaScript</span></summary>
-						<p>A web application designed to streamline and improve the assessment process at University of Central Florida (UCF). It includes complex state-based workflow and implements some software advances such as non-programmatic interface control and automated video-based embedded training.</p>
-						<div class="slider">
-							<div class="slides">
-								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_ucf_assessment1.png" alt="Homepage and Login"></a></figure>
-								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_ucf_assessment2.png" alt="User Welcome Page"></a></figure>
-								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_ucf_assessment3.png" alt="Help System"></a></figure>
-							</div>
-							<a href="javascript:;" class="prev"><span>&lt;</span></a>
-							<a href="javascript:;" class="next"><span>&gt;</span></a>
-						</div>
-					</details>
-					<details>
-						<summary>Waste Assessment, Brevard County Government Florida <span>ASP.NET VB, MS SQL, jQuery</span></summary>
-						<p>A web application that manages all aspects of determining the solid waste non-ad valorem assessment for all residentials and commercial properties based on different assessment types. This process is accomplished to provide the tax collector's office with solid waste non-ad valorem assessments that become part of the annual property tax bills.</p>
-						<div class="slider">
-							<div class="slides">
-								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_brevardcountyflorida1.png" alt="Login"></a></figure>
-								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_brevardcountyflorida2.png" alt="Search Form"></a></figure>
-								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_brevardcountyflorida3.png" alt="Data Results"></a></figure>
-							</div>
-							<a href="javascript:;" class="prev"><span>&lt;</span></a>
-							<a href="javascript:;" class="next"><span>&gt;</span></a>
-						</div>
-					</details>
-					<details>
-						<summary>US Y-STR Database <span>ASP.NET VB, MS SQL, jQuery</span></summary>
-						<p>A small project assigned to me to develop the front-end and the server-side code for the web forms. This NIJ funded project is a web application that searches an existing database of Y chromosome haplotypes.</p>
-						<div class="slider">
-							<div class="slides">
-								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_us_y-str1.png" alt="Search Form"></a></figure>
 							</div>
 							<a href="javascript:;" class="prev"><span>&lt;</span></a>
 							<a href="javascript:;" class="next"><span>&gt;</span></a>
@@ -490,14 +430,13 @@ document.createElement('footer');
 						</div>
 					</details>
 					<details>
-						<summary>Content Management, UCF CECS Engineering Technology <span>ASP.NET C#, MS SQL, jQuery</span></summary>
-						<p>Before any popular content management systems (CMS) emerged for ASP.NET 2.0, I was assigned to develop a web application to empower professors to manage content and files easily. I architect the application for professors to privately control their own set of pages and blogs using a friendly rich text editor and to quickly attach files using AJAX.</p>
+						<summary>Waste Assessment, Brevard County Government Florida <span>ASP.NET VB, MS SQL, jQuery</span></summary>
+						<p>A web application that manages all aspects of determining the solid waste non-ad valorem assessment for all residentials and commercial properties based on different assessment types. This process is accomplished to provide the tax collector's office with solid waste non-ad valorem assessments that become part of the annual property tax bills.</p>
 						<div class="slider">
 							<div class="slides">
-								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_ucf_ent1.png" alt="Published Content"></a></figure>
-								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_ucf_ent2.png" alt="Edit User"></a></figure>
-								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_ucf_ent3.png" alt="Content Types Management"></a></figure>
-								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_ucf_ent4.png" alt="Edit Page"></a></figure>
+								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_brevardcountyflorida1.png" alt="Login"></a></figure>
+								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_brevardcountyflorida2.png" alt="Search Form"></a></figure>
+								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_brevardcountyflorida3.png" alt="Data Results"></a></figure>
 							</div>
 							<a href="javascript:;" class="prev"><span>&lt;</span></a>
 							<a href="javascript:;" class="next"><span>&gt;</span></a>
@@ -518,9 +457,89 @@ document.createElement('footer');
 						</div>
 					</details>
 					<details>
+						<summary>Content Management, UCF CECS Engineering Technology <span>ASP.NET C#, MS SQL, jQuery</span></summary>
+						<p>Before any popular content management systems (CMS) emerged for ASP.NET 2.0, I was assigned to develop a web application to empower professors to manage content and files easily. I architect the application for professors to privately control their own set of pages and blogs using a friendly rich text editor and to quickly attach files using AJAX.</p>
+						<div class="slider">
+							<div class="slides">
+								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_ucf_ent1.png" alt="Published Content"></a></figure>
+								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_ucf_ent2.png" alt="Edit User"></a></figure>
+								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_ucf_ent3.png" alt="Content Types Management"></a></figure>
+								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_ucf_ent4.png" alt="Edit Page"></a></figure>
+							</div>
+							<a href="javascript:;" class="prev"><span>&lt;</span></a>
+							<a href="javascript:;" class="next"><span>&gt;</span></a>
+						</div>
+					</details>
+					<details>
+						<summary>Apple iPhone App <span>Objective-C, C++, OpenGL ES, Physics 2D</span></summary>
+						<p>One of my hobby projects I do on my spare time. I created a console (CLI, command line interface) to quickly experiment features and a game using OpenGL ES 1.1 and Box2D physics engine for collision, bounce, and friction. This project is a prototype, by creating a simple application that explore the possibilities on Apple iPhone.</p>
+						<p class="italic bold">Review My <a href="https://github.com/williamchang/creativecrew-native-mobile-ios-sandbox">Source Code</a></p>
+						<div class="slider">
+							<div class="slides">
+								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/appleiphone_sandbox4.png" alt="Game Development"></a></figure>
+								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/appleiphone_sandbox5.png" alt="Physics Debugging"></a></figure>
+								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/appleiphone_sandbox2.png" alt="Console"></a></figure>
+								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/appleiphone_sandbox3.png" alt="Title Screen"></a></figure>
+								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/appleiphone_sandbox1.png" alt="Branding"></a></figure>
+							</div>
+							<a href="javascript:;" class="prev"><span>&lt;</span></a>
+							<a href="javascript:;" class="next"><span>&gt;</span></a>
+						</div>
+					</details>
+					<details>
+						<summary>Google Android App <span>Java</span></summary>
+						<p>One of my hobby projects I do on my spare time is creating a simple prototype application that explore the possibilities on Google Android. I created a console (CLI, command line interface) to quickly experiment features and a 2D graphics simulation by side scrolling a level using tiles. The tiles are cutouts from a single image for graphics performance and conserving memory. The tiles are used as building blocks to construct a seamless world.</p>
+						<p class="italic bold">Review My <a href="https://github.com/williamchang/creativecrew-native-mobile-android-sandbox">Source Code</a></p>
+						<div class="slider">
+							<div class="slides">
+								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/googleandroid_sandbox3.png" alt="2D Tiles Side Scrolling"></a></figure>
+								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/googleandroid_sandbox2.png" alt="Console"></a></figure>
+								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/googleandroid_sandbox1.png" alt="Branding"></a></figure>
+							</div>
+							<a href="javascript:;" class="prev"><span>&lt;</span></a>
+							<a href="javascript:;" class="next"><span>&gt;</span></a>
+						</div>
+					</details>
+					<details>
+						<summary>SCINET, Seminole County Government Florida <span>ASP.NET VB, MS SQL, YUI JavaScript, Ext JS</span></summary>
+						<p>A large project started in June 2003 that I helped developed with the goal of analyzing government business process, providing recommendations for process improvement, and software development to support the process changes. Since then analysis and refinement of hundreds of processes has taken place along with the supporting software development saving Seminole County millions of dollars in efficiency improvements annually.</p>
+						<div class="slider">
+							<div class="slides">
+								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_scinet1.png" alt="Parcel Viewer"></a></figure>
+								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_scinet2.png" alt="Desktop User Interface"></a></figure>
+							</div>
+							<a href="javascript:;" class="prev"><span>&lt;</span></a>
+							<a href="javascript:;" class="next"><span>&gt;</span></a>
+						</div>
+					</details>
+					<details>
+						<summary>Program Assessment, UCF OEAS <span>ASP.NET VB, MS SQL, YUI JavaScript</span></summary>
+						<p>A web application designed to streamline and improve the assessment process at University of Central Florida (UCF). It includes complex state-based workflow and implements some software advances such as non-programmatic interface control and automated video-based embedded training.</p>
+						<div class="slider">
+							<div class="slides">
+								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_ucf_assessment1.png" alt="Homepage and Login"></a></figure>
+								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_ucf_assessment2.png" alt="User Welcome Page"></a></figure>
+								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_ucf_assessment3.png" alt="Help System"></a></figure>
+							</div>
+							<a href="javascript:;" class="prev"><span>&lt;</span></a>
+							<a href="javascript:;" class="next"><span>&gt;</span></a>
+						</div>
+					</details>
+					<details>
+						<summary>US Y-STR Database <span>ASP.NET VB, MS SQL, jQuery</span></summary>
+						<p>A small project assigned to me to develop the front-end and the server-side code for the web forms. This NIJ funded project is a web application that searches an existing database of Y chromosome haplotypes.</p>
+						<div class="slider">
+							<div class="slides">
+								<figure><a href="javascript:;"><img src="http://dummyimage.com/320x240/000/fff.png" data-src="http://williamchang.org/portfolio/image.php?mw=320&mh=240&img=gallery/web_aspnet_us_y-str1.png" alt="Search Form"></a></figure>
+							</div>
+							<a href="javascript:;" class="prev"><span>&lt;</span></a>
+							<a href="javascript:;" class="next"><span>&gt;</span></a>
+						</div>
+					</details>
+					<details>
 						<summary>Swing GUI and Java ME <span>Java, Swing, Windows Mobile</span></summary>
 						<p>A collection of small hobby projects I created for exploring, experimenting, and prototyping Java on desktop using GUI Swing and on mobile using Windows Mobile. The projects use Eclipse IDE (Integrated Development Environment).</p>
-						<p class="italic bold">Review My <a href="http://williamchang.org/portfolio/files/java_sandbox_20091203.zip">Source Code</a></p>
+						<p class="italic bold">Download and Review Source Code <a href="http://williamchang.org/portfolio/files/java_sandbox_20091203.zip">Source Code</a></p>
 					</details>
 					<details>
 						<summary>Game Engine <span>C++, OpenGL, DirectX, Physics 3D</span></summary>
@@ -532,7 +551,7 @@ document.createElement('footer');
 							<li><a href="https://www.youtube.com/watch?v=RR0lIdaMSys">Video of Level Created using Autodesk Maya</a></li>
 							<li><a href="https://www.youtube.com/watch?v=T17DW68Fb3k">Video of 3D Mouse Picker and Physics Demonstrations</a></li>
 						</ul>
-						</details>
+					</details>
 					<details>
 						<summary>Level Design for Quake 3 Weapons Factory Arena <span>QERadiant, GtkRadiant</span></summary>
 						<p>A very old hobby project I done during my teenage years, I was a level designer (aka mapper) for a game mod called Weapons Factory Arena (WFA) for Quake 3 Arena (Q3). The level editor tool I used was QERadiant and later switched to GtkRadiant, with a better lightmap &quot;.bsp&quot; compiler called &quot;ydnar Q3Map&quot;. I renamed the file types below from &quot;.pk3&quot; to &quot;.zip&quot; for your convenience. The &quot;.pk3&quot; file type is simply an archive file used by the Quake 3 engine. Unfortunately, the source maps were lost or misplaced.</p>
@@ -556,13 +575,13 @@ document.createElement('footer');
 						<li><a href="http://williamchang.org/portfolio/docs/resume_generic.txt">Text Document TXT</a></li>
 					</ul>
 					<div id="viewer_resume"></div>
-					<p>I believe in &quot;Jack of All Trades, Master of Many&quot; is possible because of the fundamentals are similar between technologies. The following tools and skills I acquired during my professional career as a full-stack developer.</p>
+					<p>I believe in &quot;<a href="https://medium.com/@anthonyambriz/jack-of-all-trades-master-of-many-22a6dbd6a86a">Jack of All Trades, Master of Many</a>&quot; is possible because of the fundamentals are similar between technologies. The following tools and skills I acquired during my professional career as a full-stack developer.</p>
 					<p class="list_heading">Front-End Web Development Tools &amp; Skills</p>
 					<ul>
-						<li>HTML, CSS, JavaScript, JSON</li>
+						<li>HTML, CSS, JavaScript, JSON, XML</li>
 						<li>Responsive Web Design (RWD), Canvas, WebSocket, and DOM (Document Object Model)</li>
 						<li>jQuery, AngularJS, Bootstrap, YUI, Ext JS, Microsoft Ajax Library</li>
-						<li>Google Chrome DevTools (Debug JavaScript, CSS, DOM, HTTP)</li>
+						<li>Google Chrome DevTools (Debug Client-Side and Network)</li>
 						<li>Adobe Photoshop and Illustrator</li>
 					</ul>
 					<p class="list_heading">.NET Development Tools &amp; Skills</p>
@@ -580,7 +599,7 @@ document.createElement('footer');
 					<ul>
 						<li>Java EE (Servlet and JSP), Swing GUI, Console</li>
 						<li>JDBC (Java Database Connectivity) and JPA (Java Persistence API)</li>
-						<li>MySQL and SQLite</li>
+						<li>MySQL and SQLite with SQLiteStudio</li>
 						<li>Maven</li>
 						<li>Eclipse IDE and Netbeans</li>
 						<li>Apache Tomcat</li>
@@ -588,28 +607,31 @@ document.createElement('footer');
 					<p class="list_heading">PHP Development Tools &amp; Skills</p>
 					<ul>
 						<li>WordPress and Drupal</li>
-						<li>MySQL and SQLite</li>
+						<li>MySQL with phpMyAdmin and SQLite</li>
 						<li>Eclipse IDE PDT (PHP Development Tools)</li>
-						<li>Linux Apache and Microsoft IIS 7+</li>
+						<li>Linux Apache HTTP Server and Microsoft IIS 7+</li>
 					</ul>
 					<p class="list_heading">General Development Tools &amp; Skills</p>
 					<ul>
 						<li>Repository Pattern for DAL (Data Access Layer)</li>
 						<li>Git, SVN (Subversion and TortoiseSVN), Microsoft Visual SourceSafe (VSS), CVS</li>
 						<li>Notepad++, Sublime Text, Beyond Compare</li>
+						<li>Doxygen (Source Code Documentation Generator)</li>
 						<li>WebService Studio and Wizdler (Debug SOAP)</li>
 						<li>Postman (Debug REST)</li>
 					</ul>
 				</section>
 				<section id="section_connect">
 					<h2>Connect</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas massa purus, facilisis ut justo vel, gravida porta diam. Quisque non sem turpis. Proin odio erat, ullamcorper sit amet porttitor id, convallis a nisi. Praesent a efficitur dolor. Ut dignissim arcu blandit nibh blandit faucibus. Maecenas sit amet risus eget ipsum gravida pulvinar. In ultricies quam quis justo bibendum finibus. Integer convallis mi sit amet erat tincidunt, in pharetra nulla tincidunt.</p>
+					<p>If you have a job available or simply interested in finding out more, then get in touch and let's get things moving. Please feel free to contact me using the list below.</p>
 					<ul class="word_break">
 						<li>Email: <a href="mailto:business@williamchang.org">business@williamchang.org</a></li>
 						<li>LinkedIn: <a href="https://www.linkedin.com/in/william-chang-11971020">https://www.linkedin.com/in/william-chang-11971020</a></li>
-						<li>GitHub: <a href="https://github.com/williamchang">https://github.com/williamchang</a></li>
+						<li>Twitter: <a href="https://twitter.com/williamchang">https://twitter.com/williamchang</a></li>
 					</ul>
-					<p>This responsive website has been designed, developed, and maintained by William Chang. It's built to be self-contained with minimal dependencies, embedded into a single file, and optimised for fast page load.</p>
+					<h4>More About Me And This Website</h4>
+					<p>I'm a minimalist, always pushing for efficiency and reducing technical debt. I read a lot of technology and science news. During my spare time, I enjoy researching and prototyping experimental technologies around the corner. When I'm not in front of a computer screen, I'm probably practicing guitar, playing tennis, <a href="https://en.wikipedia.org/wiki/Latin_dance">latin dancing</a>, or traveling.</p>
+					<p>This responsive website has been designed, developed, and maintained by William Chang. It is purpose-built to be a single page and file with minimal dependencies, hand-coded in pure vanilla HTML/CSS/JavaScript, and optimized for fast page load.</p>
 				</section>
 			</main>
 <!-- END: Region Middle -->
